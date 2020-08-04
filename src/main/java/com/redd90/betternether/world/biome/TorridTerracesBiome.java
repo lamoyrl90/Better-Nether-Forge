@@ -23,12 +23,11 @@ import net.minecraft.world.gen.placement.ChanceRangeConfig;
 import net.minecraft.world.gen.placement.CountRangeConfig;
 import net.minecraft.world.gen.placement.FrequencyConfig;
 import net.minecraft.world.gen.placement.Placement;
-import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
 public class TorridTerracesBiome extends Biome {
 	public TorridTerracesBiome() {
 		   super((new Biome.Builder())
-				   .surfaceBuilder(BNSurfaceBuilders.TORRID_TERRACES, SurfaceBuilder.NETHERRACK_CONFIG)
+				   .surfaceBuilder(BNSurfaceBuilders.TORRID_TERRACES, BNSurfaceBuilders.SOUL_SAND_SHORES)
 				   .precipitation(Biome.RainType.NONE)
 				   .category(Biome.Category.NETHER)
 				   .depth(0.125F).scale(0.05F).temperature(2.0F).downfall(0.0F)
@@ -41,7 +40,7 @@ public class TorridTerracesBiome extends Biome {
 						   .setAdditionsSound(new SoundAdditionsAmbience(SoundEvents.AMBIENT_CRIMSON_FOREST_ADDITIONS, 0.0111D))
 						   .setMusic(BackgroundMusicTracks.func_232677_a_(SoundEvents.MUSIC_NETHER_CRIMSON_FOREST))
 						   .build()).parent((String)null)
-				   .func_235098_a_(ImmutableList.of(new Biome.Attributes(0.01F, -0.025F, -0.0F, -0.475F, -0.01F))));
+				   .func_235098_a_(ImmutableList.of(new Biome.Attributes(-0.01F, -0.025F, -0.0F, 0.475F, 0.00F))));
 		   
 		  this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_NETHER);
 	      this.func_235063_a_(DefaultBiomeFeatures.FORTRESS);

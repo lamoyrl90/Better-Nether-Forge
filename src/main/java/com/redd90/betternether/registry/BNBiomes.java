@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import com.redd90.betternether.BetterNether;
 import com.redd90.betternether.world.biome.BNBiomeFeatures;
 import com.redd90.betternether.world.biome.GravelDesertBiome;
+import com.redd90.betternether.world.biome.HadeanJungleBiome;
 import com.redd90.betternether.world.biome.NetherGrasslandsBiome;
 import com.redd90.betternether.world.biome.FungalWoodlandsBiome;
 import com.redd90.betternether.world.biome.ObsidianChasmBiome;
@@ -32,9 +33,9 @@ public class BNBiomes {
 	public static final RegistryObject<Biome> SWELTERING_SWAMPLAND = BIOMES.register("sweltering_swampland", () -> new SwelteringSwamplandBiome());
 	public static final RegistryObject<Biome> TORRID_TERRACES = BIOMES.register("torrid_terraces", () -> new TorridTerracesBiome());
 	public static final RegistryObject<Biome> FUNGAL_WOODLANDS = BIOMES.register("fungal_woodlands", () -> new FungalWoodlandsBiome());
-	//public static final RegistryObject<Biome> FUNGAL_WOODLANDS_EDGE = BIOMES.register("fungal_woodlands_edge", () -> new FungalWoodlandsEdgeBiome());
 	public static final RegistryObject<Biome> OLD_FUNGIWOODS = BIOMES.register("old_fungiwoods", () -> new OldFungiwoodsBiome());
 	public static final RegistryObject<Biome> NETHER_GRASSLANDS = BIOMES.register("nether_grasslands", () -> new NetherGrasslandsBiome());
+	public static final RegistryObject<Biome> HADEAN_JUNGLE = BIOMES.register("hadean_jungle", () -> new HadeanJungleBiome());
 	
 	
 	public static void registerBiomeTypes() {
@@ -50,9 +51,9 @@ public class BNBiomes {
 		BiomeDictionary.addTypes(SWELTERING_SWAMPLAND.get(), BiomeDictionary.Type.NETHER);
 		BiomeDictionary.addTypes(TORRID_TERRACES.get(), BiomeDictionary.Type.NETHER);
 		BiomeDictionary.addTypes(FUNGAL_WOODLANDS.get(), BiomeDictionary.Type.NETHER);
-		//BiomeDictionary.addTypes(FUNGAL_WOODLANDS_EDGE.get(), BiomeDictionary.Type.NETHER);
 		BiomeDictionary.addTypes(OLD_FUNGIWOODS.get(), BiomeDictionary.Type.NETHER);
 		BiomeDictionary.addTypes(NETHER_GRASSLANDS.get(), BiomeDictionary.Type.NETHER);
+		BiomeDictionary.addTypes(HADEAN_JUNGLE.get(), BiomeDictionary.Type.NETHER);
 
 	}
 	
@@ -81,8 +82,8 @@ public class BNBiomes {
 		((SwelteringSwamplandBiome) SWELTERING_SWAMPLAND.get()).finalizeFeatures();
 		((TorridTerracesBiome) TORRID_TERRACES.get()).finalizeFeatures();
 		((FungalWoodlandsBiome) FUNGAL_WOODLANDS.get()).finalizeFeatures();
-		//((FungalWoodlandsEdgeBiome) FUNGAL_WOODLANDS_EDGE.get()).finalizeFeatures();
 		((OldFungiwoodsBiome) OLD_FUNGIWOODS.get()).finalizeFeatures();
 		((NetherGrasslandsBiome) NETHER_GRASSLANDS.get()).finalizeFeatures();
+		((HadeanJungleBiome) HADEAN_JUNGLE.get()).finalizeFeatures();
 	}
 }

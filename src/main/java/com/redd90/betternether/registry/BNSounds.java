@@ -16,6 +16,7 @@ public class BNSounds {
 	static Set<SoundEvent> registeredEvents = new HashSet<>();
 	public static final SoundEvent AMBIENT_GRAVEL_DESERT = registerSound("ambient.gravel_desert");
 	public static final SoundEvent AMBIENT_MUSHROOM_FOREST = registerSound("ambient.mushroom_forest");
+	public static final SoundEvent AMBIENT_NETHER_JUNGLE = registerSound("ambient.nether_jungle");
 	
 	public static final SoundEvent DUST_DEVIL_AMBIENT = registerSound("mob.dust_devil_ambient");
 	public static final SoundEvent DUST_DEVIL_ADDITIONAL = registerSound("mob.dust_devil_additional");

@@ -293,4 +293,16 @@ public class BNBiomeFeatures {
 				BNFeatures.BLACK_APPLE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 				.withPlacement(floorPlantPlacement(density)));
 	}
+	
+	public static void addJunglePlants(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.JUNGLE_PLANT.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
+	}
+	
+	public static void addJungleMoss(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.JUNGLE_MOSS.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(wallPlantPlacement(density)));
+	}
 }

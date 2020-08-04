@@ -263,6 +263,10 @@ public class BNBlocks {
 	public static final RegistryObject<Block> BLACK_APPLE = registerBlockNoItem("black_apple", () -> new BlackAppleBlock());
 	public static final RegistryObject<Block> BLACK_APPLE_SEED = registerBlock("black_apple_seed", () -> new BlackAppleSeedBlock());
 	
+	public static final RegistryObject<Block> JUNGLE_GRASS = registerBlockNoItem("jungle_grass", () -> new BNBlock(BNBlockProperties.NETHERRACK.sound(SoundType.NYLIUM)));
+	public static final RegistryObject<Block> JUNGLE_PLANT = registerBlock("jungle_plant", () -> new BNGrassBlock());
+	public static final RegistryObject<Block> JUNGLE_MOSS = registerBlock("jungle_moss", () -> new WallPlantBlock(MaterialColor.CYAN));
+	
 	
 	private static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<? extends B> supplier) {
 		RegistryObject<B> block = BLOCKS.register(name, supplier);

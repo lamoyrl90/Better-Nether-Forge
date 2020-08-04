@@ -21,6 +21,8 @@ import com.redd90.betternether.world.gen.feature.plants.GiantMoldFeature;
 import com.redd90.betternether.world.gen.feature.plants.GoldenVineFeature;
 import com.redd90.betternether.world.gen.feature.plants.GrayMoldFeature;
 import com.redd90.betternether.world.gen.feature.plants.InkBushFeature;
+import com.redd90.betternether.world.gen.feature.plants.JungleMossFeature;
+import com.redd90.betternether.world.gen.feature.plants.JunglePlantFeature;
 import com.redd90.betternether.world.gen.feature.plants.LucisFeature;
 import com.redd90.betternether.world.gen.feature.plants.MagmaFlowerFeature;
 import com.redd90.betternether.world.gen.feature.plants.MediumBrownMushroomFeature;
@@ -97,6 +99,8 @@ public class BNFeatures {
 	public static final RegistryObject<Feature<NoFeatureConfig>> WART_SEED = FEATURES.register("wart_seed", () -> new WartSeedFeature(NoFeatureConfig.field_236558_a_));
 	public static final RegistryObject<Feature<NoFeatureConfig>> BLACK_APPLE = FEATURES.register("black_apple", () -> new BlackAppleFeature(NoFeatureConfig.field_236558_a_));
 	public static final RegistryObject<Feature<NoFeatureConfig>> BLACKSTONE_SPIKE = FEATURES.register("blackstone_spike", () -> new BlackstoneSpikeFeature(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> JUNGLE_PLANT = FEATURES.register("jungle_plant", () -> new JunglePlantFeature(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> JUNGLE_MOSS = FEATURES.register("jungle_moss", () -> new JungleMossFeature(NoFeatureConfig.field_236558_a_));
 	
 	/// STRUCTURES ///
 	

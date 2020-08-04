@@ -42,7 +42,7 @@ public class NetherGrasslandsBiome extends Biome {
 		    				  .setMoodSound(new MoodSoundAmbience(SoundEvents.AMBIENT_NETHER_WASTES_MOOD, 6000, 8, 2.0D))
 		    				  .setAdditionsSound(new SoundAdditionsAmbience(SoundEvents.AMBIENT_NETHER_WASTES_ADDITIONS, 0.0111D))
 		    				  .setMusic(BackgroundMusicTracks.func_232677_a_(SoundEvents.MUSIC_NETHER_NETHER_WASTES)).build()).parent((String)null)
-		    		  .func_235098_a_(ImmutableList.of(new Biome.Attributes(-0.00F, -0.0f, 0.275F, 0.4F, 0.0F))));
+		    		  .func_235098_a_(ImmutableList.of(new Biome.Attributes(0.10F, -0.0f, -0.475F, 0.0F, 0.0F))));
 		      this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_NETHER);
 		      this.func_235063_a_(DefaultBiomeFeatures.FORTRESS);
 		      this.func_235063_a_(DefaultBiomeFeatures.BASTION_REMNANT);
