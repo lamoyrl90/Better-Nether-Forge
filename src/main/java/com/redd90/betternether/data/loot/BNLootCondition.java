@@ -11,6 +11,7 @@ import net.minecraft.loot.RandomValueRange;
 import net.minecraft.loot.conditions.BlockStateProperty;
 import net.minecraft.loot.conditions.ILootCondition;
 import net.minecraft.loot.conditions.MatchTool;
+import net.minecraft.loot.conditions.RandomChance;
 import net.minecraft.loot.functions.ApplyBonus;
 import net.minecraft.loot.functions.ILootFunction;
 import net.minecraft.loot.functions.SetCount;
@@ -24,6 +25,9 @@ public class BNLootCondition {
 	public static final ILootFunction.IBuilder FORTUNE = ApplyBonus.oreDrops(Enchantments.FORTUNE);
 	public static final ILootCondition.IBuilder NOT_SILK_OR_SHEARS = SILK_OR_SHEARS.inverted();
 	
+	public static final ILootCondition.IBuilder chance(float chance){
+		return RandomChance.builder(chance);
+	}
 	
 	public static final <T extends Comparable<T> & IStringSerializable> ILootCondition.IBuilder blockState(Block block, Property<T> property, T value){
 		return BlockStateProperty.builder(block).fromProperties(StatePropertiesPredicate.Builder.newBuilder().withProp(property, value));

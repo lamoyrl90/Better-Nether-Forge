@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:shield_from_cincinnasite"
+    ]
+  },
+  "criteria": {
+    "has_cincinnasite": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betternether:cincinnasite_ingot"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:shield_from_cincinnasite"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cincinnasite",
+      "has_the_recipe"
+    ]
+  ]
+}

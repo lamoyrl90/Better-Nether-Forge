@@ -343,6 +343,19 @@ public abstract class BNLootTableProvider extends LootTableProvider {
 		return LootTable.builder().addLootPool(pool1);
 	}
 	
+	protected LootTable.Builder dropItemWithSecondaryChance(String name, Block block, IItemProvider item, IItemProvider secondary, float secondaryChance) {
+		LootPool.Builder pool1 = LootPool.builder()
+				.name("pool1")
+				.rolls(ConstantRange.of(1))
+				.addEntry(ItemLootEntry.builder(item));
+		LootPool.Builder pool2 = LootPool.builder()
+				.name("pool2")
+				.rolls(ConstantRange.of(1))
+				.addEntry(ItemLootEntry.builder(secondary)
+						.acceptCondition(BNLootCondition.chance(secondaryChance)));
+		return LootTable.builder().addLootPool(pool1).addLootPool(pool2);
+	}
+	
 	@Override
 	public String getName() {
 		return "Better Nether LootTables";

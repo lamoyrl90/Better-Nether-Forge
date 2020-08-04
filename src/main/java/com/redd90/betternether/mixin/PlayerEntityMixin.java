@@ -23,7 +23,6 @@ public class PlayerEntityMixin {
 	@Inject(method = "func_234567_a_", at = @At(value = "HEAD"), cancellable = true)
 	private static void statueRespawn(ServerWorld p_234567_0_, BlockPos p_234567_1_, boolean p_234567_2_, boolean p_234567_3_, CallbackInfoReturnable<Optional<Vector3d>> info)
 	{
-		BetterNether.LOGGER.debug("Hello from my mixin!");
 		BlockState blockState = p_234567_0_.getBlockState(p_234567_1_);
 		Block block = blockState.getBlock();
 		if (block instanceof RespawnStatueBlock)

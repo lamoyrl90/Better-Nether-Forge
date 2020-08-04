@@ -153,6 +153,19 @@ public class BNRecipes extends BNRecipeProvider {
         super.doorRecipe(BNBlocks.WART_DOOR.get().asItem(), 3, BNBlocks.WART_PLANKS.get(), consumer);
         super.singleItemRecipe(BNBlocks.WART_BUTTON.get(), 4, BNBlocks.WART_PLANKS.get(), consumer);
         
+        super.singleItemRecipe("stalagnate_planks_from_stem", BNBlocks.STALAGNATE_PLANKS.get(), 1, BNBlocks.STALAGNATE_STEM.get(), consumer);
+        super.singleItemRecipe("stalagnate_planks_from_log", BNBlocks.STALAGNATE_PLANKS.get(), 1, BNTags.Items.STALAGNATE_LOGS, consumer);
+        super.recipe2x2(BNBlocks.STALAGNATE_LOG.get(), 1, BNBlocks.STALAGNATE_STEM.get(), consumer);
+        super.recipe2x2(BNBlocks.STALAGNATE_BARK.get(), 3, BNBlocks.STALAGNATE_LOG.get(), consumer);
+        super.stairsRecipe(BNBlocks.STALAGNATE_STAIRS.get().asItem(), BNBlocks.STALAGNATE_PLANKS.get(), consumer);
+        super.slabRecipe(BNBlocks.STALAGNATE_SLAB.get().asItem(), 6, BNBlocks.STALAGNATE_PLANKS.get(), consumer);
+        super.fenceRecipe(BNBlocks.STALAGNATE_FENCE.get().asItem(), BNBlocks.STALAGNATE_PLANKS.get(), consumer);
+        super.gateRecipe(BNBlocks.STALAGNATE_GATE.get().asItem(), BNBlocks.STALAGNATE_PLANKS.get(), consumer);
+        super.plateRecipe(BNBlocks.STALAGNATE_PLATE.get().asItem(), BNBlocks.STALAGNATE_PLANKS.get(), consumer);
+        super.wallRecipe(BNBlocks.STALAGNATE_TRAPDOOR.get().asItem(), 2, BNBlocks.STALAGNATE_PLANKS.get(), consumer);
+        super.doorRecipe(BNBlocks.STALAGNATE_DOOR.get().asItem(), 3, BNBlocks.STALAGNATE_PLANKS.get(), consumer);
+        super.singleItemRecipe(BNBlocks.STALAGNATE_BUTTON.get(), 4, BNBlocks.STALAGNATE_PLANKS.get(), consumer);
+        
         
         ShapedRecipeBuilder
 		.shapedRecipe(BNBlocks.PIG_STATUE_RESPAWNER.get())

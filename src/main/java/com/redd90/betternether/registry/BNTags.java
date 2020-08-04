@@ -17,6 +17,7 @@ public class BNTags {
 		public static final ITag.INamedTag<Item> SOUL_GROUND = createTag("soul_ground");
 		public static final ITag.INamedTag<Item> WILLOW_LOGS = createTag("willow_logs");
 		public static final ITag.INamedTag<Item> MUSHROOM_FIR_LOGS = createTag("mushroom_fir_logs");
+		public static final ITag.INamedTag<Item> STALAGNATE_LOGS = createTag("stalagnate_logs");
 		public static final ITag.INamedTag<Item> WART_LOGS = createTag("wart_logs");
 		
 		private static ITag.INamedTag<Item> createTag(String name) {
@@ -36,6 +37,7 @@ public class BNTags {
 		public static final ITag.INamedTag<Block> WILLOW_LOGS = createTag("willow_logs");
 		public static final ITag.INamedTag<Block> MUSHROOM_FIR_LOGS = createTag("mushroom_fir_logs");
 		public static final ITag.INamedTag<Block> WART_LOGS = createTag("wart_logs");
+		public static final ITag.INamedTag<Block> STALAGNATE_LOGS = createTag("stalagnate_logs");
 		
 		
 		private static ITag.INamedTag<Block> createTag(String name) {

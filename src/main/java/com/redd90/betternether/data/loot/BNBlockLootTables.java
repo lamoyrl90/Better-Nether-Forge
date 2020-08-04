@@ -183,6 +183,24 @@ public class BNBlockLootTables extends BNLootTableProvider {
 		registerCrop(BNBlocks.BLACK_APPLE.get(), BNItems.BLACK_APPLE.get(), 3, 1, 1);
 		registerSelfDrop(BNBlocks.BLACK_APPLE_SEED.get());
 		
+		registerDropItemWithSecondaryChance(BNBlocks.STALAGNATE.get(), BNBlocks.STALAGNATE_STEM.get(), BNBlocks.STALAGNATE_SEED.get(), 0.08333f);
+		registerSelfDrop(BNBlocks.STALAGNATE_STEM.get());
+		registerSelfDrop(BNBlocks.STALAGNATE_SEED.get());
+		registerSelfDrop(BNBlocks.STALAGNATE_LOG.get());
+		registerSelfDrop(BNBlocks.STALAGNATE_BARK.get());
+		registerSelfDrop(BNBlocks.STRIPPED_LOG_STALAGNATE.get());
+		registerSelfDrop(BNBlocks.STRIPPED_BARK_STALAGNATE.get());
+		registerSelfDrop(BNBlocks.STALAGNATE_PLANKS.get());
+		registerSelfDrop(BNBlocks.STALAGNATE_STAIRS.get());
+		registerSelfDrop(BNBlocks.STALAGNATE_SLAB.get());
+		registerSelfDrop(BNBlocks.STALAGNATE_FENCE.get());
+		registerSelfDrop(BNBlocks.STALAGNATE_GATE.get());
+		registerSelfDrop(BNBlocks.STALAGNATE_BUTTON.get());
+		registerSelfDrop(BNBlocks.STALAGNATE_PLATE.get());
+		registerSelfDrop(BNBlocks.STALAGNATE_TRAPDOOR.get());
+		registerSelfDrop(BNBlocks.STALAGNATE_DOOR.get());
+		
+		
 		blockLootTables.put(BNBlocks.RED_LARGE_MUSHROOM.get(), redMediumMushroom());
 		blockLootTables.put(BNBlocks.BROWN_LARGE_MUSHROOM.get(), brownMediumMushroom());
 		blockLootTables.put(BNBlocks.MUSHROOM_FIR.get(), mushroomFir());
@@ -191,6 +209,10 @@ public class BNBlockLootTables extends BNLootTableProvider {
 	
 	private void registerSelfDrop(Block block) {
 		blockLootTables.put(block, dropItself(block.getRegistryName().getPath(), block));
+	}
+	
+	private void registerDropItemWithSecondaryChance(Block block, IItemProvider item, IItemProvider secondary, float chance) {
+		blockLootTables.put(block, dropItemWithSecondaryChance(block.getRegistryName().getPath(), block, item, secondary, chance));
 	}
 	
 	private void registerFortune(Block block, Item item, float min, float max) {

@@ -1,0 +1,9 @@
+{
+	"replace": "false",
+	"values": [
+		"betternether:stalagnate_log",
+		"betternether:stalagnate_bark",
+		"betternether:stripped_log_stalagnate",
+		"betternether:stripped_bark_stalagnate"
+	]
+}

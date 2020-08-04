@@ -78,6 +78,8 @@ import com.redd90.betternether.block.SmokerBlock;
 import com.redd90.betternether.block.SoulFarmlandBlock;
 import com.redd90.betternether.block.SoulVeinBlock;
 import com.redd90.betternether.block.SpeleothemBlock;
+import com.redd90.betternether.block.StalagnateBlock;
+import com.redd90.betternether.block.StalagnateSaplingBlock;
 import com.redd90.betternether.block.StemBlock;
 import com.redd90.betternether.block.VeinedSandBlock;
 import com.redd90.betternether.block.WallPlantBlock;
@@ -266,6 +268,24 @@ public class BNBlocks {
 	public static final RegistryObject<Block> JUNGLE_GRASS = registerBlockNoItem("jungle_grass", () -> new BNBlock(BNBlockProperties.NETHERRACK.sound(SoundType.NYLIUM)));
 	public static final RegistryObject<Block> JUNGLE_PLANT = registerBlock("jungle_plant", () -> new BNGrassBlock());
 	public static final RegistryObject<Block> JUNGLE_MOSS = registerBlock("jungle_moss", () -> new WallPlantBlock(MaterialColor.CYAN));
+	
+	public static final RegistryObject<Block> STALAGNATE = registerBlockNoItem("stalagnate", () -> new StalagnateBlock());
+	public static final RegistryObject<Block> STALAGNATE_STEM = registerBlock("stalagnate_stem", () -> new StemBlock(BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> STALAGNATE_SEED = registerBlock("stalagnate_seed", () -> new StalagnateSaplingBlock());
+	public static final RegistryObject<Block> STRIPPED_LOG_STALAGNATE = registerBlock("stripped_log_stalagnate", () -> new BNPillarBlock(BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> STRIPPED_BARK_STALAGNATE = registerBlock("stripped_bark_stalagnate", () -> new BNPillarBlock(BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> STALAGNATE_LOG = registerBlock("stalagnate_log", () -> new BNLogStrippable(BNBlockProperties.STALAGNATE, STRIPPED_LOG_STALAGNATE.get()));
+	public static final RegistryObject<Block> STALAGNATE_BARK = registerBlock("stalagnate_bark", () -> new BNLogStrippable(BNBlockProperties.STALAGNATE, STRIPPED_BARK_STALAGNATE.get()));
+	public static final RegistryObject<Block> STALAGNATE_PLANKS = registerBlock("stalagnate_planks", () -> new BNBlock(BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> STALAGNATE_STAIRS = registerBlock("stalagnate_stairs", () -> new BNStairsBlock(() -> STALAGNATE_PLANKS.get().getDefaultState(), BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> STALAGNATE_SLAB = registerBlock("stalagnate_slab", () -> new BNSlabBlock(BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> STALAGNATE_FENCE = registerBlock("stalagnate_fence", () -> new BNFenceBlock(BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> STALAGNATE_GATE = registerBlock("stalagnate_gate", () -> new BNGateBlock(BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> STALAGNATE_BUTTON = registerBlock("stalagnate_button", () -> new BNButtonBlock(true, BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> STALAGNATE_PLATE = registerBlock("stalagnate_plate", () -> new BNPlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> STALAGNATE_TRAPDOOR = registerBlock("stalagnate_trapdoor", () -> new BNTrapdoorBlock(BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> STALAGNATE_DOOR = registerBlock("stalagnate_door", () -> new BNDoorBlock(BNBlockProperties.STALAGNATE));
+	
 	
 	
 	private static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<? extends B> supplier) {

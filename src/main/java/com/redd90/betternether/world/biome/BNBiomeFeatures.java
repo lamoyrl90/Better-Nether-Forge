@@ -305,4 +305,10 @@ public class BNBiomeFeatures {
 				BNFeatures.JUNGLE_MOSS.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 				.withPlacement(wallPlantPlacement(density)));
 	}
+	
+	public static void addStalagnates(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.STALAGNATE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
+	}
 }

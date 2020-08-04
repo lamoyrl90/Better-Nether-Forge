@@ -87,6 +87,7 @@ public class HadeanJungleBiome extends Biome {
 		BNBiomeFeatures.addJungleMoss(this, 0.8f);
 		BNBiomeFeatures.addWallMushrooms(this, 0.8f);
 		BNBiomeFeatures.addJunglePlants(this, 0.1f);
+		BNBiomeFeatures.addStalagnates(this, 0.2f);
 		
 	}
 }
