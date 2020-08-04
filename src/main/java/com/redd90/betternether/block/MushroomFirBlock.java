@@ -1,17 +1,21 @@
 package com.redd90.betternether.block;
 
-import com.redd90.betternether.registry.BNBlocks;
+import java.util.Random;
 
+import com.redd90.betternether.registry.BNBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.StateContainer;
+import net.minecraft.util.Direction;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
+import net.minecraft.world.server.ServerWorld;
 
 public class MushroomFirBlock extends BNBlock{
 	public static final EnumProperty<MushroomFirShape> SHAPE = EnumProperty.create("shape", MushroomFirShape.class);
@@ -28,7 +32,7 @@ public class MushroomFirBlock extends BNBlock{
 	
 	public MushroomFirBlock()
 	{
-		super(BNBlockProperties.MUSHROOM_FIR.notSolid());
+		super(BNBlockProperties.MUSHROOM_FIR.notSolid().tickRandomly());
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 	}
 	
@@ -36,6 +40,31 @@ public class MushroomFirBlock extends BNBlock{
 	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> stateManager)
 	{
 		stateManager.add(SHAPE);
+	}
+	
+	@Override
+	public boolean isValidPosition(BlockState state, IWorldReader world, BlockPos pos)
+	{
+		if (state.get(SHAPE) == MushroomFirShape.BOTTOM || state.get(SHAPE) == MushroomFirShape.MIDDLE || state.get(SHAPE) == MushroomFirShape.TOP){
+			return true;
+		} else {
+			for (int i=0; i<4;i++) {
+				if (world.getBlockState(pos.offset(Direction.byHorizontalIndex(i))).getBlock() == BNBlocks.MUSHROOM_FIR.get()) {
+					return true;
+				}
+			}
+			
+			if (world.getBlockState(pos.down()).getBlock() == BNBlocks.MUSHROOM_FIR.get())
+				return true;
+		}
+		
+		return false;
+	}
+	
+	@Override
+	public void randomTick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
+		if (!isValidPosition(state, worldIn, pos))
+			worldIn.destroyBlock(pos, true);
 	}
 	
 	@Override

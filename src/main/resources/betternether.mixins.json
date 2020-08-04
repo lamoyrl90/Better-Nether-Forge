@@ -4,7 +4,8 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "betternether.refmap.json",
   "mixins": [
-  "NetherBiomeProviderMixin"
+  "NetherBiomeProviderMixin",
+  "PlayerEntityMixin"
   ],
   "client":[
   ],

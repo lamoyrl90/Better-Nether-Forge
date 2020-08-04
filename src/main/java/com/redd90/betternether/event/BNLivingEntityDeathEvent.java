@@ -19,7 +19,7 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber
 public class BNLivingEntityDeathEvent {
-	
+	/*
 	@SubscribeEvent
 	public static void onLivingDeathEvent(LivingDeathEvent event) {
 		if(BNConfig.NetherSpawn==true) {
@@ -44,4 +44,5 @@ public class BNLivingEntityDeathEvent {
 			}
 		}
 	}
+	*/
 }

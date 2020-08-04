@@ -155,6 +155,26 @@ public class BNRecipes extends BNRecipeProvider {
         
         
         ShapedRecipeBuilder
+		.shapedRecipe(BNBlocks.PIG_STATUE_RESPAWNER.get())
+		.key('C', BNBlocks.CINCINNASITE_FIRE_BOWL.get())
+		.key('W', BNItems.CINCINNASITE_INGOT.get())
+		.patternLine("WCW")
+		.patternLine("WWW")
+		.patternLine(" W ")
+		.addCriterion("has_cincinnasite", hasItem(BNItems.CINCINNASITE_INGOT.get()))
+		.build(consumer);
+        
+        ShapedRecipeBuilder
+		.shapedRecipe(Items.SHIELD)
+		.key('C', BNItems.CINCINNASITE_INGOT.get())
+		.key('W', ItemTags.PLANKS)
+		.patternLine("WCW")
+		.patternLine("WWW")
+		.patternLine(" W ")
+		.addCriterion("has_cincinnasite", hasItem(BNItems.CINCINNASITE_INGOT.get()))
+		.build(consumer, "shield_from_cincinnasite");
+        
+        ShapedRecipeBuilder
 		.shapedRecipe(BNItems.GLOWSTONE_TORCH.get(), 4)
 		.key('G', Items.GLOWSTONE_DUST)
 		.key('N', Items.NETHERRACK)

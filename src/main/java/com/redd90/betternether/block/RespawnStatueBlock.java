@@ -21,6 +21,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -78,12 +79,14 @@ public class RespawnStatueBlock extends BNBlock {
 						pos.getY() + y + world.rand.nextFloat() * 0.2,
 						pos.getZ() + world.rand.nextFloat(), 0, 0, 0);
 			player.sendStatusMessage(new TranslationTextComponent("message.spawn_set", new Object[0]), true);
-			if (!world.isRemote)
-			{
-				((ServerPlayerEntity) player).func_241153_a_(world.func_234923_W_(), pos, true, false);
+			if (!world.isRemote) {
+				ServerPlayerEntity serverplayerentity = (ServerPlayerEntity)player;
+				if (serverplayerentity.func_241141_L_() != world.func_234923_W_() || !serverplayerentity.func_241140_K_().equals(pos)) {
+					serverplayerentity.func_241153_a_(world.func_234923_W_(), pos, false, true);
+					world.playSound((PlayerEntity)null, (double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D, SoundEvents.ITEM_TOTEM_USE, SoundCategory.BLOCKS, 1.0F, 1.0F);
+					return ActionResultType.SUCCESS;
+				}
 			}
-			player.playSound(SoundEvents.ITEM_TOTEM_USE, 0.7F, 1.0F);
-			return ActionResultType.SUCCESS;
 		}
 		else
 			player.sendStatusMessage(new TranslationTextComponent("message.spawn_help", new Object[0]), true);

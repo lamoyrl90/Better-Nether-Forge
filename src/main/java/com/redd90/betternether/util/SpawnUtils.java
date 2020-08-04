@@ -28,10 +28,6 @@ import net.minecraft.world.server.ServerWorld;
 
 public class SpawnUtils {
 	
-	//private static float avgHeight;
-	//private static int testRuns;
-	
-	public static boolean NETHER_SPAWN_SET = false;
 	
 	
 	//Probably best to limit this to biomes with wood available
@@ -104,7 +100,7 @@ public class SpawnUtils {
 		
 		player.addPotionEffect(new EffectInstance(Effects.FIRE_RESISTANCE, 600));
 		serverPlayer.teleport(nether, safeSpawn.getX(), safeSpawn.getY(), safeSpawn.getZ(), yaw, pitch);
-		serverPlayer.func_241153_a_(netherKey, safeSpawn, true, false);
+		//serverPlayer.func_241153_a_(netherKey, safeSpawn, true, false);
 		
 	}
 	
