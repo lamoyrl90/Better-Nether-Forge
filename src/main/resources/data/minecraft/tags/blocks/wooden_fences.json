@@ -1,0 +1,9 @@
+{
+	"replace": "false",
+	"values": [
+		"betternether:willow_fence",
+		"betternether:wart_fence",
+		"betternether:mushroom_fence",
+		"betternether:mushroom_fir_fence"
+	]
+}

@@ -1,0 +1,9 @@
+{
+	"replace": "false",
+	"values": [
+		"betternether:willow_stairs",
+		"betternether:wart_stairs",
+		"betternether:mushroom_stairs",
+		"betternether:mushroom_fir_stairs"
+	]
+}

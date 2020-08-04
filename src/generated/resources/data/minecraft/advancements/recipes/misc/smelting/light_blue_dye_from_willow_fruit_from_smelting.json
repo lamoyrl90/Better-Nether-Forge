@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:smelting/light_blue_dye_from_willow_fruit_from_smelting"
+    ]
+  },
+  "criteria": {
+    "has_willow_fruit": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betternether:willow_fruit"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:smelting/light_blue_dye_from_willow_fruit_from_smelting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_willow_fruit",
+      "has_the_recipe"
+    ]
+  ]
+}

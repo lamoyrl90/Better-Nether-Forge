@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:pillarcrafting_cincinnasite_tile_large_from_cincinnasite_slab"
+    ]
+  },
+  "criteria": {
+    "has_cincinnasite_slab": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betternether:cincinnasite_slab"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:pillarcrafting_cincinnasite_tile_large_from_cincinnasite_slab"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cincinnasite_slab",
+      "has_the_recipe"
+    ]
+  ]
+}

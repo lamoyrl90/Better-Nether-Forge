@@ -1,0 +1,9 @@
+{
+	"replace": "false",
+	"values": [
+		"#betternether:gravel_desert_ground",
+		"#betternether:soul_ground",
+		"#betternether:netherrack",
+		"#betternether:nether_mycelium"
+	]
+}

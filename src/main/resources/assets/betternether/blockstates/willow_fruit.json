@@ -1,0 +1,7 @@
+{
+    "variants":
+	{
+        "branch=false": { "model": "betternether:block/willow_fruit" },
+		"branch=true": { "model": "betternether:block/willow_branch_end" }
+    }
+}

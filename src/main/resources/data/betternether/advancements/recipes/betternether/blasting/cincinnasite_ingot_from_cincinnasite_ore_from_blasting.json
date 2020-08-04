@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:blasting/cincinnasite_ingot_from_cincinnasite_ore_from_blasting"
+    ]
+  },
+  "criteria": {
+    "has_cincinnasite_ore": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betternether:cincinnasite_ore"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:blasting/cincinnasite_ingot_from_cincinnasite_ore_from_blasting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cincinnasite_ore",
+      "has_the_recipe"
+    ]
+  ]
+}

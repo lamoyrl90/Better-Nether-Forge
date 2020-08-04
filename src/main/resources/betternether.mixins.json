@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "com.redd90.betternether.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "betternether.refmap.json",
+  "mixins": [
+  "NetherBiomeProviderMixin"
+  ],
+  "client":[
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}

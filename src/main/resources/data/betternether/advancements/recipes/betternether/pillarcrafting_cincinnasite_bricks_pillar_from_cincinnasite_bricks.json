@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:pillarcrafting_cincinnasite_bricks_pillar_from_cincinnasite_bricks"
+    ]
+  },
+  "criteria": {
+    "has_cincinnasite_bricks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betternether:cincinnasite_bricks"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:pillarcrafting_cincinnasite_bricks_pillar_from_cincinnasite_bricks"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cincinnasite_bricks",
+      "has_the_recipe"
+    ]
+  ]
+}

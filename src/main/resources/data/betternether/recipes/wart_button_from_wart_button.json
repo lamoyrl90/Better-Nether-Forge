@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "betternether:wart_planks"
+    }
+  ],
+  "result": {
+    "item": "betternether:wart_button",
+    "count": 4
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:willow_planks"
+    ]
+  },
+  "criteria": {
+    "has_net.minecraft.tags.TagRegistry$NamedTag@51d2218e": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "betternether:willow_logs"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:willow_planks"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_net.minecraft.tags.TagRegistry$NamedTag@51d2218e",
+      "has_the_recipe"
+    ]
+  ]
+}

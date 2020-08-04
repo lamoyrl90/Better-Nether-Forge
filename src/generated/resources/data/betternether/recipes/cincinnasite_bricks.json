@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NC",
+    "CN"
+  ],
+  "key": {
+    "N": {
+      "item": "minecraft:nether_brick"
+    },
+    "C": {
+      "item": "betternether:cincinnasite_ingot"
+    }
+  },
+  "result": {
+    "item": "betternether:cincinnasite_bricks"
+  }
+}

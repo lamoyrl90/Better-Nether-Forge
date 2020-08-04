@@ -1,0 +1,7 @@
+{
+	"parent": "betternether:block/stalactite_1",
+	"textures": {
+		"particle": "block/quartz_block_bottom",
+		"texture": "block/quartz_block_bottom"
+	}
+}

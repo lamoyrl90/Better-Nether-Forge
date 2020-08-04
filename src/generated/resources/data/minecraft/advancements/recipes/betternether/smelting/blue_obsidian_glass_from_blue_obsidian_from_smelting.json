@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:smelting/blue_obsidian_glass_from_blue_obsidian_from_smelting"
+    ]
+  },
+  "criteria": {
+    "has_blue_obsidian": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betternether:blue_obsidian"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:smelting/blue_obsidian_glass_from_blue_obsidian_from_smelting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_blue_obsidian",
+      "has_the_recipe"
+    ]
+  ]
+}

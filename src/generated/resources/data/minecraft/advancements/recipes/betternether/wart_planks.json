@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:wart_planks"
+    ]
+  },
+  "criteria": {
+    "has_net.minecraft.tags.TagRegistry$NamedTag@8a607a9": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "betternether:wart_logs"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:wart_planks"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_net.minecraft.tags.TagRegistry$NamedTag@8a607a9",
+      "has_the_recipe"
+    ]
+  ]
+}

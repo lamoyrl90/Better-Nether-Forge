@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:2x2crafting_cincinnasite_block"
+    ]
+  },
+  "criteria": {
+    "has_cincinnasite": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betternether:cincinnasite"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:2x2crafting_cincinnasite_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cincinnasite",
+      "has_the_recipe"
+    ]
+  ]
+}

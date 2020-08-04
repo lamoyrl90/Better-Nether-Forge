@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:3x3crafting_cincinnasite_ingot"
+    ]
+  },
+  "criteria": {
+    "has_cincinnasite_nugget": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betternether:cincinnasite_nugget"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:3x3crafting_cincinnasite_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cincinnasite_nugget",
+      "has_the_recipe"
+    ]
+  ]
+}

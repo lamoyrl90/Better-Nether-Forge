@@ -1,0 +1,13 @@
+{
+	"replace": "false",
+	"values": [
+		"minecraft:netherrack",
+		"minecraft:nether_quartz_ore",
+		"minecraft:nether_gold_ore",
+		"#betternether:nylium",
+		"#betternether:nether_mycelium",
+		"betternether:cincinnasite_ore",
+		"betternether:nether_ruby_ore",
+		"betternether:netherrack_moss"
+	]
+}

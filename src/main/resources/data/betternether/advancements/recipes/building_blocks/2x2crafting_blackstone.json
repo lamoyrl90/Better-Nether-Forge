@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:2x2crafting_blackstone"
+    ]
+  },
+  "criteria": {
+    "has_blackstone_speleothem": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betternether:blackstone_speleothem"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:2x2crafting_blackstone"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_blackstone_speleothem",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CNC",
+    " C "
+  ],
+  "key": {
+    "N": {
+      "item": "minecraft:netherrack"
+    },
+    "C": {
+      "item": "betternether:cincinnasite_ingot"
+    }
+  },
+  "result": {
+    "item": "betternether:cincinnasite_fire_bowl"
+  }
+}

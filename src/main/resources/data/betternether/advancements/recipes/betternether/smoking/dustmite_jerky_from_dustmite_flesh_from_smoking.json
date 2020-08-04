@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:smoking/dustmite_jerky_from_dustmite_flesh_from_smoking"
+    ]
+  },
+  "criteria": {
+    "has_dustmite_flesh": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betternether:dustmite_flesh"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:smoking/dustmite_jerky_from_dustmite_flesh_from_smoking"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_dustmite_flesh",
+      "has_the_recipe"
+    ]
+  ]
+}

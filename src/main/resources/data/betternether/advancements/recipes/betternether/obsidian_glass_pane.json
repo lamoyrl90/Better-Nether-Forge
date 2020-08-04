@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betternether:obsidian_glass_pane"
+    ]
+  },
+  "criteria": {
+    "has_obsidian_glass": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betternether:obsidian_glass"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betternether:obsidian_glass_pane"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_obsidian_glass",
+      "has_the_recipe"
+    ]
+  ]
+}

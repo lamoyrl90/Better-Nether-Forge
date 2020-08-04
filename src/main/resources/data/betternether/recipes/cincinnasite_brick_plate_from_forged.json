@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "NNN",
+    " C "
+  ],
+  "key": {
+    "N": {
+      "item": "minecraft:nether_brick"
+    },
+    "C": {
+      "item": "betternether:cincinnasite_forged"
+    }
+  },
+  "result": {
+    "item": "betternether:cincinnasite_brick_plate",
+    "count": 12
+  }
+}

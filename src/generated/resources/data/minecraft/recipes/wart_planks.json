@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "betternether:wart_logs"
+    }
+  ],
+  "result": {
+    "item": "betternether:wart_planks",
+    "count": 4
+  }
+}

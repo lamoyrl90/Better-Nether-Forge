@@ -1,0 +1,9 @@
+{
+	"replace": "false",
+	"values": [
+		"betternether:willow_button",
+		"betternether:wart_button",
+		"betternether:mushroom_button",
+		"betternether:mushroom_fir_button"
+	]
+}
