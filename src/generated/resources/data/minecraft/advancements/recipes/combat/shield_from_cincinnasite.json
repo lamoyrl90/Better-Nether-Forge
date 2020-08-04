@@ -2,16 +2,16 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "minecraft:willow_planks"
+      "minecraft:shield_from_cincinnasite"
     ]
   },
   "criteria": {
-    "has_net.minecraft.tags.TagRegistry$NamedTag@22a7ff5d": {
+    "has_cincinnasite": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "tag": "betternether:willow_logs"
+            "item": "betternether:cincinnasite_ingot"
           }
         ]
       }
@@ -19,13 +19,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "minecraft:willow_planks"
+        "recipe": "minecraft:shield_from_cincinnasite"
       }
     }
   },
   "requirements": [
     [
-      "has_net.minecraft.tags.TagRegistry$NamedTag@22a7ff5d",
+      "has_cincinnasite",
       "has_the_recipe"
     ]
   ]

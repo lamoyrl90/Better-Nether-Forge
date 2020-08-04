@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WCW",
+    "WWW",
+    " W "
+  ],
+  "key": {
+    "C": {
+      "item": "betternether:cincinnasite_ingot"
+    },
+    "W": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "item": "minecraft:shield"
+  }
+}

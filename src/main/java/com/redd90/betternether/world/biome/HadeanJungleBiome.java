@@ -40,10 +40,9 @@ public class HadeanJungleBiome extends Biome {
 						   .setWaterFogColor(329011)
 						   .setFogColor(4106557)
 						   .setAmbientSound(BNSounds.AMBIENT_NETHER_JUNGLE)
-						   .setMoodSound(new MoodSoundAmbience(SoundEvents.AMBIENT_NETHER_WASTES_MOOD, 6000, 8, 2.0D))
-						   .setAdditionsSound(new SoundAdditionsAmbience(SoundEvents.AMBIENT_NETHER_WASTES_ADDITIONS, 0.0111D))
-						   .setMusic(BackgroundMusicTracks.func_232677_a_(SoundEvents.MUSIC_NETHER_NETHER_WASTES))
-						   .setParticle(new ParticleEffectAmbience(ParticleTypes.ASH, 0.02F))
+						   .setMoodSound(new MoodSoundAmbience(SoundEvents.AMBIENT_WARPED_FOREST_MOOD, 6000, 8, 2.0D))
+						   .setAdditionsSound(new SoundAdditionsAmbience(SoundEvents.AMBIENT_WARPED_FOREST_ADDITIONS, 0.0111D))
+						   .setMusic(BackgroundMusicTracks.func_232677_a_(SoundEvents.MUSIC_NETHER_WARPED_FOREST))
 						   .build()).parent((String)null)
 				   .func_235098_a_(ImmutableList.of(new Biome.Attributes(-0.0f, 0.325F, -0.025F, 0.35F, 0.0f))));
 		   

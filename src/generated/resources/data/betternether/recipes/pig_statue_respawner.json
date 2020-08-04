@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WCW",
+    "WWW",
+    " W "
+  ],
+  "key": {
+    "C": {
+      "item": "betternether:cincinnasite_fire_bowl"
+    },
+    "W": {
+      "item": "betternether:cincinnasite_ingot"
+    }
+  },
+  "result": {
+    "item": "betternether:pig_statue_respawner"
+  }
+}
