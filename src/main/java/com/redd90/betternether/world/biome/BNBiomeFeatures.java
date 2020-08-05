@@ -1,5 +1,6 @@
 package com.redd90.betternether.world.biome;
 
+import com.redd90.betternether.BNConfig;
 import com.redd90.betternether.registry.BNBlocks;
 import com.redd90.betternether.registry.BNFeatures;
 import com.redd90.betternether.registry.BNPlacements;
@@ -26,9 +27,9 @@ import net.minecraft.world.gen.placement.Placement;
 public class BNBiomeFeatures {
 	
 	public static final boolean FULL_CHUNK_SCANNING = false;
-	private static final float PLANT_COUNT = 128;
-	private static final float DECOR_COUNT = 64;
-	private static final int WALL_FACTOR = 4;
+	private static final float PLANT_COUNT = BNConfig.GlobalPlantCount;
+	private static final float DECOR_COUNT = BNConfig.GlobalDecorationCount;
+	private static final float WALL_FACTOR = BNConfig.WallFactor;
 	
 	private static final BlockState AGAVE = BNBlocks.AGAVE.get().getDefaultState();
 	private static final BlockState BARREL_CACTUS = BNBlocks.BARREL_CACTUS.get().getDefaultState();

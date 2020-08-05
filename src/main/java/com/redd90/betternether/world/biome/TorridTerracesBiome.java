@@ -30,7 +30,7 @@ public class TorridTerracesBiome extends Biome {
 				   .surfaceBuilder(BNSurfaceBuilders.TORRID_TERRACES, BNSurfaceBuilders.SOUL_SAND_SHORES)
 				   .precipitation(Biome.RainType.NONE)
 				   .category(Biome.Category.NETHER)
-				   .depth(0.125F).scale(0.05F).temperature(2.0F).downfall(0.0F)
+				   .depth(0.25F).scale(0.1F).temperature(2.0F).downfall(0.0F)
 				   .func_235097_a_((new BiomeAmbience.Builder())
 						   .setWaterColor(4159204)
 						   .setWaterFogColor(329011)
