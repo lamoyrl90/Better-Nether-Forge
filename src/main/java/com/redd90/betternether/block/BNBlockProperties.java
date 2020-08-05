@@ -20,6 +20,8 @@ public class BNBlockProperties {
 	public static final AbstractBlock.Properties MUSHROOM_FIR = AbstractBlock.Properties.create(Material.NETHER_WOOD, MaterialColor.BLUE).hardnessAndResistance(2.0F, 2.0F).sound(SoundType.FUNGUS);
 	public static final AbstractBlock.Properties NETHER_WART = AbstractBlock.Properties.from(Blocks.NETHER_WART_BLOCK);
 	public static final AbstractBlock.Properties WART_WOOD = AbstractBlock.Properties.create(Material.NETHER_WOOD, MaterialColor.RED).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD);
+	public static final AbstractBlock.Properties RUBEUS = AbstractBlock.Properties.create(Material.NETHER_WOOD, MaterialColor.MAGENTA).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD);
+	public static final AbstractBlock.Properties RUBEUS_LEAVES = AbstractBlock.Properties.create(Material.LEAVES, MaterialColor.LIGHT_BLUE).hardnessAndResistance(0.2F).tickRandomly().sound(SoundType.PLANT).notSolid();
 	
 	public static final AbstractBlock.Properties BONE = AbstractBlock.Properties.from(Blocks.BONE_BLOCK);
 	public static final AbstractBlock.Properties CINCINNASITE = AbstractBlock.Properties.create(Material.IRON, MaterialColor.YELLOW).setRequiresTool().hardnessAndResistance(5.0F, 6.0F).sound(SoundType.METAL);

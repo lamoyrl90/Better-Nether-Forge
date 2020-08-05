@@ -58,11 +58,11 @@ public class BetterNether
     }
 
 	private void commonSetup(final FMLCommonSetupEvent event) {
-    	//DeferredWorkQueue.runLater(()-> {
-    		BNEntities.finalizeEntities();
-    		BNBiomes.registerBiomeTypes();
-    		BNBiomes.injectBiomeFeatures();
-    	//});
+    	
+    	BNEntities.finalizeEntities();
+    	BNBiomes.registerBiomeTypes();
+    	BNBiomes.injectBiomeFeatures();
+    	
     }
     
     @SubscribeEvent

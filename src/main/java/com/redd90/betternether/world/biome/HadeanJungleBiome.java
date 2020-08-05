@@ -1,19 +1,16 @@
 package com.redd90.betternether.world.biome;
 
 import com.google.common.collect.ImmutableList;
-import com.redd90.betternether.BetterNether;
 import com.redd90.betternether.registry.BNSounds;
 import com.redd90.betternether.world.gen.surfacebuilders.BNSurfaceBuilders;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.client.audio.BackgroundMusicTracks;
-import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeAmbience;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.biome.MoodSoundAmbience;
-import net.minecraft.world.biome.ParticleEffectAmbience;
 import net.minecraft.world.biome.SoundAdditionsAmbience;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.carver.WorldCarver;
@@ -46,7 +43,6 @@ public class HadeanJungleBiome extends Biome {
 						   .build()).parent((String)null)
 				   .func_235098_a_(ImmutableList.of(new Biome.Attributes(-0.0f, 0.325F, -0.025F, 0.35F, 0.0f))));
 		   
-		  BetterNether.LOGGER.debug("Building GravelDesertBiome...");
 		  this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_NETHER);
 	      this.func_235063_a_(DefaultBiomeFeatures.FORTRESS);
 	      this.func_235063_a_(DefaultBiomeFeatures.BASTION_REMNANT);
@@ -72,7 +68,6 @@ public class HadeanJungleBiome extends Biome {
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.PIGLIN, 15, 4, 4));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.STRIDER, 60, 1, 2));
 	      */
-	      BetterNether.LOGGER.debug("GravelDesertBiome built");
 	   }
 	
 	public void finalizeFeatures() {
@@ -87,6 +82,11 @@ public class HadeanJungleBiome extends Biome {
 		BNBiomeFeatures.addWallMushrooms(this, 0.8f);
 		BNBiomeFeatures.addJunglePlants(this, 0.1f);
 		BNBiomeFeatures.addStalagnates(this, 0.2f);
+		BNBiomeFeatures.addRubeusTrees(this, 0.1f);
+		BNBiomeFeatures.addRubeusBushes(this, 0.1f);
+		BNBiomeFeatures.addEggPlants(this, 0.05f);
+		BNBiomeFeatures.addEyeVines(this, 0.1f);
+		BNBiomeFeatures.addBloomingVines(this, 0.1f);
 		
 	}
 }

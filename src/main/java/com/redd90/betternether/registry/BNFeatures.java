@@ -15,7 +15,10 @@ import com.redd90.betternether.world.gen.feature.plants.BarrelCactusFeature;
 import com.redd90.betternether.world.gen.feature.plants.BlackAppleFeature;
 import com.redd90.betternether.world.gen.feature.plants.BlackBushFeature;
 import com.redd90.betternether.world.gen.feature.plants.BlackVineFeature;
+import com.redd90.betternether.world.gen.feature.plants.BloomingVineFeature;
 import com.redd90.betternether.world.gen.feature.plants.BrownMushroomWallFeature;
+import com.redd90.betternether.world.gen.feature.plants.EggPlantFeature;
+import com.redd90.betternether.world.gen.feature.plants.EyeFeature;
 import com.redd90.betternether.world.gen.feature.plants.FeatherFernFeature;
 import com.redd90.betternether.world.gen.feature.plants.GiantMoldFeature;
 import com.redd90.betternether.world.gen.feature.plants.GoldenVineFeature;
@@ -35,6 +38,8 @@ import com.redd90.betternether.world.gen.feature.plants.NetherWartFeature;
 import com.redd90.betternether.world.gen.feature.plants.OrangeMushroomFeature;
 import com.redd90.betternether.world.gen.feature.plants.RedMoldFeature;
 import com.redd90.betternether.world.gen.feature.plants.RedMushroomWallFeature;
+import com.redd90.betternether.world.gen.feature.plants.RubeusBushFeature;
+import com.redd90.betternether.world.gen.feature.plants.RubeusTreeFeature;
 import com.redd90.betternether.world.gen.feature.plants.SmokerFeature;
 import com.redd90.betternether.world.gen.feature.plants.SoulVeinFeature;
 import com.redd90.betternether.world.gen.feature.plants.StalagnateFeature;
@@ -103,6 +108,11 @@ public class BNFeatures {
 	public static final RegistryObject<Feature<NoFeatureConfig>> JUNGLE_PLANT = FEATURES.register("jungle_plant", () -> new JunglePlantFeature(NoFeatureConfig.field_236558_a_));
 	public static final RegistryObject<Feature<NoFeatureConfig>> JUNGLE_MOSS = FEATURES.register("jungle_moss", () -> new JungleMossFeature(NoFeatureConfig.field_236558_a_));
 	public static final RegistryObject<Feature<NoFeatureConfig>> STALAGNATE = FEATURES.register("stalagnate", () -> new StalagnateFeature(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> RUBEUS_TREE = FEATURES.register("rubeus_tree", () -> new RubeusTreeFeature(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> RUBEUS_BUSH = FEATURES.register("rubeus_bush", () -> new RubeusBushFeature(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> EGG_PLANT = FEATURES.register("egg_plant", () -> new EggPlantFeature(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> EYE_VINE = FEATURES.register("eye_vine", () -> new EyeFeature(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> BLOOMING_VINE = FEATURES.register("blooming_vine", () -> new BloomingVineFeature(NoFeatureConfig.field_236558_a_));
 	
 	/// STRUCTURES ///
 	

@@ -1,0 +1,11 @@
+{
+	"replace": "false",
+	"values": [
+		"betternether:rubeus_log",
+		"betternether:rubeus_bark",
+		"betternether:stripped_log_rubeus",
+		"betternether:stripped_bark_rubeus",
+		"betternether:rubeus_log_half_stripped",
+		"betternether:rubeus_bark_half_stripped"
+	]
+}

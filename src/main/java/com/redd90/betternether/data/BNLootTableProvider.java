@@ -356,6 +356,22 @@ public abstract class BNLootTableProvider extends LootTableProvider {
 		return LootTable.builder().addLootPool(pool1).addLootPool(pool2);
 	}
 	
+	protected LootTable.Builder eyeball() {
+		LootPool.Builder pool1 = LootPool.builder()
+				.name("pool1")
+				.rolls(ConstantRange.of(1))
+				.addEntry(ItemLootEntry.builder(BNBlocks.EYE_SEED.get().asItem()));
+		
+		LootPool.Builder pool2 = LootPool.builder()
+				.name("pool2")
+				.rolls(ConstantRange.of(1))
+				.addEntry(ItemLootEntry.builder(Items.SLIME_BALL)
+						.acceptFunction(BNLootCondition.randomCount(1, 4)));
+						
+		
+		return LootTable.builder().addLootPool(pool1).addLootPool(pool2);
+	}
+	
 	@Override
 	public String getName() {
 		return "Better Nether LootTables";

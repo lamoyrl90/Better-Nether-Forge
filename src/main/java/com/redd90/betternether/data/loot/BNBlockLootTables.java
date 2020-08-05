@@ -200,11 +200,36 @@ public class BNBlockLootTables extends BNLootTableProvider {
 		registerSelfDrop(BNBlocks.STALAGNATE_TRAPDOOR.get());
 		registerSelfDrop(BNBlocks.STALAGNATE_DOOR.get());
 		
+		registerLeaves(BNBlocks.RUBEUS_LEAVES.get(), BNBlocks.RUBEUS_SAPLING.get(), .05f, .0666f, .08333f, .1f);
+		registerSelfDrop(BNBlocks.RUBEUS_LOG.get());
+		registerSelfDrop(BNBlocks.RUBEUS_BARK.get());
+		registerSelfDrop(BNBlocks.RUBEUS_LOG_HALF_STRIPPED.get());
+		registerSelfDrop(BNBlocks.RUBEUS_BARK_HALF_STRIPPED.get());
+		registerSelfDrop(BNBlocks.STRIPPED_LOG_RUBEUS.get());
+		registerSelfDrop(BNBlocks.STRIPPED_BARK_RUBEUS.get());
+		registerSelfDrop(BNBlocks.RUBEUS_PLANKS.get());
+		registerSelfDrop(BNBlocks.RUBEUS_STAIRS.get());
+		registerSelfDrop(BNBlocks.RUBEUS_SLAB.get());
+		registerSelfDrop(BNBlocks.RUBEUS_FENCE.get());
+		registerSelfDrop(BNBlocks.RUBEUS_GATE.get());
+		registerSelfDrop(BNBlocks.RUBEUS_BUTTON.get());
+		registerSelfDrop(BNBlocks.RUBEUS_PLATE.get());
+		registerSelfDrop(BNBlocks.RUBEUS_TRAPDOOR.get());
+		registerSelfDrop(BNBlocks.RUBEUS_DOOR.get());
+		
+		registerShears(BNBlocks.EGG_PLANT.get());
+		registerShears(BNBlocks.BLOOMING_VINE.get());
+		registerShears(BNBlocks.JUNGLE_MOSS.get());
+		registerShears(BNBlocks.JUNGLE_PLANT.get());
+		registerSilkWithAltChance(BNBlocks.JUNGLE_GRASS.get(), Blocks.NETHERRACK.asItem(), 1.0f);
+		
 		
 		blockLootTables.put(BNBlocks.RED_LARGE_MUSHROOM.get(), redMediumMushroom());
 		blockLootTables.put(BNBlocks.BROWN_LARGE_MUSHROOM.get(), brownMediumMushroom());
 		blockLootTables.put(BNBlocks.MUSHROOM_FIR.get(), mushroomFir());
 		blockLootTables.put(BNBlocks.GIANT_MOLD.get(), giantMold());
+		blockLootTables.put(BNBlocks.EYEBALL.get(), eyeball());
+		blockLootTables.put(BNBlocks.EYEBALL_SMALL.get(), eyeball());
 	}
 	
 	private void registerSelfDrop(Block block) {

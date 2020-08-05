@@ -154,7 +154,7 @@ public class BNRecipes extends BNRecipeProvider {
         super.singleItemRecipe(BNBlocks.WART_BUTTON.get(), 4, BNBlocks.WART_PLANKS.get(), consumer);
         
         super.singleItemRecipe("stalagnate_planks_from_stem", BNBlocks.STALAGNATE_PLANKS.get(), 1, BNBlocks.STALAGNATE_STEM.get(), consumer);
-        super.singleItemRecipe("stalagnate_planks_from_log", BNBlocks.STALAGNATE_PLANKS.get(), 1, BNTags.Items.STALAGNATE_LOGS, consumer);
+        super.singleItemRecipe("stalagnate_planks_from_log", BNBlocks.STALAGNATE_PLANKS.get(), 4, BNTags.Items.STALAGNATE_LOGS, consumer);
         super.recipe2x2(BNBlocks.STALAGNATE_LOG.get(), 1, BNBlocks.STALAGNATE_STEM.get(), consumer);
         super.recipe2x2(BNBlocks.STALAGNATE_BARK.get(), 3, BNBlocks.STALAGNATE_LOG.get(), consumer);
         super.stairsRecipe(BNBlocks.STALAGNATE_STAIRS.get().asItem(), BNBlocks.STALAGNATE_PLANKS.get(), consumer);
@@ -165,6 +165,17 @@ public class BNRecipes extends BNRecipeProvider {
         super.wallRecipe(BNBlocks.STALAGNATE_TRAPDOOR.get().asItem(), 2, BNBlocks.STALAGNATE_PLANKS.get(), consumer);
         super.doorRecipe(BNBlocks.STALAGNATE_DOOR.get().asItem(), 3, BNBlocks.STALAGNATE_PLANKS.get(), consumer);
         super.singleItemRecipe(BNBlocks.STALAGNATE_BUTTON.get(), 4, BNBlocks.STALAGNATE_PLANKS.get(), consumer);
+        
+        super.singleItemRecipe("rubeus_planks_from_log", BNBlocks.RUBEUS_PLANKS.get(), 4, BNTags.Items.RUBEUS_LOGS, consumer);
+        super.recipe2x2(BNBlocks.RUBEUS_BARK.get(), 3, BNBlocks.RUBEUS_LOG.get(), consumer);
+        super.stairsRecipe(BNBlocks.RUBEUS_STAIRS.get().asItem(), BNBlocks.RUBEUS_PLANKS.get(), consumer);
+        super.slabRecipe(BNBlocks.RUBEUS_SLAB.get().asItem(), 6, BNBlocks.RUBEUS_PLANKS.get(), consumer);
+        super.fenceRecipe(BNBlocks.RUBEUS_FENCE.get().asItem(), BNBlocks.RUBEUS_PLANKS.get(), consumer);
+        super.gateRecipe(BNBlocks.RUBEUS_GATE.get().asItem(), BNBlocks.RUBEUS_PLANKS.get(), consumer);
+        super.plateRecipe(BNBlocks.RUBEUS_PLATE.get().asItem(), BNBlocks.RUBEUS_PLANKS.get(), consumer);
+        super.wallRecipe(BNBlocks.RUBEUS_TRAPDOOR.get().asItem(), 2, BNBlocks.RUBEUS_PLANKS.get(), consumer);
+        super.doorRecipe(BNBlocks.RUBEUS_DOOR.get().asItem(), 3, BNBlocks.RUBEUS_PLANKS.get(), consumer);
+        super.singleItemRecipe(BNBlocks.RUBEUS_BUTTON.get(), 4, BNBlocks.RUBEUS_PLANKS.get(), consumer);
         
         
         ShapedRecipeBuilder

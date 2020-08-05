@@ -1,5 +1,6 @@
 package com.redd90.betternether.registry;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EntityType;
@@ -11,6 +12,8 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Supplier;
 
 import com.redd90.betternether.BetterNether;
@@ -24,6 +27,9 @@ import com.redd90.betternether.entity.DustmiteEntity;
 public class BNEntities {
 	
 	public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES, BetterNether.MODID);
+	public static final List<EntityType<?>> netherEntities = new ArrayList<EntityType<?>>();
+		
+	
 	
 	public static final RegistryObject<EntityType<DustDevilEntity>> DUST_DEVIL = registerEntity("dust_devil", () -> EntityType.Builder.create(DustDevilEntity::new, EntityClassification.MONSTER)
 			.immuneToFire()
@@ -63,9 +69,27 @@ public class BNEntities {
 	public static void finalizeEntities() {
 		registerSpawnPlacements();
 		registerEntityAttributes();
+		registerNetherEntities();
 	}
 	
 	public static void modifyVanillaBehavior() {
 		
+	}
+
+	public static void registerNetherEntities() {
+		netherEntities.add(EntityType.BLAZE); 
+		netherEntities.add(EntityType.PIGLIN); 
+		netherEntities.add(EntityType.HOGLIN);
+		netherEntities.add(EntityType.GHAST);
+		netherEntities.add(EntityType.STRIDER);
+		netherEntities.add(EntityType.SKELETON);
+		netherEntities.add(EntityType.WITHER_SKELETON);
+		netherEntities.add(EntityType.ZOMBIFIED_PIGLIN);
+		netherEntities.add(DUSTMITE.get());
+		netherEntities.add(DUST_DEVIL.get());
+	}
+
+	public static boolean isNetherEntity(Entity entity) {
+		return netherEntities.contains(entity.getType());
 	}
 }

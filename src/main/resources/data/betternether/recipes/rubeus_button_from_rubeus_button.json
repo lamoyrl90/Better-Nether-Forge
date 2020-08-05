@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "betternether:rubeus_planks"
+    }
+  ],
+  "result": {
+    "item": "betternether:rubeus_button",
+    "count": 4
+  }
+}

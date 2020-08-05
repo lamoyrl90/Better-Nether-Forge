@@ -33,6 +33,7 @@ import com.redd90.betternether.block.BNPlateBlock;
 import com.redd90.betternether.block.BNSlabBlock;
 import com.redd90.betternether.block.BNStairsBlock;
 import com.redd90.betternether.block.BNTrapdoorBlock;
+import com.redd90.betternether.block.BNVineBlock;
 import com.redd90.betternether.block.BNWall;
 import com.redd90.betternether.block.BNButtonBlock;
 import com.redd90.betternether.block.BNDoorBlock;
@@ -48,6 +49,10 @@ import com.redd90.betternether.block.CincinnasiteFireBowlBlock;
 import com.redd90.betternether.block.CincinnasiteFrameBlock;
 import com.redd90.betternether.block.CincinnasitePedestalBlock;
 import com.redd90.betternether.block.CincinnasitePillarBlock;
+import com.redd90.betternether.block.EggPlantBlock;
+import com.redd90.betternether.block.EyeSeedBlock;
+import com.redd90.betternether.block.EyeVineBlock;
+import com.redd90.betternether.block.EyeballBlock;
 import com.redd90.betternether.block.FeatherFernBlock;
 import com.redd90.betternether.block.GeyserBlock;
 import com.redd90.betternether.block.GiantMoldBlock;
@@ -73,7 +78,11 @@ import com.redd90.betternether.block.OrangeMushroomBlock;
 import com.redd90.betternether.block.RedMoldBlock;
 import com.redd90.betternether.block.RedMushroomCapBlock;
 import com.redd90.betternether.block.RespawnStatueBlock;
+import com.redd90.betternether.block.RubeusConeBlock;
+import com.redd90.betternether.block.RubeusLeavesBlock;
+import com.redd90.betternether.block.RubeusSaplingBlock;
 import com.redd90.betternether.block.SmallCincinnasiteLanternBlock;
+import com.redd90.betternether.block.SmallEyeballBlock;
 import com.redd90.betternether.block.SmokerBlock;
 import com.redd90.betternether.block.SoulFarmlandBlock;
 import com.redd90.betternether.block.SoulVeinBlock;
@@ -98,6 +107,7 @@ public class BNBlocks {
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BetterNether.MODID);
 
 	public static final RegistryObject<Block> WILLOW_LEAVES = registerBlock("willow_leaves", () -> new WillowLeavesBlock());
+	public static final RegistryObject<Block> RUBEUS_LEAVES = registerBlock("rubeus_leaves", () -> new RubeusLeavesBlock());
 		
 	public static final RegistryObject<Block> CINCINNASITE_ORE = registerBlock("cincinnasite_ore", () -> new BNOreBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.NETHERRACK).harvestLevel(1).setRequiresTool().hardnessAndResistance(3.0F, 3.0F).sound(SoundType.NETHERRACK)));
 	public static final RegistryObject<Block> NETHER_RUBY_ORE = registerBlock("nether_ruby_ore", () -> new BNOreBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.NETHERRACK).harvestLevel(2).setRequiresTool().hardnessAndResistance(3.0F, 3.0F).sound(SoundType.NETHERRACK)));
@@ -286,6 +296,32 @@ public class BNBlocks {
 	public static final RegistryObject<Block> STALAGNATE_TRAPDOOR = registerBlock("stalagnate_trapdoor", () -> new BNTrapdoorBlock(BNBlockProperties.STALAGNATE));
 	public static final RegistryObject<Block> STALAGNATE_DOOR = registerBlock("stalagnate_door", () -> new BNDoorBlock(BNBlockProperties.STALAGNATE));
 	
+	public static final RegistryObject<Block> EGG_PLANT = registerBlock("egg_plant", () -> new EggPlantBlock());
+	
+	public static final RegistryObject<Block> RUBEUS_SAPLING = registerBlock("rubeus_sapling", () -> new RubeusSaplingBlock());
+	public static final RegistryObject<Block> RUBEUS_CONE = registerBlock("rubeus_cone", () -> new RubeusConeBlock());
+	public static final RegistryObject<Block> STRIPPED_LOG_RUBEUS = registerBlock("stripped_log_rubeus", () -> new BNPillarBlock(BNBlockProperties.RUBEUS));
+	public static final RegistryObject<Block> RUBEUS_LOG_HALF_STRIPPED = registerBlock("rubeus_log_half_stripped", () -> new BNLogStrippable(BNBlockProperties.RUBEUS, STRIPPED_LOG_RUBEUS.get()));
+	public static final RegistryObject<Block> RUBEUS_LOG = registerBlock("rubeus_log", () -> new BNLogStrippable(BNBlockProperties.RUBEUS, RUBEUS_LOG_HALF_STRIPPED.get()));
+	public static final RegistryObject<Block> STRIPPED_BARK_RUBEUS = registerBlock("stripped_bark_rubeus", () -> new BNPillarBlock(BNBlockProperties.RUBEUS));
+	public static final RegistryObject<Block> RUBEUS_BARK_HALF_STRIPPED = registerBlock("rubeus_bark_half_stripped", () -> new BNLogStrippable(BNBlockProperties.RUBEUS, STRIPPED_BARK_RUBEUS.get()));
+	public static final RegistryObject<Block> RUBEUS_BARK = registerBlock("rubeus_bark", () -> new BNLogStrippable(BNBlockProperties.RUBEUS, RUBEUS_BARK_HALF_STRIPPED.get()));
+	public static final RegistryObject<Block> RUBEUS_PLANKS = registerBlock("rubeus_planks", () -> new BNBlock(BNBlockProperties.RUBEUS));
+	public static final RegistryObject<Block> RUBEUS_STAIRS = registerBlock("rubeus_stairs", () -> new BNStairsBlock(() -> RUBEUS_PLANKS.get().getDefaultState(), BNBlockProperties.RUBEUS));
+	public static final RegistryObject<Block> RUBEUS_SLAB = registerBlock("rubeus_slab", () -> new BNSlabBlock(BNBlockProperties.RUBEUS));
+	public static final RegistryObject<Block> RUBEUS_FENCE = registerBlock("rubeus_fence", () -> new BNFenceBlock(BNBlockProperties.RUBEUS));
+	public static final RegistryObject<Block> RUBEUS_GATE = registerBlock("rubeus_gate", () -> new BNGateBlock(BNBlockProperties.RUBEUS));
+	public static final RegistryObject<Block> RUBEUS_BUTTON = registerBlock("rubeus_button", () -> new BNButtonBlock(true, BNBlockProperties.RUBEUS));
+	public static final RegistryObject<Block> RUBEUS_PLATE = registerBlock("rubeus_plate", () -> new BNPlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BNBlockProperties.RUBEUS));
+	public static final RegistryObject<Block> RUBEUS_TRAPDOOR = registerBlock("rubeus_trapdoor", () -> new BNTrapdoorBlock(BNBlockProperties.RUBEUS));
+	public static final RegistryObject<Block> RUBEUS_DOOR = registerBlock("rubeus_door", () -> new BNDoorBlock(BNBlockProperties.RUBEUS));
+	
+	public static final RegistryObject<Block> EYE_VINE = registerBlockNoItem("eye_vine", () -> new EyeVineBlock());
+	public static final RegistryObject<Block> EYEBALL = registerBlockNoItem("eyeball", () -> new EyeballBlock());
+	public static final RegistryObject<Block> EYEBALL_SMALL = registerBlockNoItem("eyeball_small", () -> new SmallEyeballBlock());
+	public static final RegistryObject<Block> EYE_SEED = registerBlock("eye_seed", () -> new EyeSeedBlock());
+	
+	public static final RegistryObject<Block> BLOOMING_VINE = registerBlock("blooming_vine", () -> new BNVineBlock(MaterialColor.PURPLE));
 	
 	
 	private static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<? extends B> supplier) {

@@ -19,6 +19,7 @@ public class BNTags {
 		public static final ITag.INamedTag<Item> MUSHROOM_FIR_LOGS = createTag("mushroom_fir_logs");
 		public static final ITag.INamedTag<Item> STALAGNATE_LOGS = createTag("stalagnate_logs");
 		public static final ITag.INamedTag<Item> WART_LOGS = createTag("wart_logs");
+		public static final ITag.INamedTag<Item> RUBEUS_LOGS = createTag("rubeus_logs");
 		
 		private static ITag.INamedTag<Item> createTag(String name) {
 			return ItemTags.makeWrapperTag("betternether:" + name);
@@ -38,6 +39,7 @@ public class BNTags {
 		public static final ITag.INamedTag<Block> MUSHROOM_FIR_LOGS = createTag("mushroom_fir_logs");
 		public static final ITag.INamedTag<Block> WART_LOGS = createTag("wart_logs");
 		public static final ITag.INamedTag<Block> STALAGNATE_LOGS = createTag("stalagnate_logs");
+		public static final ITag.INamedTag<Block> RUBEUS_LOGS = createTag("rubeus_logs");
 		
 		
 		private static ITag.INamedTag<Block> createTag(String name) {

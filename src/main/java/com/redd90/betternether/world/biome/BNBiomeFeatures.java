@@ -26,7 +26,7 @@ import net.minecraft.world.gen.placement.Placement;
 public class BNBiomeFeatures {
 	
 	public static final boolean FULL_CHUNK_SCANNING = false;
-	private static final float PLANT_COUNT = 64;
+	private static final float PLANT_COUNT = 128;
 	private static final float DECOR_COUNT = 64;
 	private static final int WALL_FACTOR = 4;
 	
@@ -310,5 +310,35 @@ public class BNBiomeFeatures {
 		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
 				BNFeatures.STALAGNATE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 				.withPlacement(floorPlantPlacement(density)));
+	}
+	
+	public static void addRubeusTrees(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, 
+				BNFeatures.RUBEUS_TREE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
+	}
+	
+	public static void addRubeusBushes(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.RUBEUS_BUSH.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
+	}
+	
+	public static void addEggPlants(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.EGG_PLANT.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
+	}
+	
+	public static void addEyeVines(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.EYE_VINE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(ceilingPlantPlacement(density)));
+	}
+	
+	public static void addBloomingVines(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.BLOOMING_VINE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(ceilingPlantPlacement(density)));
 	}
 }
