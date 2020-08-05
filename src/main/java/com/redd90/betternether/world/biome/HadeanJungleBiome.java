@@ -1,11 +1,14 @@
 package com.redd90.betternether.world.biome;
 
 import com.google.common.collect.ImmutableList;
+import com.redd90.betternether.registry.BNEntities;
 import com.redd90.betternether.registry.BNSounds;
 import com.redd90.betternether.world.gen.surfacebuilders.BNSurfaceBuilders;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.client.audio.BackgroundMusicTracks;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeAmbience;
@@ -68,9 +71,18 @@ public class HadeanJungleBiome extends Biome {
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.PIGLIN, 15, 4, 4));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.STRIDER, 60, 1, 2));
 	      */
+
+	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.HOGLIN, 5, 2, 4));
+	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.MAGMA_CUBE, 2, 4, 4));
+	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.STRIDER, 60, 1, 2));
+	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ZOMBIFIED_PIGLIN, 20, 4, 4));
+	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ENDERMAN, 1, 4, 4));
 	   }
 	
 	public void finalizeFeatures() {
+
+		this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(BNEntities.OVERGROWN_SKELETON.get(), 60, 2, 4));
+		
 		BNBiomeFeatures.addNetherReeds(this, 0.5f);
 		BNBiomeFeatures.addMagmaFlowers(this, 0.5f);
 		BNBiomeFeatures.addFeatherFerns(this, 0.05f);

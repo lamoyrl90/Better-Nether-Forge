@@ -19,8 +19,10 @@ import java.util.function.Supplier;
 import com.redd90.betternether.BetterNether;
 import com.redd90.betternether.client.renderer.entity.DustDevilRenderer;
 import com.redd90.betternether.client.renderer.entity.DustmiteRenderer;
+import com.redd90.betternether.client.renderer.entity.OvergrownSkeletonRenderer;
 import com.redd90.betternether.entity.DustDevilEntity;
 import com.redd90.betternether.entity.DustmiteEntity;
+import com.redd90.betternether.entity.OvergrownSkeletonEntity;
 
 
 @EventBusSubscriber(modid = BetterNether.MODID, bus = EventBusSubscriber.Bus.MOD)
@@ -44,6 +46,12 @@ public class BNEntities {
 			.setShouldReceiveVelocityUpdates(true)
 			.build("dustmite"));
 	
+	public static final RegistryObject<EntityType<OvergrownSkeletonEntity>> OVERGROWN_SKELETON = registerEntity("overgrown_skeleton", () -> EntityType.Builder.create(OvergrownSkeletonEntity::new, EntityClassification.MONSTER)
+			.size(0.6F, 1.99F)
+			.func_233606_a_(8)
+			.setShouldReceiveVelocityUpdates(true)
+			.build("overgrown_skeleton"));
+	
 	private static <E extends EntityType<?>> RegistryObject<E> registerEntity(String name, Supplier<? extends E> supplier) {
 		RegistryObject<E> entity = ENTITIES.register(name, supplier);
 		//BNItems.ITEMS.register(name, () -> new BNSpawnEggItem((Supplier<EntityType<?>>) supplier, 0, 0, new Item.Properties().group(BNItemGroup.ITEM_GROUP)));
@@ -54,16 +62,19 @@ public class BNEntities {
 	public static void registerSpawnPlacements() {
 		EntitySpawnPlacementRegistry.register(DUST_DEVIL.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, DustDevilEntity::canMonsterSpawn);
 		EntitySpawnPlacementRegistry.register(DUSTMITE.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, DustmiteEntity::canMonsterSpawn);
+		EntitySpawnPlacementRegistry.register(OVERGROWN_SKELETON.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, OvergrownSkeletonEntity::canMonsterSpawn);
 	}
 	
 	public static void registerRenderers() {
 		RenderingRegistry.registerEntityRenderingHandler(DUST_DEVIL.get(), DustDevilRenderer::new);
 		RenderingRegistry.registerEntityRenderingHandler(DUSTMITE.get(), DustmiteRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(OVERGROWN_SKELETON.get(), OvergrownSkeletonRenderer::new);
 	}
 	
 	public static void registerEntityAttributes() {
 		GlobalEntityTypeAttributes.put(DUST_DEVIL.get(), DustDevilEntity.registerAttributes().create());
 		GlobalEntityTypeAttributes.put(DUSTMITE.get(), DustmiteEntity.registerAttributes().create());
+		GlobalEntityTypeAttributes.put(OVERGROWN_SKELETON.get(), OvergrownSkeletonEntity.registerAttributes().create());
 	}
 	
 	public static void finalizeEntities() {
@@ -87,6 +98,7 @@ public class BNEntities {
 		netherEntities.add(EntityType.ZOMBIFIED_PIGLIN);
 		netherEntities.add(DUSTMITE.get());
 		netherEntities.add(DUST_DEVIL.get());
+		netherEntities.add(OVERGROWN_SKELETON.get());
 	}
 
 	public static boolean isNetherEntity(Entity entity) {

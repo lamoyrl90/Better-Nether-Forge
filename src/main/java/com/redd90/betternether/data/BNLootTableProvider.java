@@ -360,7 +360,8 @@ public abstract class BNLootTableProvider extends LootTableProvider {
 		LootPool.Builder pool1 = LootPool.builder()
 				.name("pool1")
 				.rolls(ConstantRange.of(1))
-				.addEntry(ItemLootEntry.builder(BNBlocks.EYE_SEED.get().asItem()));
+				.addEntry(ItemLootEntry.builder(BNBlocks.EYE_SEED.get().asItem())
+						.acceptFunction(BNLootCondition.randomCount(1, 2)));
 		
 		LootPool.Builder pool2 = LootPool.builder()
 				.name("pool2")
