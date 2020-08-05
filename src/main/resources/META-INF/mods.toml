@@ -49,3 +49,10 @@ description='''
     versionRange="[1.16.1,)"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies.betternether]]
+    modId="biomesoplenty"
+    mandatory=false
+    versionRange="[11.0.0.391,)"
+    ordering="AFTER"
+    side="BOTH"

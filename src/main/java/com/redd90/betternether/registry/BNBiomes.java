@@ -6,6 +6,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.redd90.betternether.BetterNether;
+import com.redd90.betternether.compatibility.BiomesoPlenty;
 import com.redd90.betternether.world.biome.BNBiomeFeatures;
 import com.redd90.betternether.world.biome.GravelDesertBiome;
 import com.redd90.betternether.world.biome.HadeanJungleBiome;
@@ -19,6 +20,7 @@ import com.redd90.betternether.world.biome.TorridTerracesBiome;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
@@ -85,5 +87,11 @@ public class BNBiomes {
 		((OldFungiwoodsBiome) OLD_FUNGIWOODS.get()).finalizeFeatures();
 		((NetherGrasslandsBiome) NETHER_GRASSLANDS.get()).finalizeFeatures();
 		((HadeanJungleBiome) HADEAN_JUNGLE.get()).finalizeFeatures();
+	}
+	
+	public static void runCompat() {
+		if (ModList.get().isLoaded("biomesoplenty")) {
+			BiomesoPlenty.registerBiomesToBOP();
+		}
 	}
 }

@@ -62,6 +62,7 @@ public class BetterNether
     	BNEntities.finalizeEntities();
     	BNBiomes.registerBiomeTypes();
     	BNBiomes.injectBiomeFeatures();
+        BNBiomes.runCompat();
     	
     }
     
