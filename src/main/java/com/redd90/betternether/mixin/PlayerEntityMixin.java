@@ -7,7 +7,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import com.redd90.betternether.BetterNether;
 import com.redd90.betternether.block.RespawnStatueBlock;
 
 import net.minecraft.block.Block;

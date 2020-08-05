@@ -4,7 +4,6 @@ import java.util.Random;
 
 import com.mojang.serialization.Codec;
 import com.redd90.betternether.registry.BNBlocks;
-import com.redd90.betternether.registry.BNTags;
 import com.redd90.betternether.util.BlocksHelper;
 
 import net.minecraft.block.BlockState;
