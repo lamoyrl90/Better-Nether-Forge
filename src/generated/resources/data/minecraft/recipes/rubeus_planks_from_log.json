@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "betternether:stalagnate_logs"
+      "tag": "betternether:rubeus_logs"
     }
   ],
   "result": {
-    "item": "betternether:stalagnate_planks",
+    "item": "betternether:rubeus_planks",
     "count": 4
   }
 }

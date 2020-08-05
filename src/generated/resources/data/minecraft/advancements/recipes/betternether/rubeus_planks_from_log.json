@@ -2,16 +2,16 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "minecraft:stalagnate_planks_from_log"
+      "minecraft:rubeus_planks_from_log"
     ]
   },
   "criteria": {
-    "has_net.minecraft.tags.TagRegistry$NamedTag@5d7807b0": {
+    "has_net.minecraft.tags.TagRegistry$NamedTag@4d3946b6": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "tag": "betternether:stalagnate_logs"
+            "tag": "betternether:rubeus_logs"
           }
         ]
       }
@@ -19,13 +19,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "minecraft:stalagnate_planks_from_log"
+        "recipe": "minecraft:rubeus_planks_from_log"
       }
     }
   },
   "requirements": [
     [
-      "has_net.minecraft.tags.TagRegistry$NamedTag@5d7807b0",
+      "has_net.minecraft.tags.TagRegistry$NamedTag@4d3946b6",
       "has_the_recipe"
     ]
   ]

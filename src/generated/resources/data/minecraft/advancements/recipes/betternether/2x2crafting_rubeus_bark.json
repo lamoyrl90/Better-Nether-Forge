@@ -2,16 +2,16 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "minecraft:stalagnate_planks_from_log"
+      "minecraft:2x2crafting_rubeus_bark"
     ]
   },
   "criteria": {
-    "has_net.minecraft.tags.TagRegistry$NamedTag@5d7807b0": {
+    "has_rubeus_log": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "tag": "betternether:stalagnate_logs"
+            "item": "betternether:rubeus_log"
           }
         ]
       }
@@ -19,13 +19,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "minecraft:stalagnate_planks_from_log"
+        "recipe": "minecraft:2x2crafting_rubeus_bark"
       }
     }
   },
   "requirements": [
     [
-      "has_net.minecraft.tags.TagRegistry$NamedTag@5d7807b0",
+      "has_rubeus_log",
       "has_the_recipe"
     ]
   ]
