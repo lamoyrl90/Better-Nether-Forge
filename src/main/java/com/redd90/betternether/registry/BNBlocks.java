@@ -322,6 +322,7 @@ public class BNBlocks {
 	public static final RegistryObject<Block> EYE_SEED = registerBlock("eye_seed", () -> new EyeSeedBlock());
 	
 	public static final RegistryObject<Block> BLOOMING_VINE = registerBlock("blooming_vine", () -> new BNVineBlock(MaterialColor.PURPLE));
+	public static final RegistryObject<Block> SOUL_GRASS = registerBlock("soul_grass", () -> new BNGrassBlock());
 	
 	
 	private static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<? extends B> supplier) {

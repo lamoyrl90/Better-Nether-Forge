@@ -90,8 +90,14 @@ public class BNBiomes {
 	}
 	
 	public static void runCompat() {
-		if (ModList.get().isLoaded("biomesoplenty")) {
+		boolean bop = false;
+		boolean byg = false;
+		
+		if (ModList.get().isLoaded("biomesoplenty"))
+			bop = true;
+		
+		if (bop)
 			BiomesoPlenty.registerBiomesToBOP();
-		}
+		
 	}
 }

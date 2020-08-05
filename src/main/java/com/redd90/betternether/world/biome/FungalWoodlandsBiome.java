@@ -1,6 +1,7 @@
 package com.redd90.betternether.world.biome;
 
 import com.google.common.collect.ImmutableList;
+import com.redd90.betternether.registry.BNEntities;
 import com.redd90.betternether.registry.BNSounds;
 import com.redd90.betternether.world.gen.surfacebuilders.BNSurfaceBuilders;
 
@@ -86,5 +87,7 @@ public class FungalWoodlandsBiome extends Biome {
 		BNBiomeFeatures.addRedMold(this, 0.5f);
 		BNBiomeFeatures.addGrayMold(this, 0.5f);
 		BNBiomeFeatures.addLucisMushrooms(this, 0.05f);
+		
+		this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(BNEntities.FIREFLY.get(), 50, 2, 4));
 	}
 }

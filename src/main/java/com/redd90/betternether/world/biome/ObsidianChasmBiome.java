@@ -2,6 +2,7 @@ package com.redd90.betternether.world.biome;
 
 import com.google.common.collect.ImmutableList;
 import com.redd90.betternether.registry.BNCarvers;
+import com.redd90.betternether.registry.BNEntities;
 import com.redd90.betternether.world.gen.surfacebuilders.BNSurfaceBuilders;
 
 import net.minecraft.block.Blocks;
@@ -71,6 +72,8 @@ public class ObsidianChasmBiome extends Biome {
 		BNBiomeFeatures.addMagmaFlowers(this, 0.4f);
 		BNBiomeFeatures.addGoldenVines(this, 0.2f);
 		BNBiomeFeatures.addObsidianCrystals(this, 0.04f);
+		
+		this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(BNEntities.FIREFLY.get(), 50, 2, 4));
 	}
 	
 }

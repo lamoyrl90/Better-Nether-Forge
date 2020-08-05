@@ -20,6 +20,7 @@ public class BNSounds {
 	
 	public static final SoundEvent DUST_DEVIL_AMBIENT = registerSound("mob.dust_devil_ambient");
 	public static final SoundEvent DUST_DEVIL_ADDITIONAL = registerSound("mob.dust_devil_additional");
+	public static final SoundEvent MOB_FIREFLY_FLY = registerSound("mob.firefly_fly");
 		
     private static SoundEvent registerSound(String name)
     {

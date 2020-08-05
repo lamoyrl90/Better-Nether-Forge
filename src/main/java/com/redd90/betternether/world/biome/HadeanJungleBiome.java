@@ -100,5 +100,7 @@ public class HadeanJungleBiome extends Biome {
 		BNBiomeFeatures.addEyeVines(this, 0.1f);
 		BNBiomeFeatures.addBloomingVines(this, 0.1f);
 		
+		this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(BNEntities.FIREFLY.get(), 75, 2, 4));
+		
 	}
 }
