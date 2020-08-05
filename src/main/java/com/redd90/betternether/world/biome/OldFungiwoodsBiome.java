@@ -34,7 +34,7 @@ public class OldFungiwoodsBiome extends Biome {
 				   .surfaceBuilder(SurfaceBuilder.NETHER, BNSurfaceBuilders.NETHER_MYCELIUM_CONFIG)
 				   .precipitation(Biome.RainType.NONE)
 				   .category(Biome.Category.NETHER)
-				   .depth(0.125F).scale(0.05F).temperature(2.0F).downfall(0.0F)
+				   .depth(0.025F).scale(0.01F).temperature(2.0F).downfall(0.0F)
 				   .func_235097_a_((new BiomeAmbience.Builder())
 						   .setWaterColor(4159204)
 						   .setWaterFogColor(329011)

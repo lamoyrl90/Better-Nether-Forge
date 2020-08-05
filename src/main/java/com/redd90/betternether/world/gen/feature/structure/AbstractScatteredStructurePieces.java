@@ -10,6 +10,7 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MutableBoundingBox;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.ChunkGenerator;
@@ -36,7 +37,7 @@ public abstract class AbstractScatteredStructurePieces extends AbstractBNStructu
 			this.manDist = Integer.parseInt(tagCompound.getString("manDist"));
 		}
 		
-		public boolean noObjNear(IWorld world, BlockPos pos)
+		public boolean noObjNear(IBlockReader world, BlockPos pos)
 		{
 			int x1 = pos.getX() - distance;
 			int z1 = pos.getZ() - distance;

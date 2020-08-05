@@ -101,6 +101,23 @@ public abstract class BNLootTableProvider extends LootTableProvider {
 					.acceptFunction(LootingEnchantBonus.builder(RandomValueRange.of(min, max))));
 		return LootTable.builder().addLootPool(builder);
 	}
+	
+	protected LootTable.Builder overgrownSkeletonLootTable() {
+		LootPool.Builder pool1 = LootPool.builder()
+				.name("pool1")
+				.rolls(ConstantRange.of(1))
+				.addEntry(ItemLootEntry.builder(Items.ARROW)
+					.acceptFunction(SetCount.builder(RandomValueRange.of(0, 2)))
+					.acceptFunction(LootingEnchantBonus.builder(RandomValueRange.of(0, 1))));
+		
+		LootPool.Builder pool2 = LootPool.builder()
+				.name("pool2")
+				.rolls(ConstantRange.of(1))
+				.addEntry(ItemLootEntry.builder(Items.BONE)
+					.acceptFunction(SetCount.builder(RandomValueRange.of(0, 2)))
+					.acceptFunction(LootingEnchantBonus.builder(RandomValueRange.of(0, 1))));
+		return LootTable.builder().addLootPool(pool1).addLootPool(pool2);
+	}
 
 	// Block methods
 	

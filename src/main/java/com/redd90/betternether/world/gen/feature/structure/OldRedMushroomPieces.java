@@ -15,21 +15,26 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.math.BlockPos.Mutable;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.ISeedReader;
+import net.minecraft.world.gen.ChunkGenerator;
+import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.structure.StructurePiece;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 
 public class OldRedMushroomPieces extends AbstractScatteredStructurePieces {
 
-	private static final ResourceLocation[] PIECES = new ResourceLocation[]{
-			new ResourceLocation(BetterNether.MODID, "trees/red_mushroom_01"),
-			new ResourceLocation(BetterNether.MODID, "trees/red_mushroom_02"),
-			new ResourceLocation(BetterNether.MODID, "trees/red_mushroom_03"),
-			new ResourceLocation(BetterNether.MODID, "trees/red_mushroom_04"),
-			new ResourceLocation(BetterNether.MODID, "trees/red_mushroom_05"),
-			new ResourceLocation(BetterNether.MODID, "trees/red_mushroom_06"),
-			new ResourceLocation(BetterNether.MODID, "trees/red_mushroom_07")};
+	private static final StructureWithOffset[] PIECES = new StructureWithOffset[]{
+			new StructureWithOffset(new ResourceLocation(BetterNether.MODID, "trees/red_mushroom_01"), -2),
+			new StructureWithOffset(new ResourceLocation(BetterNether.MODID, "trees/red_mushroom_02"), -1),
+			new StructureWithOffset(new ResourceLocation(BetterNether.MODID, "trees/red_mushroom_03"), -1),
+			new StructureWithOffset(new ResourceLocation(BetterNether.MODID, "trees/red_mushroom_04"), -4),
+			new StructureWithOffset(new ResourceLocation(BetterNether.MODID, "trees/red_mushroom_05"), -4),
+			new StructureWithOffset(new ResourceLocation(BetterNether.MODID, "trees/red_mushroom_06"), -1),
+			new StructureWithOffset(new ResourceLocation(BetterNether.MODID, "trees/red_mushroom_07"), -4)};
 	
 	public static void addPiece(TemplateManager manager, List<StructurePiece> pieces, Random random, BlockPos pos, IBlockReader blockreader) {
 		Mutable blockpos = new Mutable();
@@ -38,9 +43,11 @@ public class OldRedMushroomPieces extends AbstractScatteredStructurePieces {
 			Rotation rotation = Rotation.randomRotation(random);
 			Mirror mirror = Mirror.values()[random.nextInt(3)];
 			StructureType type = StructureType.FLOOR;
-			int offsetY = -2-random.nextInt(4);
-			Piece piece = new OldRedMushroomPieces.Piece(manager, Util.getRandomObject(PIECES, random), pos, rotation, mirror, offsetY, type, offsetY);
-			if (piece.canGenerate(blockreader, pos)) {
+			StructureWithOffset object = Util.getRandomObject(PIECES, random);
+			int offsetY = object.offsetY;
+			ResourceLocation location = object.location;
+			Piece piece = new OldRedMushroomPieces.Piece(manager, location, pos, rotation, mirror, offsetY, type);
+			if (piece.isGround(blockreader.getBlockState(pos.down())) && piece.isGround(blockreader.getBlockState(pos.down(2))) && piece.noObjNear(blockreader, pos)) {
 				pieces.add(piece);
 				break;
 			}
@@ -56,7 +63,7 @@ public class OldRedMushroomPieces extends AbstractScatteredStructurePieces {
 	public static class Piece extends AbstractScatteredStructurePieces.Piece {
 
 		public Piece(TemplateManager manager, ResourceLocation location, BlockPos pos, Rotation rotation, Mirror mirror,
-				int offsetY, StructureType type, int manDist) {
+				int offsetY, StructureType type) {
 			super(manager, location, pos, rotation, mirror, offsetY, type, 9, 9);
 		}
 		
@@ -64,6 +71,15 @@ public class OldRedMushroomPieces extends AbstractScatteredStructurePieces {
 			super(manager, tagCompound);
 		}
 
+		//Generate
+		public boolean func_230383_a_(ISeedReader world, StructureManager manager, ChunkGenerator generator, Random random, MutableBoundingBox bounds, ChunkPos chunkpos, BlockPos pos) {
+			if (canGenerate(world, pos))
+			{
+				bounds.expandTo(this.template.getMutableBoundingBox(this.placeSettings, this.templatePosition));
+				return super.func_230383_a_(world, manager, generator, random, bounds, chunkpos, pos);
+			} else return false;
+		}
+		
 		@Override
 		public boolean isStructure(BlockState state) {
 			return  state.getBlock() == Blocks.MUSHROOM_STEM ||

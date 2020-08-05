@@ -27,11 +27,11 @@ import net.minecraft.world.gen.feature.template.TemplateManager;
 
 public class OldBrownMushroomPieces extends AbstractScatteredStructurePieces {
 
-	private static final ResourceLocation[] PIECES = new ResourceLocation[]{
-			new ResourceLocation(BetterNether.MODID, "trees/brown_mushroom_01"),
-			new ResourceLocation(BetterNether.MODID, "trees/brown_mushroom_02"),
-			new ResourceLocation(BetterNether.MODID, "trees/brown_mushroom_03"),
-			new ResourceLocation(BetterNether.MODID, "trees/brown_mushroom_04")};
+	private static final StructureWithOffset[] PIECES = new StructureWithOffset[]{
+			new StructureWithOffset(new ResourceLocation(BetterNether.MODID, "trees/brown_mushroom_01"), -4),
+			new StructureWithOffset(new ResourceLocation(BetterNether.MODID, "trees/brown_mushroom_02"), -3),
+			new StructureWithOffset(new ResourceLocation(BetterNether.MODID, "trees/brown_mushroom_03"), -3),
+			new StructureWithOffset(new ResourceLocation(BetterNether.MODID, "trees/brown_mushroom_04"), -2)};
 	
 	public static void addPiece(TemplateManager manager, List<StructurePiece> pieces, Random random, BlockPos pos, IBlockReader blockreader) {
 		Mutable blockpos = new Mutable();
@@ -39,10 +39,11 @@ public class OldBrownMushroomPieces extends AbstractScatteredStructurePieces {
 		for(int i=0; i<16; ++i) {
 			Rotation rotation = Rotation.randomRotation(random);
 			Mirror mirror = Mirror.values()[random.nextInt(3)];
-			StructureType type = StructureType.FLOOR;
-			int offsetY = -2-random.nextInt(4);
-			Piece piece = new OldBrownMushroomPieces.Piece(manager, Util.getRandomObject(PIECES, random), pos, rotation, mirror, offsetY, type);
-			if (piece.canGenerate(blockreader, pos)) {
+			StructureWithOffset object = Util.getRandomObject(PIECES, random);
+			int offsetY = object.offsetY;
+			ResourceLocation location = object.location;
+			Piece piece = new OldBrownMushroomPieces.Piece(manager, location, pos, rotation, mirror, offsetY);
+			if (piece.isGround(blockreader.getBlockState(pos.down())) && piece.isGround(blockreader.getBlockState(pos.down(2))) && piece.noObjNear(blockreader, pos)) {
 				pieces.add(piece);
 				break;
 			}
@@ -58,8 +59,8 @@ public class OldBrownMushroomPieces extends AbstractScatteredStructurePieces {
 	public static class Piece extends AbstractScatteredStructurePieces.Piece {
 
 		public Piece(TemplateManager manager, ResourceLocation location, BlockPos pos, Rotation rotation, Mirror mirror,
-				int offsetY, StructureType type) {
-			super(manager, location, pos, rotation, mirror, offsetY, type, 9, 9);
+				int offsetY) {
+			super(manager, location, pos, rotation, mirror, offsetY, StructureType.FLOOR, 9, 9);
 		}
 		
 		public Piece(TemplateManager manager, CompoundNBT tagCompound) {
@@ -68,7 +69,7 @@ public class OldBrownMushroomPieces extends AbstractScatteredStructurePieces {
 
 		//Generate
 		public boolean func_230383_a_(ISeedReader world, StructureManager manager, ChunkGenerator generator, Random random, MutableBoundingBox bounds, ChunkPos chunkpos, BlockPos pos) {
-			if (isGround(world.getBlockState(pos.down())) && isGround(world.getBlockState(pos.down(2))) && noObjNear(world, pos))
+			if (canGenerate(world, pos))
 			{
 				bounds.expandTo(this.template.getMutableBoundingBox(this.placeSettings, this.templatePosition));
 				return super.func_230383_a_(world, manager, generator, random, bounds, chunkpos, pos);
