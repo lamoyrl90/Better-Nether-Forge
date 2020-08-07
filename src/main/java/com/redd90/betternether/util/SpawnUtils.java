@@ -37,7 +37,8 @@ public class SpawnUtils {
 			BNBiomes.OLD_FUNGIWOODS.get(),
 			BNBiomes.HADEAN_JUNGLE.get(),
 			BNBiomes.OLD_WARPED_WOODS.get(),
-			BNBiomes.WART_FOREST.get()
+			BNBiomes.WART_FOREST.get(),
+			BNBiomes.CRIMSON_GLOWING_WOODS.get()
 			);
 	
 	public static ServerWorld getNether(ServerPlayerEntity serverplayer) {

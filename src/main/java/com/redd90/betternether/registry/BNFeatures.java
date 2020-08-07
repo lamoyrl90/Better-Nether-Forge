@@ -19,6 +19,8 @@ import com.redd90.betternether.world.gen.feature.plants.BlackVineFeature;
 import com.redd90.betternether.world.gen.feature.plants.BloomingVineFeature;
 import com.redd90.betternether.world.gen.feature.plants.BoneGrassFeature;
 import com.redd90.betternether.world.gen.feature.plants.BrownMushroomWallFeature;
+import com.redd90.betternether.world.gen.feature.plants.CrimsonFungusFeature;
+import com.redd90.betternether.world.gen.feature.plants.CrimsonRootsFeature;
 import com.redd90.betternether.world.gen.feature.plants.EggPlantFeature;
 import com.redd90.betternether.world.gen.feature.plants.EyeFeature;
 import com.redd90.betternether.world.gen.feature.plants.FeatherFernFeature;
@@ -54,10 +56,13 @@ import com.redd90.betternether.world.gen.feature.plants.VanillaMushroomsFeature;
 import com.redd90.betternether.world.gen.feature.plants.WallMossFeature;
 import com.redd90.betternether.world.gen.feature.plants.WarpedFungusFeature;
 import com.redd90.betternether.world.gen.feature.plants.WarpedRootsFeature;
+import com.redd90.betternether.world.gen.feature.plants.WartBushFeature;
 import com.redd90.betternether.world.gen.feature.plants.WartSeedFeature;
 import com.redd90.betternether.world.gen.feature.plants.WartTreeFeature;
 import com.redd90.betternether.world.gen.feature.structure.BigWarpedTreeStructure;
 import com.redd90.betternether.world.gen.feature.structure.BoneReefStructure;
+import com.redd90.betternether.world.gen.feature.structure.CrimsonGlowingTreeStructure;
+import com.redd90.betternether.world.gen.feature.structure.CrimsonPinewoodStructure;
 import com.redd90.betternether.world.gen.feature.structure.OldBrownMushroomStructure;
 import com.redd90.betternether.world.gen.feature.structure.OldRedMushroomStructure;
 import com.redd90.betternether.world.gen.feature.structure.WartDeadwoodStructure;
@@ -139,6 +144,11 @@ public class BNFeatures {
 	public static final RegistryObject<Feature<NoFeatureConfig>> WART_TREE = FEATURES.register("wart_tree", () -> new WartTreeFeature(NoFeatureConfig.field_236558_a_));
 	public static final RegistryObject<Feature<NoFeatureConfig>> WART_DEADWOOD = FEATURES.register("wart_deadwood", () -> new WartDeadwoodStructure(NoFeatureConfig.field_236558_a_));
 	public static final RegistryObject<Feature<NoFeatureConfig>> SOUL_GRASS = FEATURES.register("soul_grass", () -> new SoulGrassFeature(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> CRIMSON_FUNGUS = FEATURES.register("crimson_fungus", () -> new CrimsonFungusFeature(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> CRIMSON_ROOTS = FEATURES.register("crimson_roots", () -> new CrimsonRootsFeature(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> WART_BUSH = FEATURES.register("wart_bush", () -> new WartBushFeature(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> CRIMSON_GLOWING_TREE = FEATURES.register("crimson_glowing_tree", () -> new CrimsonGlowingTreeStructure(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> CRIMSON_PINEWOOD = FEATURES.register("crimson_pinewood", () -> new CrimsonPinewoodStructure(NoFeatureConfig.field_236558_a_));
 	
 	/// STRUCTURES ///
 	

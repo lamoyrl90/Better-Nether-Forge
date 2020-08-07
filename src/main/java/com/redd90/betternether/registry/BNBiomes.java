@@ -9,6 +9,7 @@ import com.redd90.betternether.BetterNether;
 import com.redd90.betternether.compatibility.BiomesoPlenty;
 import com.redd90.betternether.world.biome.BNBiomeFeatures;
 import com.redd90.betternether.world.biome.BoneReefBiome;
+import com.redd90.betternether.world.biome.CrimsonGlowingWoodsBiome;
 import com.redd90.betternether.world.biome.GravelDesertBiome;
 import com.redd90.betternether.world.biome.HadeanJungleBiome;
 import com.redd90.betternether.world.biome.NetherGrasslandsBiome;
@@ -47,6 +48,7 @@ public class BNBiomes {
 	public static final RegistryObject<Biome> OLD_WARPED_WOODS = BIOMES.register("old_warped_woods", () -> new OldWarpedWoodsBiome());
 	public static final RegistryObject<Biome> WART_FOREST = BIOMES.register("wart_forest", () -> new WartForestBiome());
 	public static final RegistryObject<Biome> SOUL_PLAINS = BIOMES.register("soul_plains", () -> new SoulPlainsBiome());
+	public static final RegistryObject<Biome> CRIMSON_GLOWING_WOODS = BIOMES.register("crimson_glowing_woods", () -> new CrimsonGlowingWoodsBiome());
 	
 	
 	public static void registerBiomeTypes() {
@@ -69,6 +71,7 @@ public class BNBiomes {
 		BiomeDictionary.addTypes(OLD_WARPED_WOODS.get(), BiomeDictionary.Type.NETHER);
 		BiomeDictionary.addTypes(WART_FOREST.get(), BiomeDictionary.Type.NETHER);
 		BiomeDictionary.addTypes(SOUL_PLAINS.get(), BiomeDictionary.Type.NETHER);
+		BiomeDictionary.addTypes(CRIMSON_GLOWING_WOODS.get(), BiomeDictionary.Type.NETHER);
 
 	}
 	
@@ -104,6 +107,7 @@ public class BNBiomes {
 		((OldWarpedWoodsBiome) OLD_WARPED_WOODS.get()).finalizeFeatures();
 		((WartForestBiome) WART_FOREST.get()).finalizeFeatures();
 		((SoulPlainsBiome) SOUL_PLAINS.get()).finalizeFeatures();
+		((CrimsonGlowingWoodsBiome) CRIMSON_GLOWING_WOODS.get()).finalizeFeatures();
 		
 		Biomes.CRIMSON_FOREST.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(BNEntities.FIREFLY.get(), 50, 2, 4));
 		Biomes.WARPED_FOREST.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(BNEntities.FIREFLY.get(), 50, 2, 4));

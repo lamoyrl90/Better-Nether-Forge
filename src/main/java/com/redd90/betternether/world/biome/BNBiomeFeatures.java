@@ -75,9 +75,39 @@ public class BNBiomeFeatures {
 				.withPlacement(floorPlantPlacement(density)));
 	}
 	
+	public static void addCrimsonGlowingTrees(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.CRIMSON_GLOWING_TREE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
+	}
+	
+	public static void addCrimsonPinewoods(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.CRIMSON_PINEWOOD.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
+	}
+	
 	public static void addWartTrees(Biome biome, float density) {
 		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
 				BNFeatures.WART_TREE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
+	}
+	
+	public static void addCrimsonFungus(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.CRIMSON_FUNGUS.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
+	}
+	
+	public static void addCrimsonRoots(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.CRIMSON_ROOTS.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
+	}
+	
+	public static void addWartBushes(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.WART_BUSH.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 				.withPlacement(floorPlantPlacement(density)));
 	}
 	
