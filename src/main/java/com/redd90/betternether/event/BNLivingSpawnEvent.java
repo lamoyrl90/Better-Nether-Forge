@@ -33,7 +33,7 @@ public class BNLivingSpawnEvent {
 			if (BiomeDictionary.getTypes(event.getWorld().getBiome(pos)).contains(BiomeDictionary.Type.NETHER)){
 				if ((event.getSpawnReason() == SpawnReason.NATURAL) || (event.getSpawnReason() == SpawnReason.SPAWNER)) {
 					if (event.getEntity().getClassification(false) == EntityClassification.MONSTER) {
-						if (world.getLightValue(pos) <= getLightLevelForDifficulty(world.getDifficulty()))
+						if (world.getLightValue(pos) > getLightLevelForDifficulty(world.getDifficulty()))
 							event.setResult(Event.Result.DENY); else event.setResult(Event.Result.DEFAULT);
 					} else event.setResult(Event.Result.DEFAULT);
 				} else event.setResult(Event.Result.DEFAULT);
