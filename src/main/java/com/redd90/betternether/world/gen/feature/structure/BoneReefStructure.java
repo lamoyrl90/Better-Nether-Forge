@@ -1,77 +1,50 @@
 package com.redd90.betternether.world.gen.feature.structure;
 
+import java.util.Random;
+
 import com.mojang.serialization.Codec;
-import com.redd90.betternether.world.gen.feature.StructureFrequencyConfig;
+import com.redd90.betternether.util.BlocksHelper;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.util.Direction;
-import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
-import net.minecraft.util.math.MutableBoundingBox;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.provider.BiomeProvider;
+import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.feature.structure.MarginedStructureStart;
-import net.minecraft.world.gen.feature.structure.Structure;
-import net.minecraft.world.gen.feature.structure.StructureStart;
-import net.minecraft.world.gen.feature.template.TemplateManager;
-import net.minecraft.world.gen.settings.StructureSeparationSettings;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.NoFeatureConfig;
+import net.minecraft.world.gen.feature.structure.StructureManager;
 
-public class BoneReefStructure extends Structure<StructureFrequencyConfig> {
-	public BoneReefStructure(Codec<StructureFrequencyConfig> p_i232105_1_) {
-		super(p_i232105_1_);
-	}
-
-	public IStartFactory<StructureFrequencyConfig> getStartFactory() {
-		return BoneReefStructure.Start::new;
-	}
-
-	public StructureStart<?> func_236389_a_(ChunkGenerator generator, BiomeProvider biomeProvider, TemplateManager templateManager, long seed, ChunkPos chunkPos, Biome biome, int p_236389_8_, SharedSeedRandom seedRandom, StructureSeparationSettings separation, StructureFrequencyConfig config) {
-		ChunkPos chunkpos = this.func_236392_a_(separation, seed, seedRandom, chunkPos.x, chunkPos.z);
-		if (chunkPos.x == chunkpos.x && chunkPos.z == chunkpos.z && this.func_230363_a_(generator, biomeProvider, seed, seedRandom, chunkPos.x, chunkPos.z, biome, chunkpos, config)) {
-			int count = config.frequency;
-			for(int i=0; i<count;i++) {
-				StructureStart<StructureFrequencyConfig> structurestart = this.func_236387_a_(chunkPos.x, chunkPos.z, MutableBoundingBox.getNewBoundingBox(), p_236389_8_, seed);
-				structurestart.func_230364_a_(generator, templateManager, chunkPos.x, chunkPos.z, biome, config);
-				if (structurestart.isValid()) {
-					return structurestart;
-				}
-			}
-		}
-
-		return StructureStart.DUMMY;
-	}
-		   
-		   public static class Start extends MarginedStructureStart<StructureFrequencyConfig> {
-		      public Start(Structure<StructureFrequencyConfig> p_i232106_1_, int p_i232106_2_, int p_i232106_3_, MutableBoundingBox p_i232106_4_, int p_i232106_5_, long p_i232106_6_) {
-		         super(p_i232106_1_, p_i232106_2_, p_i232106_3_, p_i232106_4_, p_i232106_5_, p_i232106_6_);
-		      }
-
-		      public void func_230364_a_(ChunkGenerator p_230364_1_, TemplateManager p_230364_2_, int p_230364_3_, int p_230364_4_, Biome p_230364_5_, StructureFrequencyConfig p_230364_6_) {
-		         ChunkPos chunkpos = new ChunkPos(p_230364_3_, p_230364_4_);
-		         int i = chunkpos.getXStart() + this.rand.nextInt(16);
-		         int j = chunkpos.getZStart() + this.rand.nextInt(16);
-		         int k = p_230364_1_.func_230356_f_();
-		         int l = k + this.rand.nextInt(p_230364_1_.func_230355_e_() - 2 - k);
-		         IBlockReader iblockreader = p_230364_1_.func_230348_a_(i, j);
-
-		         for(BlockPos.Mutable blockpos$mutable = new BlockPos.Mutable(i, l, j); l > k; --l) {
-		            BlockState blockstate = iblockreader.getBlockState(blockpos$mutable);
-		            blockpos$mutable.move(Direction.DOWN);
-		            BlockState blockstate1 = iblockreader.getBlockState(blockpos$mutable);
-		            if (blockstate.isAir() && (blockstate1.isIn(Blocks.SOUL_SAND) || blockstate1.isSolidSide(iblockreader, blockpos$mutable, Direction.UP))) {
-		               break;
-		            }
-		         }
-
-		         if (l > k) {
-		            BoneReefPieces.func_236994_a_(p_230364_2_, this.components, this.rand, new BlockPos(i, l, j));
-		            this.recalculateStructureSize();
-		         }
-		      }
-		   }
+public class BoneReefStructure extends Feature<NoFeatureConfig> implements IStructure {
 	
+	private static final StructureNBT[] BONES = new StructureNBT[] {
+			new StructureNBT("bone_01"),
+			new StructureNBT("bone_02"),
+			new StructureNBT("bone_03")
+		};
+	
+	
+	public BoneReefStructure(Codec<NoFeatureConfig> codec) {
+		super(codec);
+	}
+
+	
+	@Override
+	public boolean generate(IWorld world, BlockPos pos, Random random)
+	{
+		if (BlocksHelper.isNetherGround(world.getBlockState(pos.down())) && world.isAirBlock(pos.up(2)) && world.isAirBlock(pos.up(4)))
+		{
+			StructureNBT bone = BONES[random.nextInt(BONES.length)];
+			bone.randomRM(random);
+			bone.generateCentered(world, pos.down(random.nextInt(4)));
+			return true;
+		} 
+		return false;
+	}
+
+
+
+	@Override
+	public boolean func_230362_a_(ISeedReader world, StructureManager p_230362_2_, ChunkGenerator p_230362_3_,
+			Random random, BlockPos pos, NoFeatureConfig p_230362_6_) {
+		return generate(world, pos, random);
+	}
 }

@@ -63,16 +63,40 @@ public class BNBiomeFeatures {
 		return BNPlacements.WALL_SEARCH.get().configure(new DensityConfig(density*DECOR_COUNT*WALL_FACTOR));
 	}
 	
-	public static void addOldRedMushrooms(Biome biome, float density) {
-		biome.func_235063_a_(BNFeatures.OLD_RED_MUSHROOM.get().func_236391_a_(new StructureFrequencyConfig(Math.round(PLANT_COUNT*density))));
+	public static void addBoneReefs(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, 
+				BNFeatures.BONE_REEF.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorDecorPlacement(density)));
+	}
+	
+	public static void addTwistingVines(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.TWISTING_VINES.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
+	}
+	
+	public static void addWarpedRoots(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.WARPED_ROOTS.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
+	}
+	
+	public static void addBigWarpedTrees(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.BIG_WARPED_TREE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
 	}
 	
 	public static void addOldBrownMushrooms(Biome biome, float density) {
-		biome.func_235063_a_(BNFeatures.OLD_BROWN_MUSHROOM.get().func_236391_a_(new StructureFrequencyConfig(Math.round(PLANT_COUNT*density))));
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.OLD_BROWN_MUSHROOM.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
 	}
 	
-	public static void addBoneReefs(Biome biome, float density) {
-		biome.func_235063_a_(BNFeatures.BONE_REEF.get().func_236391_a_(new StructureFrequencyConfig(Math.round(DECOR_COUNT*density))));
+	public static void addOldRedMushrooms(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.OLD_RED_MUSHROOM.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
 	}
 	
 	public static void addNetherCactii(Biome biome, float density) {
@@ -367,6 +391,12 @@ public class BNBiomeFeatures {
 	public static void addJellyfishMushrooms(Biome biome, float density) {
 		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
 				BNFeatures.JELLYFISH_MUSHROOM.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
+	}
+	
+	public static void addWarpedFungus(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.WARPED_FUNGUS.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 				.withPlacement(floorPlantPlacement(density)));
 	}
 	

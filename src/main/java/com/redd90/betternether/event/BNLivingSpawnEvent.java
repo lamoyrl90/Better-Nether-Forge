@@ -8,6 +8,7 @@ import net.minecraft.entity.SpawnReason;
 import net.minecraft.util.math.BlockPos.Mutable;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.IWorld;
+import net.minecraft.world.World;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.eventbus.api.Event;
@@ -25,20 +26,18 @@ public class BNLivingSpawnEvent {
 	public static void checkLightLevels(LivingSpawnEvent.SpecialSpawn event) {
 		pos.setPos(event.getX(), event.getY(), event.getZ());
 		IWorld world = event.getWorld();
+		boolean nether = event.getEntityLiving().getEntityWorld().func_234923_W_() == World.field_234919_h_;
 		
 		boolean magma = world.getBlockState(pos.down()).getBlock() == MAGMA;
 		boolean cube = event.getEntityLiving().getType() == MAGMA_CUBE;
 		
-		if (!magma && !cube) {
-			if (BiomeDictionary.getTypes(event.getWorld().getBiome(pos)).contains(BiomeDictionary.Type.NETHER)){
-				if ((event.getSpawnReason() == SpawnReason.NATURAL) || (event.getSpawnReason() == SpawnReason.SPAWNER)) {
-					if (event.getEntity().getClassification(false) == EntityClassification.MONSTER) {
-						if (world.getLightValue(pos) > getLightLevelForDifficulty(world.getDifficulty()))
-							event.setResult(Event.Result.DENY); else event.setResult(Event.Result.DEFAULT);
-					} else event.setResult(Event.Result.DEFAULT);
-				} else event.setResult(Event.Result.DEFAULT);
-			} else event.setResult(Event.Result.DEFAULT);
-		}
+		if ((world.getLightValue(pos) > getLightLevelForDifficulty(world.getDifficulty())) 
+				& (event.getEntity().getClassification(false) == EntityClassification.MONSTER)
+				& !magma 
+				& !cube 
+				& nether 
+				& (event.getSpawnReason() == SpawnReason.NATURAL || (event.getSpawnReason() == SpawnReason.SPAWNER)))
+			event.setResult(Event.Result.DENY);
 	}
 
 	private static int getLightLevelForDifficulty(Difficulty difficulty) {

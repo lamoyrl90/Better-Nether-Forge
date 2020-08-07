@@ -4,7 +4,6 @@ import com.redd90.betternether.BetterNether;
 import com.redd90.betternether.world.gen.feature.BNFloorOreFeature;
 import com.redd90.betternether.world.gen.feature.BNFloorOreFeatureConfig;
 import com.redd90.betternether.world.gen.feature.StrayLavaFixer;
-import com.redd90.betternether.world.gen.feature.StructureFrequencyConfig;
 import com.redd90.betternether.world.gen.feature.NetherrackFeature;
 import com.redd90.betternether.world.gen.feature.decorations.BlackstoneSpikeFeature;
 import com.redd90.betternether.world.gen.feature.decorations.BoneStalactiteFeature;
@@ -49,15 +48,18 @@ import com.redd90.betternether.world.gen.feature.plants.SmokerFeature;
 import com.redd90.betternether.world.gen.feature.plants.SoulVeinFeature;
 import com.redd90.betternether.world.gen.feature.plants.StalagnateFeature;
 import com.redd90.betternether.world.gen.feature.plants.SwampGrassFeature;
+import com.redd90.betternether.world.gen.feature.plants.TwistingVinesFeature;
 import com.redd90.betternether.world.gen.feature.plants.VanillaMushroomsFeature;
 import com.redd90.betternether.world.gen.feature.plants.WallMossFeature;
+import com.redd90.betternether.world.gen.feature.plants.WarpedFungusFeature;
+import com.redd90.betternether.world.gen.feature.plants.WarpedRootsFeature;
 import com.redd90.betternether.world.gen.feature.plants.WartSeedFeature;
+import com.redd90.betternether.world.gen.feature.structure.BigWarpedTreeStructure;
 import com.redd90.betternether.world.gen.feature.structure.BoneReefStructure;
 import com.redd90.betternether.world.gen.feature.structure.OldBrownMushroomStructure;
 import com.redd90.betternether.world.gen.feature.structure.OldRedMushroomStructure;
 import com.redd90.betternether.world.gen.feature.trees.WillowTreeFeature;
 
-import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.structure.Structure;
@@ -124,16 +126,24 @@ public class BNFeatures {
 	public static final RegistryObject<Feature<NoFeatureConfig>> BONE_STALAGMITE = FEATURES.register("bone_stalagmite", () -> new BoneStalagmiteFeature(NoFeatureConfig.field_236558_a_));
 	public static final RegistryObject<Feature<NoFeatureConfig>> JELLYFISH_MUSHROOM = FEATURES.register("jellyfish_mushroom", () -> new JellyfishMushroomFeature(NoFeatureConfig.field_236558_a_));
 	public static final RegistryObject<Feature<NoFeatureConfig>> LUMABUS_VINE = FEATURES.register("lumabus_vine", () -> new LumabusVineFeature(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> WARPED_FUNGUS = FEATURES.register("warped_fungus", () -> new WarpedFungusFeature(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> BIG_WARPED_TREE = FEATURES.register("big_warped_tree", () -> new BigWarpedTreeStructure(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> BONE_REEF = FEATURES.register("bone_reef", () -> new BoneReefStructure(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> OLD_RED_MUSHROOM = FEATURES.register("old_red_mushroom", () -> new OldRedMushroomStructure(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> OLD_BROWN_MUSHROOM = FEATURES.register("old_brown_mushroom", () -> new OldBrownMushroomStructure(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> TWISTING_VINES = FEATURES.register("twisting_vines", () -> new TwistingVinesFeature(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> WARPED_ROOTS = FEATURES.register("warped_roots", () -> new WarpedRootsFeature(NoFeatureConfig.field_236558_a_));
 	
 	/// STRUCTURES ///
 	
-	public static final RegistryObject<Structure<StructureFrequencyConfig>> OLD_BROWN_MUSHROOM = register("old_brown_mushroom", new OldBrownMushroomStructure(StructureFrequencyConfig.codec), GenerationStage.Decoration.SURFACE_STRUCTURES);
-	public static final RegistryObject<Structure<StructureFrequencyConfig>> OLD_RED_MUSHROOM = register("old_red_mushroom", new OldRedMushroomStructure(StructureFrequencyConfig.codec), GenerationStage.Decoration.SURFACE_STRUCTURES);
-	public static final RegistryObject<Structure<StructureFrequencyConfig>> BONE_REEF = register("bone_reef", new BoneReefStructure(StructureFrequencyConfig.codec), GenerationStage.Decoration.SURFACE_STRUCTURES);
+	//public static final RegistryObject<Structure<StructureFrequencyConfig>> OLD_BROWN_MUSHROOM = register("old_brown_mushroom", new OldBrownMushroomStructure(StructureFrequencyConfig.codec), GenerationStage.Decoration.SURFACE_STRUCTURES);
+	//public static final RegistryObject<Structure<StructureFrequencyConfig>> OLD_RED_MUSHROOM = register("old_red_mushroom", new OldRedMushroomStructure(StructureFrequencyConfig.codec), GenerationStage.Decoration.SURFACE_STRUCTURES);
+	//public static final RegistryObject<Structure<StructureFrequencyConfig>> BONE_REEF = register("bone_reef", new BoneReefStructure(StructureFrequencyConfig.codec), GenerationStage.Decoration.SURFACE_STRUCTURES);
+	//public static final RegistryObject<Structure<StructureFrequencyConfig>> BIG_WARPED_TREE = register("big_warped_tree", new BigWarpedTreeStructure(StructureFrequencyConfig.codec), GenerationStage.Decoration.SURFACE_STRUCTURES);
 
-    private static <T extends Structure<?>> RegistryObject<T> register(String name, T structure, GenerationStage.Decoration decoration) {
+    /*private static <T extends Structure<?>> RegistryObject<T> register(String name, T structure, GenerationStage.Decoration decoration) {
         Structure.field_236365_a_.put(BetterNether.MODID + ":" + name, structure);
         Structure.field_236385_u_.put(structure, decoration);
         return STRUCTURES.register(name, () -> structure);
-    }
+    }*/
 }

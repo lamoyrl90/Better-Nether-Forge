@@ -1,77 +1,50 @@
 package com.redd90.betternether.world.gen.feature.structure;
 
+import java.util.Random;
+
 import com.mojang.serialization.Codec;
-import com.redd90.betternether.world.gen.feature.StructureFrequencyConfig;
+import com.redd90.betternether.registry.BNBlocks;
+import com.redd90.betternether.util.BlocksHelper;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.util.Direction;
-import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
-import net.minecraft.util.math.MutableBoundingBox;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.provider.BiomeProvider;
+import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.feature.structure.MarginedStructureStart;
-import net.minecraft.world.gen.feature.structure.Structure;
-import net.minecraft.world.gen.feature.structure.StructureStart;
-import net.minecraft.world.gen.feature.template.TemplateManager;
-import net.minecraft.world.gen.settings.StructureSeparationSettings;
+import net.minecraft.world.gen.feature.NoFeatureConfig;
+import net.minecraft.world.gen.feature.structure.StructureManager;
 
-public class OldRedMushroomStructure extends Structure<StructureFrequencyConfig> {
-	public OldRedMushroomStructure(Codec<StructureFrequencyConfig> p_i232105_1_) {
-		super(p_i232105_1_);
-	}
-
-	public IStartFactory<StructureFrequencyConfig> getStartFactory() {
-		return OldRedMushroomStructure.Start::new;
-	}
-
-	public StructureStart<?> func_236389_a_(ChunkGenerator generator, BiomeProvider biomeProvider, TemplateManager templateManager, long seed, ChunkPos chunkPos, Biome biome, int p_236389_8_, SharedSeedRandom seedRandom, StructureSeparationSettings separation, StructureFrequencyConfig config) {
-		ChunkPos chunkpos = this.func_236392_a_(separation, seed, seedRandom, chunkPos.x, chunkPos.z);
-		if (chunkPos.x == chunkpos.x && chunkPos.z == chunkpos.z && this.func_230363_a_(generator, biomeProvider, seed, seedRandom, chunkPos.x, chunkPos.z, biome, chunkpos, config)) {
-			int count = config.frequency;
-			for(int i=0; i<count;i++) {
-				StructureStart<StructureFrequencyConfig> structurestart = this.func_236387_a_(chunkPos.x, chunkPos.z, MutableBoundingBox.getNewBoundingBox(), p_236389_8_, seed);
-				structurestart.func_230364_a_(generator, templateManager, chunkPos.x, chunkPos.z, biome, config);
-				if (structurestart.isValid()) {
-					return structurestart;
-				}
-			}
-		}
-
-		return StructureStart.DUMMY;
-	}
-		   
-		   public static class Start extends MarginedStructureStart<StructureFrequencyConfig> {
-		      public Start(Structure<StructureFrequencyConfig> p_i232106_1_, int p_i232106_2_, int p_i232106_3_, MutableBoundingBox p_i232106_4_, int p_i232106_5_, long p_i232106_6_) {
-		         super(p_i232106_1_, p_i232106_2_, p_i232106_3_, p_i232106_4_, p_i232106_5_, p_i232106_6_);
-		      }
-
-		      public void func_230364_a_(ChunkGenerator p_230364_1_, TemplateManager p_230364_2_, int p_230364_3_, int p_230364_4_, Biome p_230364_5_, StructureFrequencyConfig p_230364_6_) {
-		         ChunkPos chunkpos = new ChunkPos(p_230364_3_, p_230364_4_);
-		         int i = chunkpos.getXStart() + this.rand.nextInt(16);
-		         int j = chunkpos.getZStart() + this.rand.nextInt(16);
-		         int k = p_230364_1_.func_230356_f_();
-		         int l = k + this.rand.nextInt(p_230364_1_.func_230355_e_() - 2 - k);
-		         IBlockReader iblockreader = p_230364_1_.func_230348_a_(i, j);
-
-		         for(BlockPos.Mutable blockpos$mutable = new BlockPos.Mutable(i, l, j); l > k; --l) {
-		            BlockState blockstate = iblockreader.getBlockState(blockpos$mutable);
-		            blockpos$mutable.move(Direction.DOWN);
-		            BlockState blockstate1 = iblockreader.getBlockState(blockpos$mutable);
-		            if (blockstate.isAir() && (blockstate1.isIn(Blocks.SOUL_SAND) || blockstate1.isSolidSide(iblockreader, blockpos$mutable, Direction.UP))) {
-		               break;
-		            }
-		         }
-
-		         if (l > k) {
-		            OldRedMushroomPieces.func_236994_a_(p_230364_2_, this.components, this.rand, new BlockPos(i, l, j));
-		            this.recalculateStructureSize();
-		         }
-		      }
-		   }
+public class OldRedMushroomStructure extends StructureObjScatter {
+	private static final StructureWorld[] TREES = new StructureWorld[] {
+			new StructureWorld("trees/red_mushroom_01", -2, StructureType.FLOOR),
+			new StructureWorld("trees/red_mushroom_02", -1, StructureType.FLOOR),
+			new StructureWorld("trees/red_mushroom_03", -1, StructureType.FLOOR),
+			new StructureWorld("trees/red_mushroom_04", -4, StructureType.FLOOR),
+			new StructureWorld("trees/red_mushroom_05", -4, StructureType.FLOOR),
+			new StructureWorld("trees/red_mushroom_06", -1, StructureType.FLOOR),
+			new StructureWorld("trees/red_mushroom_07", -4, StructureType.FLOOR)
+		};
 	
+	public OldRedMushroomStructure(Codec<NoFeatureConfig> codec)
+	{
+		super(codec, 9, TREES);
+	}
+	
+	protected boolean isGround(BlockState state)
+	{
+		return state.getBlock() == BNBlocks.NETHER_MYCELIUM.get() || BlocksHelper.isNetherGround(state);
+	}
+	
+	protected boolean isStructure(BlockState state)
+	{
+		return  state.getBlock() == Blocks.MUSHROOM_STEM ||
+				state.getBlock() == Blocks.BROWN_MUSHROOM_BLOCK ||
+				state.getBlock() == Blocks.RED_MUSHROOM_BLOCK;
+	}
+
+	@Override
+	public boolean func_230362_a_(ISeedReader world, StructureManager p_230362_2_, ChunkGenerator p_230362_3_,
+			Random random, BlockPos pos, NoFeatureConfig p_230362_6_) {
+		return generate(world, pos, random);
+	}
 }

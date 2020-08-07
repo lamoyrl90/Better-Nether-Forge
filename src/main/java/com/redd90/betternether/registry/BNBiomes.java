@@ -15,6 +15,7 @@ import com.redd90.betternether.world.biome.NetherGrasslandsBiome;
 import com.redd90.betternether.world.biome.FungalWoodlandsBiome;
 import com.redd90.betternether.world.biome.ObsidianChasmBiome;
 import com.redd90.betternether.world.biome.OldFungiwoodsBiome;
+import com.redd90.betternether.world.biome.OldWarpedWoodsBiome;
 import com.redd90.betternether.world.biome.SwelteringSwamplandBiome;
 import com.redd90.betternether.world.biome.TorridTerracesBiome;
 
@@ -41,6 +42,7 @@ public class BNBiomes {
 	public static final RegistryObject<Biome> NETHER_GRASSLANDS = BIOMES.register("nether_grasslands", () -> new NetherGrasslandsBiome());
 	public static final RegistryObject<Biome> HADEAN_JUNGLE = BIOMES.register("hadean_jungle", () -> new HadeanJungleBiome());
 	public static final RegistryObject<Biome> BONE_REEF = BIOMES.register("bone_reef", () -> new BoneReefBiome());
+	public static final RegistryObject<Biome> OLD_WARPED_WOODS = BIOMES.register("old_warped_woods", () -> new OldWarpedWoodsBiome());
 	
 	
 	public static void registerBiomeTypes() {
@@ -60,6 +62,7 @@ public class BNBiomes {
 		BiomeDictionary.addTypes(NETHER_GRASSLANDS.get(), BiomeDictionary.Type.NETHER);
 		BiomeDictionary.addTypes(HADEAN_JUNGLE.get(), BiomeDictionary.Type.NETHER);
 		BiomeDictionary.addTypes(BONE_REEF.get(), BiomeDictionary.Type.NETHER);
+		BiomeDictionary.addTypes(OLD_WARPED_WOODS.get(), BiomeDictionary.Type.NETHER);
 
 	}
 	
@@ -92,6 +95,7 @@ public class BNBiomes {
 		((NetherGrasslandsBiome) NETHER_GRASSLANDS.get()).finalizeFeatures();
 		((HadeanJungleBiome) HADEAN_JUNGLE.get()).finalizeFeatures();
 		((BoneReefBiome) BONE_REEF.get()).finalizeFeatures();
+		((OldWarpedWoodsBiome) OLD_WARPED_WOODS.get()).finalizeFeatures();
 		
 		Biomes.CRIMSON_FOREST.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(BNEntities.FIREFLY.get(), 50, 2, 4));
 		Biomes.WARPED_FOREST.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(BNEntities.FIREFLY.get(), 50, 2, 4));
