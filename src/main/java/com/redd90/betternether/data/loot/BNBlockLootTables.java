@@ -165,7 +165,8 @@ public class BNBlockLootTables extends BNLootTableProvider {
 		registerSelfDrop(BNBlocks.MUSHROOM_FIR_PLATE.get());
 		registerSelfDrop(BNBlocks.MUSHROOM_FIR_TRAPDOOR.get());
 		registerSelfDrop(BNBlocks.MUSHROOM_FIR_DOOR.get());
-		
+
+		registerSelfDrop(BNBlocks.WART_SEED.get());
 		registerSelfDrop(BNBlocks.WART_LOG.get());
 		registerSelfDrop(BNBlocks.WART_BARK.get());
 		registerSelfDrop(BNBlocks.STRIPPED_LOG_WART.get());

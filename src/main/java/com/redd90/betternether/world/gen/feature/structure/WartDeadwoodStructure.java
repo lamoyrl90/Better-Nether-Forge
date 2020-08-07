@@ -6,6 +6,7 @@ import com.mojang.serialization.Codec;
 import com.redd90.betternether.util.BlocksHelper;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.IWorld;
@@ -29,7 +30,7 @@ public class WartDeadwoodStructure extends Feature<NoFeatureConfig> implements I
 
 	public boolean generate(IWorld world, BlockPos pos, Random random)
 	{
-		if (isGround(world.getBlockState(pos.down())) && isGround(world.getBlockState(pos.down(2))))
+		if (isGround(world, world.getBlockState(pos.down()), pos.down()) && isGround(world, world.getBlockState(pos.down(2)), pos.down(2)))
 		{
 			StructureWorld tree = TREES[random.nextInt(TREES.length)];
 			tree.generate(world, pos, random);
@@ -37,9 +38,9 @@ public class WartDeadwoodStructure extends Feature<NoFeatureConfig> implements I
 		} return false;
 	}
 	
-	private boolean isGround(BlockState state)
+	private boolean isGround(IWorld world, BlockState state, BlockPos pos)
 	{
-		return BlocksHelper.isNetherGround(state);
+		return state.isSolidSide(world, pos, Direction.UP);
 	}
 
 	@Override

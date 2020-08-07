@@ -412,6 +412,12 @@ public class BNBiomeFeatures {
 				.withPlacement(floorPlantPlacement(density)));
 	}
 	
+	public static void addSoulGrass(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.SOUL_GRASS.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
+	}
+	
 	public static void addLumabusVines(Biome biome, float density) {
 		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
 				BNFeatures.LUMABUS_VINE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)

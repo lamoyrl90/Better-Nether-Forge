@@ -270,7 +270,7 @@ public class BNBlocks {
 	public static final RegistryObject<Block> MUSHROOM_FIR_TRAPDOOR = registerBlock("mushroom_fir_trapdoor", () -> new BNTrapdoorBlock(BNBlockProperties.MUSHROOM_FIR));
 	public static final RegistryObject<Block> MUSHROOM_FIR_DOOR = registerBlock("mushroom_fir_door", () -> new BNDoorBlock(BNBlockProperties.MUSHROOM_FIR));
 		
-	public static final RegistryObject<Block> WART_ROOTS = registerBlockNoItem("wart_roots", () -> new BNBlock(BNBlockProperties.WILLOW));
+	public static final RegistryObject<Block> WART_ROOTS = registerBlockNoItem("wart_roots", () -> new BNBlock(BNBlockProperties.WART_WOOD));
 	public static final RegistryObject<Block> WART_SEED = registerBlock("wart_seed", () -> new WartSeedBlock());
 	public static final RegistryObject<Block> STRIPPED_LOG_WART = registerBlock("stripped_log_wart", () -> new BNPillarBlock(BNBlockProperties.WART_WOOD));
 	public static final RegistryObject<Block> STRIPPED_BARK_WART = registerBlock("stripped_bark_wart", () -> new BNPillarBlock(BNBlockProperties.WART_WOOD));

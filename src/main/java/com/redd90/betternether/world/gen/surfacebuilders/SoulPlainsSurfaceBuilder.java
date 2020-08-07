@@ -1,27 +1,37 @@
 package com.redd90.betternether.world.gen.surfacebuilders;
 
+import java.util.Comparator;
 import java.util.Random;
 
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableMap.Builder;
 import com.mojang.serialization.Codec;
 import com.redd90.betternether.block.SoulSandstoneBlock;
 import com.redd90.betternether.registry.BNBlocks;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.OctavesNoiseGenerator;
 import net.minecraft.world.gen.surfacebuilders.NetherSurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
-public class WartForestSurfaceBuilder extends NetherSurfaceBuilder {
+public class SoulPlainsSurfaceBuilder extends NetherSurfaceBuilder {
 
 	private static final BlockState SOUL_SAND = Blocks.SOUL_SAND.getDefaultState();
 	private static final BlockState SOUL_SOIL = Blocks.SOUL_SOIL.getDefaultState();
+	private static final BlockState GRAVEL = Blocks.GRAVEL.getDefaultState();
 	private static final BlockState NETHERRACK_MOSS = BNBlocks.NETHERRACK_MOSS.get().getDefaultState();
 	private static final BlockState SOUL_SANDSTONE_BOTTOM = BNBlocks.SOUL_SANDSTONE.get().getDefaultState().with(SoulSandstoneBlock.UP, false);
 	
-	public WartForestSurfaceBuilder(Codec<SurfaceBuilderConfig> codec) {
+	private static final ImmutableList<BlockState> surfaceStates = ImmutableList.of(SOUL_SAND, SOUL_SOIL);
+	private ImmutableMap<BlockState, OctavesNoiseGenerator> stateNoiseMap = ImmutableMap.of();
+	
+	public SoulPlainsSurfaceBuilder(Codec<SurfaceBuilderConfig> codec) {
 		super(codec);
 	}
 	
@@ -37,9 +47,12 @@ public class WartForestSurfaceBuilder extends NetherSurfaceBuilder {
 	      int noiseFactor = (int)(noise / 3.0D + 3.0D + random.nextDouble() * 0.25D);
 	      BlockPos.Mutable blockpos$mutable = new BlockPos.Mutable();
 	      int currentDepth = -1;
-	      BlockState blockstate = genSurfColumn(chunkIn, blockpos$mutable, random, config.getTop());
+	      BlockState blockstateTop = this.stateNoiseMap.entrySet().stream().max(Comparator.comparing((entry) -> {
+	          return entry.getValue().func_205563_a((double)x, (double)seaLevel, (double)z);
+	      })).get().getKey();
 	      BlockState blockstate1 = config.getUnder();
 	      BlockState blockstate3 = SOUL_SANDSTONE_BOTTOM;
+	      BlockState blockstate = blockstateTop;
 
 	      for(int currentY = 127; currentY >= 0; --currentY) {
 	         blockpos$mutable.setPos(j, currentY, k);
@@ -53,10 +66,10 @@ public class WartForestSurfaceBuilder extends NetherSurfaceBuilder {
 	                  underSeaLevel = true;
 	                  blockstate1 = config.getUnder();
 	               } else if (currentY >= seaLevelY - 4 && currentY <= seaLevelY + 1) {
-	                  blockstate = genSurfColumn(chunkIn, blockpos$mutable, random, blockstate);
+	                  blockstate = blockstateTop;
 	                  blockstate1 = config.getUnder();
 	                  if (flag1) {
-	                     blockstate = SOUL_SOIL;
+	                     blockstate = GRAVEL;
 	                     blockstate1 = config.getUnder();
 	                  }
 
@@ -102,4 +115,23 @@ public class WartForestSurfaceBuilder extends NetherSurfaceBuilder {
 		}
 	}
 	
+	public void setSeed(long seed) {
+		super.setSeed(seed);
+		this.stateNoiseMap = getStateMap(this.getBlockState(), seed);
+	}
+	
+	private static ImmutableMap<BlockState, OctavesNoiseGenerator> getStateMap(ImmutableList<BlockState> statesList, long seed) {
+		Builder<BlockState, OctavesNoiseGenerator> builder = new Builder<>();
+
+		for(BlockState blockstate : statesList) {
+			builder.put(blockstate, new OctavesNoiseGenerator(new SharedSeedRandom(seed), ImmutableList.of(-4)));
+			++seed;
+		}
+
+		return builder.build();
+	}
+	
+	private ImmutableList<BlockState> getBlockState(){
+		return surfaceStates;
+	}
 }

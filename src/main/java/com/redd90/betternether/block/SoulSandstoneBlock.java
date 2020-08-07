@@ -15,6 +15,7 @@ public class SoulSandstoneBlock extends BNBlock {
 	public SoulSandstoneBlock()
 	{
 		super(BNBlockProperties.SOUL_SANDSTONE);
+		this.setDefaultState(this.getStateContainer().getBaseState().with(UP, true));
 	}
 	
 	@Override
@@ -34,4 +35,5 @@ public class SoulSandstoneBlock extends BNBlock {
 	{
 		return this.getDefaultState().with(UP, ctx.getWorld().getBlockState(ctx.getPos().up()).getBlock() != this);
 	}
+	
 }

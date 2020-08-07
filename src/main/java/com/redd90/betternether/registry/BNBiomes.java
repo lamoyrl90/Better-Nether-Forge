@@ -16,6 +16,7 @@ import com.redd90.betternether.world.biome.FungalWoodlandsBiome;
 import com.redd90.betternether.world.biome.ObsidianChasmBiome;
 import com.redd90.betternether.world.biome.OldFungiwoodsBiome;
 import com.redd90.betternether.world.biome.OldWarpedWoodsBiome;
+import com.redd90.betternether.world.biome.SoulPlainsBiome;
 import com.redd90.betternether.world.biome.SwelteringSwamplandBiome;
 import com.redd90.betternether.world.biome.TorridTerracesBiome;
 import com.redd90.betternether.world.biome.WartForestBiome;
@@ -45,6 +46,7 @@ public class BNBiomes {
 	public static final RegistryObject<Biome> BONE_REEF = BIOMES.register("bone_reef", () -> new BoneReefBiome());
 	public static final RegistryObject<Biome> OLD_WARPED_WOODS = BIOMES.register("old_warped_woods", () -> new OldWarpedWoodsBiome());
 	public static final RegistryObject<Biome> WART_FOREST = BIOMES.register("wart_forest", () -> new WartForestBiome());
+	public static final RegistryObject<Biome> SOUL_PLAINS = BIOMES.register("soul_plains", () -> new SoulPlainsBiome());
 	
 	
 	public static void registerBiomeTypes() {
@@ -66,6 +68,7 @@ public class BNBiomes {
 		BiomeDictionary.addTypes(BONE_REEF.get(), BiomeDictionary.Type.NETHER);
 		BiomeDictionary.addTypes(OLD_WARPED_WOODS.get(), BiomeDictionary.Type.NETHER);
 		BiomeDictionary.addTypes(WART_FOREST.get(), BiomeDictionary.Type.NETHER);
+		BiomeDictionary.addTypes(SOUL_PLAINS.get(), BiomeDictionary.Type.NETHER);
 
 	}
 	
@@ -100,6 +103,7 @@ public class BNBiomes {
 		((BoneReefBiome) BONE_REEF.get()).finalizeFeatures();
 		((OldWarpedWoodsBiome) OLD_WARPED_WOODS.get()).finalizeFeatures();
 		((WartForestBiome) WART_FOREST.get()).finalizeFeatures();
+		((SoulPlainsBiome) SOUL_PLAINS.get()).finalizeFeatures();
 		
 		Biomes.CRIMSON_FOREST.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(BNEntities.FIREFLY.get(), 50, 2, 4));
 		Biomes.WARPED_FOREST.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(BNEntities.FIREFLY.get(), 50, 2, 4));

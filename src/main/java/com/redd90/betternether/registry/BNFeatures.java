@@ -45,6 +45,7 @@ import com.redd90.betternether.world.gen.feature.plants.RedMushroomWallFeature;
 import com.redd90.betternether.world.gen.feature.plants.RubeusBushFeature;
 import com.redd90.betternether.world.gen.feature.plants.RubeusTreeFeature;
 import com.redd90.betternether.world.gen.feature.plants.SmokerFeature;
+import com.redd90.betternether.world.gen.feature.plants.SoulGrassFeature;
 import com.redd90.betternether.world.gen.feature.plants.SoulVeinFeature;
 import com.redd90.betternether.world.gen.feature.plants.StalagnateFeature;
 import com.redd90.betternether.world.gen.feature.plants.SwampGrassFeature;
@@ -137,6 +138,7 @@ public class BNFeatures {
 	public static final RegistryObject<Feature<NoFeatureConfig>> WARPED_ROOTS = FEATURES.register("warped_roots", () -> new WarpedRootsFeature(NoFeatureConfig.field_236558_a_));
 	public static final RegistryObject<Feature<NoFeatureConfig>> WART_TREE = FEATURES.register("wart_tree", () -> new WartTreeFeature(NoFeatureConfig.field_236558_a_));
 	public static final RegistryObject<Feature<NoFeatureConfig>> WART_DEADWOOD = FEATURES.register("wart_deadwood", () -> new WartDeadwoodStructure(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> SOUL_GRASS = FEATURES.register("soul_grass", () -> new SoulGrassFeature(NoFeatureConfig.field_236558_a_));
 	
 	/// STRUCTURES ///
 	

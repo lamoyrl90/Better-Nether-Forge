@@ -24,6 +24,7 @@ public class BiomesoPlenty {
 		BOPClimates.NETHER.addBiome(5, BNBiomes.BONE_REEF.get());	
 		BOPClimates.NETHER.addBiome(5, BNBiomes.OLD_WARPED_WOODS.get());
 		BOPClimates.NETHER.addBiome(5, BNBiomes.WART_FOREST.get());		
+		BOPClimates.NETHER.addBiome(5, BNBiomes.SOUL_PLAINS.get());		
 		
 		BOPBiomes.undergrowth.get().addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(BNEntities.FIREFLY.get(), 50, 2, 4));
 	

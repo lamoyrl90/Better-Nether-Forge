@@ -34,6 +34,7 @@ public class BNSurfaceBuilders {
 	public static final SurfaceBuilder<SurfaceBuilderConfig> FUNGAL_WOODLANDS_EDGE = register("fungal_woodlands_edge", new FungalWoodlandsEdgeSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_));
 	public static final SurfaceBuilder<SurfaceBuilderConfig> NETHER_GRASSLANDS = register("nether_grasslands", new NetherGrasslandsSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_));
 	public static final SurfaceBuilder<SurfaceBuilderConfig> WART_FOREST = register("wart_forest", new WartForestSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_));
+	public static final SurfaceBuilder<SurfaceBuilderConfig> SOUL_PLAINS = register("soul_plains", new SoulPlainsSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_));
 	
 	
 	private static SurfaceBuilder<SurfaceBuilderConfig> register(String name, SurfaceBuilder<SurfaceBuilderConfig> surfaceBuilder) {
