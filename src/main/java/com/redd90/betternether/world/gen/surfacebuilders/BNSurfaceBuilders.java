@@ -16,12 +16,14 @@ public class BNSurfaceBuilders {
 	public static final BlockState SOUL_SAND = Blocks.SOUL_SAND.getDefaultState();
 	public static final BlockState NETHER_MYCELIUM = BNBlocks.NETHER_MYCELIUM.get().getDefaultState();
 	public static final BlockState JUNGLE_GRASS = BNBlocks.JUNGLE_GRASS.get().getDefaultState();
+	public static final BlockState MUSHROOM_GRASS = BNBlocks.MUSHROOM_GRASS.get().getDefaultState();
 	
 	public static final SurfaceBuilderConfig GRAVEL_DESERT_CONFIG = new SurfaceBuilderConfig(GRAVEL, NETHERRACK, NETHERRACK);
 	public static final SurfaceBuilderConfig NETHER_MYCELIUM_CONFIG = new SurfaceBuilderConfig(NETHER_MYCELIUM, NETHERRACK, NETHERRACK);
 	public static final SurfaceBuilderConfig MAGMA_SHORES = new SurfaceBuilderConfig(NETHERRACK, NETHERRACK, MAGMA);
 	public static final SurfaceBuilderConfig SOUL_SAND_SHORES = new SurfaceBuilderConfig(NETHERRACK, NETHERRACK, SOUL_SAND);
 	public static final SurfaceBuilderConfig JUNGLE_GRASS_CONFIG = new SurfaceBuilderConfig(JUNGLE_GRASS, NETHERRACK, SOUL_SAND);
+	public static final SurfaceBuilderConfig MUSHROOM_GRASS_CONFIG = new SurfaceBuilderConfig(MUSHROOM_GRASS, NETHERRACK, SOUL_SAND);
 	public static final SurfaceBuilder<SurfaceBuilderConfig> OBSIDIAN_CHASM = register("obsidian_swamp", new ObsidianChasmSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_));
 	public static final SurfaceBuilder<SurfaceBuilderConfig> SWELTERING_SWAMP = register("sweltering_swamp", new SwelteringSwampSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_));
 	public static final SurfaceBuilder<SurfaceBuilderConfig> TORRID_TERRACES = register("torrid_terraces", new TorridTerracesSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_));

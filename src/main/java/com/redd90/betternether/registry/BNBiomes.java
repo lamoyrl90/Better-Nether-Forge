@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import com.redd90.betternether.BetterNether;
 import com.redd90.betternether.compatibility.BiomesoPlenty;
 import com.redd90.betternether.world.biome.BNBiomeFeatures;
+import com.redd90.betternether.world.biome.BoneReefBiome;
 import com.redd90.betternether.world.biome.GravelDesertBiome;
 import com.redd90.betternether.world.biome.HadeanJungleBiome;
 import com.redd90.betternether.world.biome.NetherGrasslandsBiome;
@@ -17,6 +18,7 @@ import com.redd90.betternether.world.biome.OldFungiwoodsBiome;
 import com.redd90.betternether.world.biome.SwelteringSwamplandBiome;
 import com.redd90.betternether.world.biome.TorridTerracesBiome;
 
+import net.minecraft.entity.EntityClassification;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
 import net.minecraftforge.common.BiomeDictionary;
@@ -38,6 +40,7 @@ public class BNBiomes {
 	public static final RegistryObject<Biome> OLD_FUNGIWOODS = BIOMES.register("old_fungiwoods", () -> new OldFungiwoodsBiome());
 	public static final RegistryObject<Biome> NETHER_GRASSLANDS = BIOMES.register("nether_grasslands", () -> new NetherGrasslandsBiome());
 	public static final RegistryObject<Biome> HADEAN_JUNGLE = BIOMES.register("hadean_jungle", () -> new HadeanJungleBiome());
+	public static final RegistryObject<Biome> BONE_REEF = BIOMES.register("bone_reef", () -> new BoneReefBiome());
 	
 	
 	public static void registerBiomeTypes() {
@@ -56,6 +59,7 @@ public class BNBiomes {
 		BiomeDictionary.addTypes(OLD_FUNGIWOODS.get(), BiomeDictionary.Type.NETHER);
 		BiomeDictionary.addTypes(NETHER_GRASSLANDS.get(), BiomeDictionary.Type.NETHER);
 		BiomeDictionary.addTypes(HADEAN_JUNGLE.get(), BiomeDictionary.Type.NETHER);
+		BiomeDictionary.addTypes(BONE_REEF.get(), BiomeDictionary.Type.NETHER);
 
 	}
 	
@@ -87,15 +91,15 @@ public class BNBiomes {
 		((OldFungiwoodsBiome) OLD_FUNGIWOODS.get()).finalizeFeatures();
 		((NetherGrasslandsBiome) NETHER_GRASSLANDS.get()).finalizeFeatures();
 		((HadeanJungleBiome) HADEAN_JUNGLE.get()).finalizeFeatures();
+		((BoneReefBiome) BONE_REEF.get()).finalizeFeatures();
+		
+		Biomes.CRIMSON_FOREST.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(BNEntities.FIREFLY.get(), 50, 2, 4));
+		Biomes.WARPED_FOREST.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(BNEntities.FIREFLY.get(), 50, 2, 4));
 	}
 	
 	public static void runCompat() {
-		boolean bop = false;
-		boolean byg = false;
-		
-		if (ModList.get().isLoaded("biomesoplenty"))
-			bop = true;
-		
+		boolean bop = (ModList.get().isLoaded("biomesoplenty"));
+				
 		if (bop)
 			BiomesoPlenty.registerBiomesToBOP();
 		

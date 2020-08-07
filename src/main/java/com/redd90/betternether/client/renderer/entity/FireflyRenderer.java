@@ -30,7 +30,7 @@ import net.minecraft.util.math.vector.Vector3f;
 
 public class FireflyRenderer extends MobRenderer<FireflyEntity, AgeableModel<FireflyEntity>> {
 	private static final ResourceLocation TEXTURE = new ResourceLocation(BetterNether.MODID, "textures/entity/firefly.png");
-	private static final RenderType LAYER = BNRenderType.getFirefly(TEXTURE); // getEntityTranslucent getEntityNoOutline getBeaconBeam getEntityShadow
+	private static final RenderType LAYER = RenderType.getEntityTranslucent(TEXTURE); // getEntityTranslucent getEntityNoOutline getBeaconBeam getEntityShadow
 	private static final int LIT = 15728880;
 
 	public FireflyRenderer(EntityRendererManager renderManager)

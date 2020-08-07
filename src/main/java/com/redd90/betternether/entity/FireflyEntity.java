@@ -6,6 +6,7 @@ import java.util.EnumSet;
 import java.util.HashSet;
 import java.util.Random;
 
+import com.redd90.betternether.compatibility.BiomesoPlenty;
 import com.redd90.betternether.registry.BNBlocks;
 import com.redd90.betternether.registry.BNEntities;
 import com.redd90.betternether.registry.BNSounds;
@@ -52,6 +53,7 @@ import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.ModList;
 
 @SuppressWarnings("deprecation")
 public class FireflyEntity extends AnimalEntity implements IFlyingAnimal {
@@ -615,6 +617,8 @@ public class FireflyEntity extends AnimalEntity implements IFlyingAnimal {
 			FLOWERS.add(BNBlocks.INK_BUSH_SEED.get());
 			//FLOWERS.add(BNBlocks.POTTED_PLANT.get());
 			FLOWERS.add(Blocks.NETHER_WART);
+			if (ModList.get().isLoaded("biomesoplenty"))
+				FLOWERS.add(BiomesoPlenty.getBurningBlossom());
 		}
 		
 		public static boolean canMonsterSpawn(EntityType<? extends FireflyEntity> type, IWorld world, SpawnReason spawnReason, BlockPos pos, Random rand)

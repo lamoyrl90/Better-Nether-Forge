@@ -44,6 +44,7 @@ import com.redd90.betternether.block.BlackAppleBlock;
 import com.redd90.betternether.block.BlackAppleSeedBlock;
 import com.redd90.betternether.block.BlackBushBlock;
 import com.redd90.betternether.block.BlackVineBlock;
+import com.redd90.betternether.block.BoneMushroomBlock;
 import com.redd90.betternether.block.BrownMushroomCapBlock;
 import com.redd90.betternether.block.CincinnasiteFireBowlBlock;
 import com.redd90.betternether.block.CincinnasiteFrameBlock;
@@ -64,8 +65,12 @@ import com.redd90.betternether.block.GrayMoldBlock;
 import com.redd90.betternether.block.IRenderTypeable;
 import com.redd90.betternether.block.InkBushBlock;
 import com.redd90.betternether.block.InkBushSeedBlock;
+import com.redd90.betternether.block.JellyfishMushroomBlock;
+import com.redd90.betternether.block.JellyfishMushroomSaplingBlock;
 import com.redd90.betternether.block.LucisMushroomBlock;
 import com.redd90.betternether.block.LucisSporeBlock;
+import com.redd90.betternether.block.LumabusSeedBlock;
+import com.redd90.betternether.block.LumabusVineBlock;
 import com.redd90.betternether.block.MagmaFlowerBlock;
 import com.redd90.betternether.block.MushroomFirBlock;
 import com.redd90.betternether.block.MushroomFirSaplingBlock;
@@ -136,6 +141,14 @@ public class BNBlocks {
 	public static final RegistryObject<Block> CINCINNASITE_LANTERN_SMALL = registerBlock("cincinnasite_lantern_small", () -> new SmallCincinnasiteLanternBlock(BNBlockProperties.CINCINNASITE_LANTERN));
 		
 	public static final RegistryObject<Block> BONE_BLOCK = registerBlock("bone_block", () -> new BNBlock(BNBlockProperties.BONE));
+	public static final RegistryObject<Block> BONE_STAIRS = registerBlock("bone_stairs", () -> new BNStairsBlock(() -> BONE_BLOCK.get().getDefaultState(), BNBlockProperties.BONE));
+	public static final RegistryObject<Block> BONE_SLAB = registerBlock("bone_slab", () -> new BNSlabBlock(BNBlockProperties.BONE));
+	public static final RegistryObject<Block> BONE_TILE = registerBlock("bone_tile", () -> new BNBlock(BNBlockProperties.BONE));
+	public static final RegistryObject<Block> BONE_BUTTON = registerBlock("bone_button", () -> new BNButtonBlock(false, BNBlockProperties.BONE));
+	public static final RegistryObject<Block> BONE_PLATE = registerBlock("bone_plate", () -> new BNPlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BNBlockProperties.BONE));
+	public static final RegistryObject<Block> BONE_WALL = registerBlock("bone_wall", () -> new BNWall(BNBlockProperties.BONE));
+	public static final RegistryObject<Block> BONE_REED_DOOR = registerBlock("bone_reed_door", () -> new BNDoorBlock(BNBlockProperties.BONE));
+	public static final RegistryObject<Block> BONE_CINCINNASITE_DOOR = registerBlock("bone_cincinnasite_door", () -> new BNDoorBlock(BNBlockProperties.CINCINNASITE));
 	
 	public static final RegistryObject<Block> QUARTZ_GLASS = registerBlock("quartz_glass", () -> new BNGlassBlock(BNBlockProperties.QUARTZ_GLASS));
 	public static final RegistryObject<Block> QUARTZ_GLASS_FRAMED = registerBlock("quartz_glass_framed", () -> new BNGlassBlock(BNBlockProperties.CINCINNASITE));
@@ -158,6 +171,7 @@ public class BNBlocks {
 	public static final RegistryObject<Block> BLACKSTONE_SPELEOTHEM = registerBlock("blackstone_speleothem", () -> new SpeleothemBlock(AbstractBlock.Properties.from(Blocks.BLACKSTONE).setRequiresTool()));
 	public static final RegistryObject<Block> BASALT_SPELEOTHEM = registerBlock("basalt_speleothem", () -> new SpeleothemBlock(AbstractBlock.Properties.from(Blocks.BASALT).setRequiresTool()));
 	public static final RegistryObject<Block> QUARTZ_SPELEOTHEM = registerBlock("quartz_speleothem", () -> new SpeleothemBlock(AbstractBlock.Properties.from(Blocks.QUARTZ_BLOCK).setRequiresTool()));
+	public static final RegistryObject<Block> BONE_SPELEOTHEM = registerBlock("bone_speleothem", () -> new SpeleothemBlock(AbstractBlock.Properties.from(Blocks.BONE_BLOCK).setRequiresTool()));
 	
 	public static final RegistryObject<Block> OBSIDIAN_BRICKS = registerBlock("obsidian_bricks", () -> new BNBlock(BNBlockProperties.OBSIDIAN));
 	public static final RegistryObject<Block> OBSIDIAN_BRICKS_STAIRS = registerBlock("obsidian_bricks_stairs", () -> new BNStairsBlock(() -> OBSIDIAN_BRICKS.get().getDefaultState(), BNBlockProperties.OBSIDIAN));
@@ -180,6 +194,7 @@ public class BNBlocks {
 	public static final RegistryObject<Block> BLUE_OBSIDIAN_GLASS_PANE = registerBlock("blue_obsidian_glass_pane", () -> new BNGlassPaneBlock(BNBlockProperties.BLUE_OBSIDIAN_GLASS));
 	
 	public static final RegistryObject<Block> NETHERRACK_MOSS = registerBlock("netherrack_moss", () -> new NetherrackMossBlock());
+	public static final RegistryObject<Block> MUSHROOM_GRASS = registerBlock("mushroom_grass", () -> new BNBlock(AbstractBlock.Properties.from(Blocks.WARPED_NYLIUM)));
 	public static final RegistryObject<Block> WILLOW_FRUIT = registerBlockEdible("willow_fruit", () -> new WillowFruitBlock(), BNFood.WILLOW_FRUIT);
 	public static final RegistryObject<Block> WILLOW_BRANCH = registerBlock("willow_branch", () -> new WillowBranchBlock());
 	public static final RegistryObject<Block> WILLOW_BRANCH_NATURAL = registerBlockNoItem("willow_branch_natural", () -> new WillowBranchNaturalBlock());
@@ -192,6 +207,7 @@ public class BNBlocks {
 	public static final RegistryObject<Block> SMOKER = registerBlock("smoker", () -> new SmokerBlock());
 	public static final RegistryObject<Block> BLACK_BUSH = registerBlock("black_bush", () -> new BlackBushBlock());
 	public static final RegistryObject<Block> SWAMP_GRASS = registerBlock("swamp_grass", () -> new BNGrassBlock());
+	public static final RegistryObject<Block> BONE_GRASS = registerBlock("bone_grass", () -> new BNGrassBlock());
 	public static final RegistryObject<Block> WALL_MUSHROOM_BROWN = registerBlock("wall_mushroom_brown", () -> new WallPlantBlock(MaterialColor.BROWN));
 	public static final RegistryObject<Block> WALL_MUSHROOM_RED = registerBlock("wall_mushroom_red", () -> new WallPlantBlock(MaterialColor.RED));
 	public static final RegistryObject<Block> WALL_MOSS = registerBlock("wall_moss", () -> new WallPlantBlock(MaterialColor.RED));
@@ -323,6 +339,12 @@ public class BNBlocks {
 	
 	public static final RegistryObject<Block> BLOOMING_VINE = registerBlock("blooming_vine", () -> new BNVineBlock(MaterialColor.PURPLE));
 	public static final RegistryObject<Block> SOUL_GRASS = registerBlock("soul_grass", () -> new BNGrassBlock());
+	public static final RegistryObject<Block> BONE_MUSHROOM = registerBlock("bone_mushroom", () -> new BoneMushroomBlock());
+	
+	public static final RegistryObject<Block> JELLYFISH_MUSHROOM = registerBlockNoItem("jellyfish_mushroom", () -> new JellyfishMushroomBlock());
+	public static final RegistryObject<Block> JELLYFISH_MUSHROOM_SAPLING = registerBlock("jellyfish_mushroom_sapling", () -> new JellyfishMushroomSaplingBlock());
+	public static final RegistryObject<Block> LUMABUS_VINE = registerBlockNoItem("lumabus_vine", () -> new LumabusVineBlock());
+	public static final RegistryObject<Block> LUMABUS_SEED = registerBlock("lumabus_seed", () -> new LumabusSeedBlock());
 	
 	
 	private static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<? extends B> supplier) {
@@ -348,15 +370,12 @@ public class BNBlocks {
 			if (blockEntry instanceof IRenderTypeable) {
 				switch (((IRenderTypeable) blockEntry).getRenderLayer()){
 				case CUTOUT :
-					BetterNether.LOGGER.debug("Setting the render layer of " + blockEntry.getRegistryName().getPath() + " to cutout");
 					RenderTypeLookup.setRenderLayer(blockEntry, RenderType.getCutout()::equals);
 					break;
 				case TRANSLUCENT :
-					BetterNether.LOGGER.debug("Setting the render layer of " + blockEntry.getRegistryName().getPath() + " to translucent");
 					RenderTypeLookup.setRenderLayer(blockEntry, RenderType.getTranslucent()::equals);
 					break;
 				case CUTOUT_MIPPED :
-					BetterNether.LOGGER.debug("Setting the render layer of " + blockEntry.getRegistryName().getPath() + " to mipped cutout");
 					RenderTypeLookup.setRenderLayer(blockEntry, RenderType.getCutoutMipped()::equals);
 					break;
 				default:

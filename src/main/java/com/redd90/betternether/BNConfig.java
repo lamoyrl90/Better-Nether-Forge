@@ -62,7 +62,7 @@ public class BNConfig {
 			
 			WallFactor = builder
 					.translation(BetterNether.MODID + ".config.WallFactor")
-					.define("Additional factor for wall features", 4.0F);
+					.define("Additional factor for wall features", 4.0f);
 		}
 	}
 	

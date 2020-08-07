@@ -7,6 +7,8 @@ import com.redd90.betternether.world.gen.feature.StrayLavaFixer;
 import com.redd90.betternether.world.gen.feature.StructureFrequencyConfig;
 import com.redd90.betternether.world.gen.feature.NetherrackFeature;
 import com.redd90.betternether.world.gen.feature.decorations.BlackstoneSpikeFeature;
+import com.redd90.betternether.world.gen.feature.decorations.BoneStalactiteFeature;
+import com.redd90.betternether.world.gen.feature.decorations.BoneStalagmiteFeature;
 import com.redd90.betternether.world.gen.feature.decorations.ObsidianCrystalFeature;
 import com.redd90.betternether.world.gen.feature.decorations.StalactiteFeature;
 import com.redd90.betternether.world.gen.feature.decorations.StalagmiteFeature;
@@ -16,6 +18,7 @@ import com.redd90.betternether.world.gen.feature.plants.BlackAppleFeature;
 import com.redd90.betternether.world.gen.feature.plants.BlackBushFeature;
 import com.redd90.betternether.world.gen.feature.plants.BlackVineFeature;
 import com.redd90.betternether.world.gen.feature.plants.BloomingVineFeature;
+import com.redd90.betternether.world.gen.feature.plants.BoneGrassFeature;
 import com.redd90.betternether.world.gen.feature.plants.BrownMushroomWallFeature;
 import com.redd90.betternether.world.gen.feature.plants.EggPlantFeature;
 import com.redd90.betternether.world.gen.feature.plants.EyeFeature;
@@ -24,9 +27,11 @@ import com.redd90.betternether.world.gen.feature.plants.GiantMoldFeature;
 import com.redd90.betternether.world.gen.feature.plants.GoldenVineFeature;
 import com.redd90.betternether.world.gen.feature.plants.GrayMoldFeature;
 import com.redd90.betternether.world.gen.feature.plants.InkBushFeature;
+import com.redd90.betternether.world.gen.feature.plants.JellyfishMushroomFeature;
 import com.redd90.betternether.world.gen.feature.plants.JungleMossFeature;
 import com.redd90.betternether.world.gen.feature.plants.JunglePlantFeature;
 import com.redd90.betternether.world.gen.feature.plants.LucisFeature;
+import com.redd90.betternether.world.gen.feature.plants.LumabusVineFeature;
 import com.redd90.betternether.world.gen.feature.plants.MagmaFlowerFeature;
 import com.redd90.betternether.world.gen.feature.plants.MediumBrownMushroomFeature;
 import com.redd90.betternether.world.gen.feature.plants.MediumRedMushroomFeature;
@@ -47,6 +52,7 @@ import com.redd90.betternether.world.gen.feature.plants.SwampGrassFeature;
 import com.redd90.betternether.world.gen.feature.plants.VanillaMushroomsFeature;
 import com.redd90.betternether.world.gen.feature.plants.WallMossFeature;
 import com.redd90.betternether.world.gen.feature.plants.WartSeedFeature;
+import com.redd90.betternether.world.gen.feature.structure.BoneReefStructure;
 import com.redd90.betternether.world.gen.feature.structure.OldBrownMushroomStructure;
 import com.redd90.betternether.world.gen.feature.structure.OldRedMushroomStructure;
 import com.redd90.betternether.world.gen.feature.trees.WillowTreeFeature;
@@ -113,11 +119,17 @@ public class BNFeatures {
 	public static final RegistryObject<Feature<NoFeatureConfig>> EGG_PLANT = FEATURES.register("egg_plant", () -> new EggPlantFeature(NoFeatureConfig.field_236558_a_));
 	public static final RegistryObject<Feature<NoFeatureConfig>> EYE_VINE = FEATURES.register("eye_vine", () -> new EyeFeature(NoFeatureConfig.field_236558_a_));
 	public static final RegistryObject<Feature<NoFeatureConfig>> BLOOMING_VINE = FEATURES.register("blooming_vine", () -> new BloomingVineFeature(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> BONE_GRASS = FEATURES.register("bone_grass", () -> new BoneGrassFeature(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> BONE_STALACTITE = FEATURES.register("bone_stalactite", () -> new BoneStalactiteFeature(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> BONE_STALAGMITE = FEATURES.register("bone_stalagmite", () -> new BoneStalagmiteFeature(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> JELLYFISH_MUSHROOM = FEATURES.register("jellyfish_mushroom", () -> new JellyfishMushroomFeature(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> LUMABUS_VINE = FEATURES.register("lumabus_vine", () -> new LumabusVineFeature(NoFeatureConfig.field_236558_a_));
 	
 	/// STRUCTURES ///
 	
 	public static final RegistryObject<Structure<StructureFrequencyConfig>> OLD_BROWN_MUSHROOM = register("old_brown_mushroom", new OldBrownMushroomStructure(StructureFrequencyConfig.codec), GenerationStage.Decoration.SURFACE_STRUCTURES);
 	public static final RegistryObject<Structure<StructureFrequencyConfig>> OLD_RED_MUSHROOM = register("old_red_mushroom", new OldRedMushroomStructure(StructureFrequencyConfig.codec), GenerationStage.Decoration.SURFACE_STRUCTURES);
+	public static final RegistryObject<Structure<StructureFrequencyConfig>> BONE_REEF = register("bone_reef", new BoneReefStructure(StructureFrequencyConfig.codec), GenerationStage.Decoration.SURFACE_STRUCTURES);
 
     private static <T extends Structure<?>> RegistryObject<T> register(String name, T structure, GenerationStage.Decoration decoration) {
         Structure.field_236365_a_.put(BetterNether.MODID + ":" + name, structure);

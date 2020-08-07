@@ -201,6 +201,7 @@ public class BNBlockLootTables extends BNLootTableProvider {
 		registerSelfDrop(BNBlocks.STALAGNATE_DOOR.get());
 		
 		registerLeaves(BNBlocks.RUBEUS_LEAVES.get(), BNBlocks.RUBEUS_SAPLING.get(), .05f, .0666f, .08333f, .1f);
+		registerSelfDrop(BNBlocks.RUBEUS_CONE.get());
 		registerSelfDrop(BNBlocks.RUBEUS_LOG.get());
 		registerSelfDrop(BNBlocks.RUBEUS_BARK.get());
 		registerSelfDrop(BNBlocks.RUBEUS_LOG_HALF_STRIPPED.get());

@@ -20,6 +20,7 @@ import com.redd90.betternether.registry.BNEntities;
 import com.redd90.betternether.registry.BNFeatures;
 import com.redd90.betternether.registry.BNItems;
 import com.redd90.betternether.registry.BNPlacements;
+import com.redd90.betternether.registry.BNStructurePieceTypes;
 import com.redd90.betternether.registry.BNTags;
 
 @Mod(BetterNether.MODID)
@@ -41,6 +42,7 @@ public class BetterNether
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BNConfig.COMMON_SPEC); 
         
         BNTags.init();
+        
         BNBlocks.BLOCKS.register(modEventBus);
         BNItems.ITEMS.register(modEventBus);
         BNEntities.ENTITIES.register(modEventBus);
@@ -49,6 +51,7 @@ public class BetterNether
         BNFeatures.STRUCTURES.register(modEventBus);
         BNCarvers.CARVERS.register(modEventBus);
         BNBiomes.BIOMES.register(modEventBus);
+        
     }
 
     private void clientSetup(final FMLClientSetupEvent event)
@@ -59,6 +62,7 @@ public class BetterNether
 
 	private void commonSetup(final FMLCommonSetupEvent event) {
     	
+		BNStructurePieceTypes.init();
     	BNEntities.finalizeEntities();
     	BNBiomes.registerBiomeTypes();
     	BNBiomes.injectBiomeFeatures();

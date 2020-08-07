@@ -71,6 +71,10 @@ public class BNBiomeFeatures {
 		biome.func_235063_a_(BNFeatures.OLD_BROWN_MUSHROOM.get().func_236391_a_(new StructureFrequencyConfig(Math.round(PLANT_COUNT*density))));
 	}
 	
+	public static void addBoneReefs(Biome biome, float density) {
+		biome.func_235063_a_(BNFeatures.BONE_REEF.get().func_236391_a_(new StructureFrequencyConfig(Math.round(DECOR_COUNT*density))));
+	}
+	
 	public static void addNetherCactii(Biome biome, float density) {
 		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
 				BNFeatures.NETHER_CACTUS.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
@@ -109,6 +113,17 @@ public class BNBiomeFeatures {
 	public static void addStalactites(Biome biome, float density) {
 		biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, 
 				BNFeatures.STALACTITES.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(ceilingDecorPlacement(density)));
+	}
+	
+	public static void addBoneStalagmites(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, 
+				BNFeatures.BONE_STALAGMITE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorDecorPlacement(density)));
+	}
+	public static void addBoneStalactites(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, 
+				BNFeatures.BONE_STALACTITE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 				.withPlacement(ceilingDecorPlacement(density)));
 	}
 
@@ -340,6 +355,24 @@ public class BNBiomeFeatures {
 	public static void addBloomingVines(Biome biome, float density) {
 		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
 				BNFeatures.BLOOMING_VINE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(ceilingPlantPlacement(density)));
+	}
+	
+	public static void addBoneGrass(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.BONE_GRASS.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
+	}
+	
+	public static void addJellyfishMushrooms(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.JELLYFISH_MUSHROOM.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
+	}
+	
+	public static void addLumabusVines(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.LUMABUS_VINE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 				.withPlacement(ceilingPlantPlacement(density)));
 	}
 }
