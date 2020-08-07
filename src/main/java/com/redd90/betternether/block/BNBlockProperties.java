@@ -23,12 +23,11 @@ public class BNBlockProperties {
 	public static final AbstractBlock.Properties WART_WOOD = AbstractBlock.Properties.create(Material.NETHER_WOOD, MaterialColor.RED).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.HYPHAE);
 	public static final AbstractBlock.Properties RUBEUS = AbstractBlock.Properties.create(Material.NETHER_WOOD, MaterialColor.MAGENTA).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD);
 	public static final AbstractBlock.Properties RUBEUS_LEAVES = AbstractBlock.Properties.create(Material.LEAVES, MaterialColor.LIGHT_BLUE).hardnessAndResistance(0.2F).tickRandomly().sound(SoundType.PLANT).notSolid();
-	public static final AbstractBlock.Properties JELLYFISH_MUSHROOM = AbstractBlock.Properties.create(Material.NETHER_WOOD, MaterialColor.CYAN).hardnessAndResistance(0.1F).sound(SoundType.FUNGUS).notSolid().setLightLevel((state)->{return 13;});
+	public static final AbstractBlock.Properties JELLYFISH_MUSHROOM = AbstractBlock.Properties.create(Material.NETHER_WOOD, MaterialColor.CYAN).hardnessAndResistance(0.1F).sound(SoundType.FUNGUS).notSolid();//.setLightLevel((state)->{return 13;});
 	
 	public static final AbstractBlock.Properties BONE = AbstractBlock.Properties.from(Blocks.BONE_BLOCK);
 	public static final AbstractBlock.Properties BASALT = AbstractBlock.Properties.from(Blocks.BASALT);
 	public static final AbstractBlock.Properties CINCINNASITE = AbstractBlock.Properties.create(Material.IRON, MaterialColor.YELLOW).setRequiresTool().hardnessAndResistance(5.0F, 6.0F).sound(SoundType.METAL);
-	public static final AbstractBlock.Properties CINCINNASITE_LANTERN = AbstractBlock.Properties.create(Material.IRON, MaterialColor.YELLOW).setRequiresTool().hardnessAndResistance(5.0F, 6.0F).sound(SoundType.METAL).setLightLevel((state)->{return 15;});
 	public static final AbstractBlock.Properties NETHERRACK = AbstractBlock.Properties.from(Blocks.NETHERRACK);
 	public static final AbstractBlock.Properties NETHER_BRICKS = AbstractBlock.Properties.from(Blocks.NETHER_BRICKS);
 	public static final AbstractBlock.Properties QUARTZ_GLASS = AbstractBlock.Properties.from(Blocks.GLASS);

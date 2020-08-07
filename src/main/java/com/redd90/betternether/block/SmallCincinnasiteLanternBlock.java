@@ -110,4 +110,9 @@ public class SmallCincinnasiteLanternBlock extends BNBlock {
 		}
 		return null;
 	}
+	
+    @Override
+    public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) {
+        return 15;
+    }
 }

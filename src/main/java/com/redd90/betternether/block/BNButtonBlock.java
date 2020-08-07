@@ -1,9 +1,12 @@
 package com.redd90.betternether.block;
 
 import net.minecraft.block.AbstractButtonBlock;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 public class BNButtonBlock extends AbstractButtonBlock implements IRenderTypeable {
 
@@ -37,4 +40,8 @@ public class BNButtonBlock extends AbstractButtonBlock implements IRenderTypeabl
 		return isOn ? onSound : offSound;
 	}
 	
+    @Override
+    public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) {
+        return 0;
+    }
 }

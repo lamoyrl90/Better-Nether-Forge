@@ -129,4 +129,9 @@ public class JellyfishMushroomBlock extends BNBlock {
 		}
 		super.onEntityWalk(world, pos, entity);
 	}
+	
+    @Override
+    public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) {
+        return 13;
+    }
 }

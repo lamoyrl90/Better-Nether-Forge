@@ -1,6 +1,9 @@
 package com.redd90.betternether.block;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 public class BNBlock extends Block implements IRenderTypeable {
 
@@ -21,4 +24,8 @@ public class BNBlock extends Block implements IRenderTypeable {
 		return layer;
 	}
 
+    @Override
+    public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) {
+        return 0;
+    }
 }

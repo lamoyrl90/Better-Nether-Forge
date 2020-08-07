@@ -77,6 +77,7 @@ import com.redd90.betternether.block.MushroomFirSaplingBlock;
 import com.redd90.betternether.block.NetherCactusBlock;
 import com.redd90.betternether.block.NetherMyceliumBlock;
 import com.redd90.betternether.block.BNGrassBlock;
+import com.redd90.betternether.block.BNLightBlock;
 import com.redd90.betternether.block.NetherReedsBlock;
 import com.redd90.betternether.block.NetherrackMossBlock;
 import com.redd90.betternether.block.OrangeMushroomBlock;
@@ -129,7 +130,7 @@ public class BNBlocks {
 	public static final RegistryObject<Block> CINCINNASITE_SLAB = registerBlock("cincinnasite_slab", () -> new BNSlabBlock(BNBlockProperties.CINCINNASITE));
 	public static final RegistryObject<Block> CINCINNASITE_BUTTON = registerBlock("cincinnasite_button", () -> new BNButtonBlock(false, BNBlockProperties.CINCINNASITE));
 	public static final RegistryObject<Block> CINCINNASITE_PLATE = registerBlock("cincinnasite_plate", () -> new BNPlateBlock(PressurePlateBlock.Sensitivity.MOBS, BNBlockProperties.CINCINNASITE));
-	public static final RegistryObject<Block> CINCINNASITE_LANTERN = registerBlock("cincinnasite_lantern", () -> new BNBlock(BNBlockProperties.CINCINNASITE_LANTERN));
+	public static final RegistryObject<Block> CINCINNASITE_LANTERN = registerBlock("cincinnasite_lantern", () -> new BNLightBlock(BNBlockProperties.CINCINNASITE));
 	public static final RegistryObject<Block> CINCINNASITE_TILE_LARGE = registerBlock("cincinnasite_tile_large", () -> new BNBlock(BNBlockProperties.CINCINNASITE));
 	public static final RegistryObject<Block> CINCINNASITE_TILE_SMALL = registerBlock("cincinnasite_tile_small", () -> new BNBlock(BNBlockProperties.CINCINNASITE));
 	public static final RegistryObject<Block> CINCINNASITE_CARVED = registerBlock("cincinnasite_carved", () -> new BNBlock(BNBlockProperties.CINCINNASITE));
@@ -139,7 +140,7 @@ public class BNBlocks {
 	public static final RegistryObject<Block> CINCINNASITE_BARS = registerBlock("cincinnasite_bars", () -> new BNPaneBlock(BNBlockProperties.CINCINNASITE));
 	public static final RegistryObject<Block> CINCINNASITE_PEDESTAL = registerBlock("cincinnasite_pedestal", () -> new CincinnasitePedestalBlock(BNBlockProperties.CINCINNASITE));
 	public static final RegistryObject<Block> CINCINNASITE_FRAME = registerBlock("cincinnasite_frame", () -> new CincinnasiteFrameBlock(BNBlockProperties.CINCINNASITE));
-	public static final RegistryObject<Block> CINCINNASITE_LANTERN_SMALL = registerBlock("cincinnasite_lantern_small", () -> new SmallCincinnasiteLanternBlock(BNBlockProperties.CINCINNASITE_LANTERN));
+	public static final RegistryObject<Block> CINCINNASITE_LANTERN_SMALL = registerBlock("cincinnasite_lantern_small", () -> new SmallCincinnasiteLanternBlock(BNBlockProperties.CINCINNASITE));
 		
 	public static final RegistryObject<Block> BONE_BLOCK = registerBlock("bone_block", () -> new BNBlock(BNBlockProperties.BONE));
 	public static final RegistryObject<Block> BONE_STAIRS = registerBlock("bone_stairs", () -> new BNStairsBlock(() -> BONE_BLOCK.get().getDefaultState(), BNBlockProperties.BONE));
