@@ -19,7 +19,7 @@ public class BNBlockProperties {
 	public static final AbstractBlock.Properties GIANT_MOLD = AbstractBlock.Properties.create(Material.NETHER_WOOD, MaterialColor.GRAY).hardnessAndResistance(2.0F, 2.0F).sound(SoundType.FUNGUS);
 	public static final AbstractBlock.Properties MUSHROOM_FIR = AbstractBlock.Properties.create(Material.NETHER_WOOD, MaterialColor.BLUE).hardnessAndResistance(2.0F, 2.0F).sound(SoundType.FUNGUS);
 	public static final AbstractBlock.Properties NETHER_WART = AbstractBlock.Properties.from(Blocks.NETHER_WART_BLOCK);
-	public static final AbstractBlock.Properties WART_WOOD = AbstractBlock.Properties.create(Material.NETHER_WOOD, MaterialColor.RED).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD);
+	public static final AbstractBlock.Properties WART_WOOD = AbstractBlock.Properties.create(Material.NETHER_WOOD, MaterialColor.RED).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.FUNGUS);
 	public static final AbstractBlock.Properties RUBEUS = AbstractBlock.Properties.create(Material.NETHER_WOOD, MaterialColor.MAGENTA).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD);
 	public static final AbstractBlock.Properties RUBEUS_LEAVES = AbstractBlock.Properties.create(Material.LEAVES, MaterialColor.LIGHT_BLUE).hardnessAndResistance(0.2F).tickRandomly().sound(SoundType.PLANT).notSolid();
 	public static final AbstractBlock.Properties JELLYFISH_MUSHROOM = AbstractBlock.Properties.create(Material.NETHER_WOOD, MaterialColor.CYAN).hardnessAndResistance(0.1F).sound(SoundType.FUNGUS).notSolid().setLightLevel((state)->{return 13;});
@@ -34,6 +34,7 @@ public class BNBlockProperties {
 	public static final AbstractBlock.Properties BLUE_OBSIDIAN = AbstractBlock.Properties.create(Material.ROCK, MaterialColor.BLUE).setRequiresTool().hardnessAndResistance(50.0F, 1200.0F);
 	public static final AbstractBlock.Properties BLUE_OBSIDIAN_GLASS = AbstractBlock.Properties.create(Material.ROCK, MaterialColor.BLUE).setRequiresTool().hardnessAndResistance(50.0F, 1200.0F).sound(SoundType.GLASS).notSolid();//.setAllowsSpawn(BNBlockProperties::neverAllowSpawn).setOpaque(BNBlockProperties::isntSolid).setSuffocates(BNBlockProperties::isntSolid).setBlocksVision(BNBlockProperties::isntSolid);
 	
+	public static final AbstractBlock.Properties SOUL_SANDSTONE = AbstractBlock.Properties.from(Blocks.SANDSTONE);
 	
 	
 	public static AbstractBlock.Properties Vine(MaterialColor color) {

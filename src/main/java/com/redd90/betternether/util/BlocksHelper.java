@@ -64,8 +64,8 @@ public class BlocksHelper
 	
 	public static boolean isNetherGround(BlockState state)
 	{
-		return isNetherrack(state) || isSoulSand(state) || isNetherMycelium(state)|| isNylium(state);
-		//return state.isIn(NetherTags.NETHER_GROUND);
+		//return isNetherrack(state) || isSoulSand(state) || isNetherMycelium(state)|| isNylium(state);
+		return state.isIn(BNTags.Blocks.NETHER_GROUND);
 	}
 	
 	public static boolean isNetherGroundMagma(BlockState state)

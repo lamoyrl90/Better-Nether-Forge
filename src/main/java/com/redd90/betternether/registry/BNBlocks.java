@@ -90,6 +90,7 @@ import com.redd90.betternether.block.SmallCincinnasiteLanternBlock;
 import com.redd90.betternether.block.SmallEyeballBlock;
 import com.redd90.betternether.block.SmokerBlock;
 import com.redd90.betternether.block.SoulFarmlandBlock;
+import com.redd90.betternether.block.SoulSandstoneBlock;
 import com.redd90.betternether.block.SoulVeinBlock;
 import com.redd90.betternether.block.SpeleothemBlock;
 import com.redd90.betternether.block.StalagnateBlock;
@@ -345,6 +346,8 @@ public class BNBlocks {
 	public static final RegistryObject<Block> JELLYFISH_MUSHROOM_SAPLING = registerBlock("jellyfish_mushroom_sapling", () -> new JellyfishMushroomSaplingBlock());
 	public static final RegistryObject<Block> LUMABUS_VINE = registerBlockNoItem("lumabus_vine", () -> new LumabusVineBlock());
 	public static final RegistryObject<Block> LUMABUS_SEED = registerBlock("lumabus_seed", () -> new LumabusSeedBlock());
+	
+	public static final RegistryObject<Block> SOUL_SANDSTONE = registerBlock("soul_sandstone", () -> new SoulSandstoneBlock());
 	
 	
 	private static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<? extends B> supplier) {

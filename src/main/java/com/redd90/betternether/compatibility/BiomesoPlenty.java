@@ -2,6 +2,7 @@ package com.redd90.betternether.compatibility;
 
 import com.redd90.betternether.registry.BNBiomes;
 import com.redd90.betternether.registry.BNEntities;
+import com.redd90.betternether.util.SpawnUtils;
 
 import biomesoplenty.api.biome.BOPBiomes;
 import biomesoplenty.api.block.BOPBlocks;
@@ -21,9 +22,11 @@ public class BiomesoPlenty {
 		BOPClimates.NETHER.addBiome(5, BNBiomes.NETHER_GRASSLANDS.get());
 		BOPClimates.NETHER.addBiome(5, BNBiomes.OBSIDIAN_CHASM.get());	
 		BOPClimates.NETHER.addBiome(5, BNBiomes.BONE_REEF.get());	
-		BOPClimates.NETHER.addBiome(5, BNBiomes.OLD_WARPED_WOODS.get());	
+		BOPClimates.NETHER.addBiome(5, BNBiomes.OLD_WARPED_WOODS.get());
+		BOPClimates.NETHER.addBiome(5, BNBiomes.WART_FOREST.get());		
 		
 		BOPBiomes.undergrowth.get().addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(BNEntities.FIREFLY.get(), 50, 2, 4));
+	
 	}
 	
 	public static Block getBurningBlossom() {

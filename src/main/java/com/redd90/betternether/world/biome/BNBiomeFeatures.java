@@ -75,6 +75,18 @@ public class BNBiomeFeatures {
 				.withPlacement(floorPlantPlacement(density)));
 	}
 	
+	public static void addWartTrees(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.WART_TREE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
+	}
+	
+	public static void addWartDeadwood(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.WART_DEADWOOD.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
+	}
+	
 	public static void addWarpedRoots(Biome biome, float density) {
 		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
 				BNFeatures.WARPED_ROOTS.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)

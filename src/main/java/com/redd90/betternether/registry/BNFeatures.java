@@ -54,10 +54,12 @@ import com.redd90.betternether.world.gen.feature.plants.WallMossFeature;
 import com.redd90.betternether.world.gen.feature.plants.WarpedFungusFeature;
 import com.redd90.betternether.world.gen.feature.plants.WarpedRootsFeature;
 import com.redd90.betternether.world.gen.feature.plants.WartSeedFeature;
+import com.redd90.betternether.world.gen.feature.plants.WartTreeFeature;
 import com.redd90.betternether.world.gen.feature.structure.BigWarpedTreeStructure;
 import com.redd90.betternether.world.gen.feature.structure.BoneReefStructure;
 import com.redd90.betternether.world.gen.feature.structure.OldBrownMushroomStructure;
 import com.redd90.betternether.world.gen.feature.structure.OldRedMushroomStructure;
+import com.redd90.betternether.world.gen.feature.structure.WartDeadwoodStructure;
 import com.redd90.betternether.world.gen.feature.trees.WillowTreeFeature;
 
 import net.minecraft.world.gen.feature.Feature;
@@ -133,6 +135,8 @@ public class BNFeatures {
 	public static final RegistryObject<Feature<NoFeatureConfig>> OLD_BROWN_MUSHROOM = FEATURES.register("old_brown_mushroom", () -> new OldBrownMushroomStructure(NoFeatureConfig.field_236558_a_));
 	public static final RegistryObject<Feature<NoFeatureConfig>> TWISTING_VINES = FEATURES.register("twisting_vines", () -> new TwistingVinesFeature(NoFeatureConfig.field_236558_a_));
 	public static final RegistryObject<Feature<NoFeatureConfig>> WARPED_ROOTS = FEATURES.register("warped_roots", () -> new WarpedRootsFeature(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> WART_TREE = FEATURES.register("wart_tree", () -> new WartTreeFeature(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> WART_DEADWOOD = FEATURES.register("wart_deadwood", () -> new WartDeadwoodStructure(NoFeatureConfig.field_236558_a_));
 	
 	/// STRUCTURES ///
 	

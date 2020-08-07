@@ -29,13 +29,15 @@ import net.minecraft.world.server.ServerWorld;
 public class SpawnUtils {
 	
 	//Probably best to limit this to biomes with wood available
-	private static final Set<Biome> safeNetherSpawnBiomes = ImmutableSet.of(
+	public static final Set<Biome> safeNetherSpawnBiomes = ImmutableSet.of(
 			Biomes.CRIMSON_FOREST, 
 			Biomes.WARPED_FOREST,
 			BNBiomes.SWELTERING_SWAMPLAND.get(),
 			BNBiomes.FUNGAL_WOODLANDS.get(),
 			BNBiomes.OLD_FUNGIWOODS.get(),
-			BNBiomes.HADEAN_JUNGLE.get()
+			BNBiomes.HADEAN_JUNGLE.get(),
+			BNBiomes.OLD_WARPED_WOODS.get(),
+			BNBiomes.WART_FOREST.get()
 			);
 	
 	public static ServerWorld getNether(ServerPlayerEntity serverplayer) {
