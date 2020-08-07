@@ -9,6 +9,7 @@ import net.minecraft.block.material.MaterialColor;
 public class BNBlockProperties {
 
 	public static final AbstractBlock.Properties STALAGNATE = AbstractBlock.Properties.create(Material.NETHER_WOOD, MaterialColor.LIME_TERRACOTTA).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD);
+	public static final AbstractBlock.Properties REEDS = AbstractBlock.Properties.create(Material.NETHER_WOOD, MaterialColor.LIGHT_BLUE).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD);
 	public static final AbstractBlock.Properties WILLOW = AbstractBlock.Properties.create(Material.NETHER_WOOD, MaterialColor.RED_TERRACOTTA).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD);
 	public static final AbstractBlock.Properties WILLOW_BRANCH = AbstractBlock.Properties.create(Material.PLANTS, MaterialColor.BROWN).zeroHardnessAndResistance().sound(SoundType.PLANT).notSolid().doesNotBlockMovement();
 	public static final AbstractBlock.Properties WILLOW_LEAVES = AbstractBlock.Properties.create(Material.LEAVES, MaterialColor.RED_TERRACOTTA).hardnessAndResistance(0.2F).tickRandomly().sound(SoundType.PLANT).notSolid();
@@ -25,9 +26,11 @@ public class BNBlockProperties {
 	public static final AbstractBlock.Properties JELLYFISH_MUSHROOM = AbstractBlock.Properties.create(Material.NETHER_WOOD, MaterialColor.CYAN).hardnessAndResistance(0.1F).sound(SoundType.FUNGUS).notSolid().setLightLevel((state)->{return 13;});
 	
 	public static final AbstractBlock.Properties BONE = AbstractBlock.Properties.from(Blocks.BONE_BLOCK);
+	public static final AbstractBlock.Properties BASALT = AbstractBlock.Properties.from(Blocks.BASALT);
 	public static final AbstractBlock.Properties CINCINNASITE = AbstractBlock.Properties.create(Material.IRON, MaterialColor.YELLOW).setRequiresTool().hardnessAndResistance(5.0F, 6.0F).sound(SoundType.METAL);
 	public static final AbstractBlock.Properties CINCINNASITE_LANTERN = AbstractBlock.Properties.create(Material.IRON, MaterialColor.YELLOW).setRequiresTool().hardnessAndResistance(5.0F, 6.0F).sound(SoundType.METAL).setLightLevel((state)->{return 15;});
 	public static final AbstractBlock.Properties NETHERRACK = AbstractBlock.Properties.from(Blocks.NETHERRACK);
+	public static final AbstractBlock.Properties NETHER_BRICKS = AbstractBlock.Properties.from(Blocks.NETHER_BRICKS);
 	public static final AbstractBlock.Properties QUARTZ_GLASS = AbstractBlock.Properties.from(Blocks.GLASS);
 	public static final AbstractBlock.Properties OBSIDIAN = AbstractBlock.Properties.from(Blocks.OBSIDIAN);
 	public static final AbstractBlock.Properties OBSIDIAN_GLASS = AbstractBlock.Properties.from(Blocks.OBSIDIAN).sound(SoundType.GLASS).notSolid();//.setAllowsSpawn(BNBlockProperties::neverAllowSpawn).setOpaque(BNBlockProperties::isntSolid).setSuffocates(BNBlockProperties::isntSolid).setBlocksVision(BNBlockProperties::isntSolid);

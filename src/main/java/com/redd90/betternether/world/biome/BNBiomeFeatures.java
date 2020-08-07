@@ -63,6 +63,12 @@ public class BNBiomeFeatures {
 		return BNPlacements.WALL_SEARCH.get().configure(new DensityConfig(density*DECOR_COUNT*WALL_FACTOR));
 	}
 	
+	public static void addScatteredFloorStructures(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, 
+				BNFeatures.SCATTERED_FLOOR_STRUCTURES.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorDecorPlacement(density)));
+	}
+	
 	public static void addBoneReefs(Biome biome, float density) {
 		biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, 
 				BNFeatures.BONE_REEF.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)

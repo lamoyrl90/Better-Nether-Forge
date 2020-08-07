@@ -228,6 +228,16 @@ public class BNBlocks {
 	public static final RegistryObject<Block> WILLOW_DOOR = registerBlock("willow_door", () -> new BNDoorBlock(BNBlockProperties.WILLOW));
 	public static final RegistryObject<Block> WILLOW_SAPLING = registerBlock("willow_sapling", () -> new WillowSaplingBlock());
 	
+	public static final RegistryObject<Block> REEDS_BLOCK = registerBlock("reeds_block", () -> new BNPillarBlock(BNBlockProperties.REEDS));
+	public static final RegistryObject<Block> REEDS_STAIRS = registerBlock("reeds_stairs", () -> new BNStairsBlock(() -> REEDS_BLOCK.get().getDefaultState(), BNBlockProperties.REEDS));
+	public static final RegistryObject<Block> REEDS_SLAB = registerBlock("reeds_slab", () -> new BNSlabBlock(BNBlockProperties.REEDS));
+	public static final RegistryObject<Block> REEDS_FENCE = registerBlock("reeds_fence", () -> new BNFenceBlock(BNBlockProperties.REEDS));
+	public static final RegistryObject<Block> REEDS_GATE = registerBlock("reeds_gate", () -> new BNGateBlock(BNBlockProperties.REEDS));
+	public static final RegistryObject<Block> REEDS_BUTTON = registerBlock("reeds_button", () -> new BNButtonBlock(true, BNBlockProperties.REEDS));
+	public static final RegistryObject<Block> REEDS_PLATE = registerBlock("reeds_plate", () -> new BNPlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BNBlockProperties.REEDS));
+	public static final RegistryObject<Block> REEDS_TRAPDOOR = registerBlock("reeds_trapdoor", () -> new BNTrapdoorBlock(BNBlockProperties.REEDS));
+	public static final RegistryObject<Block> REEDS_DOOR = registerBlock("reeds_door", () -> new BNDoorBlock(BNBlockProperties.REEDS));
+	
 	public static final RegistryObject<Block> NETHER_MYCELIUM = registerBlock("nether_mycelium", () -> new NetherMyceliumBlock());
 	
 	public static final RegistryObject<Block> MUSHROOM_STEM = registerBlock("mushroom_stem", () -> new StemBlock(BNBlockProperties.MUSHROOM));
@@ -348,6 +358,43 @@ public class BNBlocks {
 	public static final RegistryObject<Block> LUMABUS_SEED = registerBlock("lumabus_seed", () -> new LumabusSeedBlock());
 	
 	public static final RegistryObject<Block> SOUL_SANDSTONE = registerBlock("soul_sandstone", () -> new SoulSandstoneBlock());
+	public static final RegistryObject<Block> SOUL_SANDSTONE_CUT = registerBlock("soul_sandstone_cut", () -> new SoulSandstoneBlock());
+	public static final RegistryObject<Block> SOUL_SANDSTONE_SMOOTH = registerBlock("soul_sandstone_smooth", () -> new BNBlock(BNBlockProperties.SOUL_SANDSTONE));
+	public static final RegistryObject<Block> SOUL_SANDSTONE_CHISELED = registerBlock("soul_sandstone_chiseled", () -> new BNBlock(BNBlockProperties.SOUL_SANDSTONE));
+	
+	public static final RegistryObject<Block> SOUL_SANDSTONE_STAIRS = registerBlock("soul_sandstone_stairs", () -> new BNStairsBlock(() -> SOUL_SANDSTONE.get().getDefaultState(), BNBlockProperties.SOUL_SANDSTONE));
+	public static final RegistryObject<Block> SOUL_SANDSTONE_CUT_STAIRS = registerBlock("soul_sandstone_cut_stairs", () -> new BNStairsBlock(() -> SOUL_SANDSTONE_CUT.get().getDefaultState(), BNBlockProperties.SOUL_SANDSTONE));
+	public static final RegistryObject<Block> SOUL_SANDSTONE_SMOOTH_STAIRS = registerBlock("soul_sandstone_smooth_stairs", () -> new BNStairsBlock(() -> SOUL_SANDSTONE_SMOOTH.get().getDefaultState(), BNBlockProperties.SOUL_SANDSTONE));
+	
+	public static final RegistryObject<Block> SOUL_SANDSTONE_SLAB = registerBlock("soul_sandstone_slab", () -> new BNSlabBlock(BNBlockProperties.SOUL_SANDSTONE));
+	public static final RegistryObject<Block> SOUL_SANDSTONE_CUT_SLAB = registerBlock("soul_sandstone_cut_slab", () -> new BNSlabBlock(BNBlockProperties.SOUL_SANDSTONE));
+	public static final RegistryObject<Block> SOUL_SANDSTONE_SMOOTH_SLAB = registerBlock("soul_sandstone_smooth_slab", () -> new BNSlabBlock(BNBlockProperties.SOUL_SANDSTONE));
+	
+	public static final RegistryObject<Block> SOUL_SANDSTONE_WALL = registerBlock("soul_sandstone_wall", () -> new BNWall(BNBlockProperties.SOUL_SANDSTONE));
+	
+	public static final RegistryObject<Block> BASALT_BRICKS = registerBlock("basalt_bricks", () -> new BNBlock(BNBlockProperties.BASALT));
+	public static final RegistryObject<Block> BASALT_BRICKS_STAIRS = registerBlock("basalt_bricks_stairs", () -> new BNStairsBlock(() -> BASALT_BRICKS.get().getDefaultState(), BNBlockProperties.BASALT));
+	public static final RegistryObject<Block> BASALT_BRICKS_SLAB = registerBlock("basalt_bricks_slab", () -> new BNSlabBlock(BNBlockProperties.BASALT));
+	public static final RegistryObject<Block> BASALT_BRICKS_WALL = registerBlock("basalt_bricks_wall", () -> new BNWall(BNBlockProperties.BASALT));
+	
+	public static final RegistryObject<Block> ROOF_TILE_REEDS = registerBlock("roof_tile_reeds", () -> new BNBlock(BNBlockProperties.REEDS));
+	public static final RegistryObject<Block> ROOF_TILE_REEDS_STAIRS = registerBlock("roof_tile_reeds_stairs", () -> new BNStairsBlock(() -> ROOF_TILE_REEDS.get().getDefaultState(), BNBlockProperties.REEDS));
+	public static final RegistryObject<Block> ROOF_TILE_REEDS_SLAB = registerBlock("roof_tile_reeds_slab", () -> new BNSlabBlock(BNBlockProperties.REEDS));
+	public static final RegistryObject<Block> ROOF_TILE_STALAGNATE = registerBlock("roof_tile_stalagnate", () -> new BNBlock(BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> ROOF_TILE_STALAGNATE_STAIRS = registerBlock("roof_tile_stalagnate_stairs", () -> new BNStairsBlock(() -> ROOF_TILE_STALAGNATE.get().getDefaultState(), BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> ROOF_TILE_STALAGNATE_SLAB = registerBlock("roof_tile_stalagnate_slab", () -> new BNSlabBlock(BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> ROOF_TILE_NETHER_BRICKS = registerBlock("roof_tile_nether_bricks", () -> new BNBlock(BNBlockProperties.NETHER_BRICKS));
+	public static final RegistryObject<Block> ROOF_TILE_NETHER_BRICKS_STAIRS = registerBlock("roof_tile_nether_bricks_stairs", () -> new BNStairsBlock(() -> ROOF_TILE_NETHER_BRICKS.get().getDefaultState(), BNBlockProperties.NETHER_BRICKS));
+	public static final RegistryObject<Block> ROOF_TILE_NETHER_BRICKS_SLAB = registerBlock("roof_tile_nether_bricks_slab", () -> new BNSlabBlock(BNBlockProperties.NETHER_BRICKS));
+	public static final RegistryObject<Block> ROOF_TILE_CINCINNASITE = registerBlock("roof_tile_cincinnasite", () -> new BNBlock(BNBlockProperties.CINCINNASITE));
+	public static final RegistryObject<Block> ROOF_TILE_CINCINNASITE_STAIRS = registerBlock("roof_tile_cincinnasite_stairs", () -> new BNStairsBlock(() -> ROOF_TILE_CINCINNASITE.get().getDefaultState(), BNBlockProperties.CINCINNASITE));
+	public static final RegistryObject<Block> ROOF_TILE_CINCINNASITE_SLAB = registerBlock("roof_tile_cincinnasite_slab", () -> new BNSlabBlock(BNBlockProperties.CINCINNASITE));
+	public static final RegistryObject<Block> ROOF_TILE_WILLOW = registerBlock("roof_tile_willow", () -> new BNBlock(BNBlockProperties.WILLOW));
+	public static final RegistryObject<Block> ROOF_TILE_WILLOW_STAIRS = registerBlock("roof_tile_willow_stairs", () -> new BNStairsBlock(() -> ROOF_TILE_WILLOW.get().getDefaultState(), BNBlockProperties.WILLOW));
+	public static final RegistryObject<Block> ROOF_TILE_WILLOW_SLAB = registerBlock("roof_tile_willow_slab", () -> new BNSlabBlock(BNBlockProperties.WILLOW));
+	public static final RegistryObject<Block> ROOF_TILE_WART = registerBlock("roof_tile_wart", () -> new BNBlock(BNBlockProperties.WART_WOOD));
+	public static final RegistryObject<Block> ROOF_TILE_WART_STAIRS = registerBlock("roof_tile_wart_stairs", () -> new BNStairsBlock(() -> ROOF_TILE_WART.get().getDefaultState(), BNBlockProperties.WART_WOOD));
+	public static final RegistryObject<Block> ROOF_TILE_WART_SLAB = registerBlock("roof_tile_wart_slab", () -> new BNSlabBlock(BNBlockProperties.WART_WOOD));
 	
 	
 	private static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<? extends B> supplier) {

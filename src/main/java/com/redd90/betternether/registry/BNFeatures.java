@@ -65,6 +65,7 @@ import com.redd90.betternether.world.gen.feature.structure.CrimsonGlowingTreeStr
 import com.redd90.betternether.world.gen.feature.structure.CrimsonPinewoodStructure;
 import com.redd90.betternether.world.gen.feature.structure.OldBrownMushroomStructure;
 import com.redd90.betternether.world.gen.feature.structure.OldRedMushroomStructure;
+import com.redd90.betternether.world.gen.feature.structure.ScatteredFloorStructures;
 import com.redd90.betternether.world.gen.feature.structure.WartDeadwoodStructure;
 import com.redd90.betternether.world.gen.feature.trees.WillowTreeFeature;
 
@@ -149,6 +150,8 @@ public class BNFeatures {
 	public static final RegistryObject<Feature<NoFeatureConfig>> WART_BUSH = FEATURES.register("wart_bush", () -> new WartBushFeature(NoFeatureConfig.field_236558_a_));
 	public static final RegistryObject<Feature<NoFeatureConfig>> CRIMSON_GLOWING_TREE = FEATURES.register("crimson_glowing_tree", () -> new CrimsonGlowingTreeStructure(NoFeatureConfig.field_236558_a_));
 	public static final RegistryObject<Feature<NoFeatureConfig>> CRIMSON_PINEWOOD = FEATURES.register("crimson_pinewood", () -> new CrimsonPinewoodStructure(NoFeatureConfig.field_236558_a_));
+	
+	public static final RegistryObject<Feature<NoFeatureConfig>> SCATTERED_FLOOR_STRUCTURES = FEATURES.register("scattered_floor_structure", () -> new ScatteredFloorStructures(NoFeatureConfig.field_236558_a_));
 	
 	/// STRUCTURES ///
 	
