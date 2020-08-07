@@ -314,14 +314,14 @@ public class BNBlocks {
 	public static final RegistryObject<Block> STALAGNATE_LOG = registerBlock("stalagnate_log", () -> new BNLogStrippable(BNBlockProperties.STALAGNATE, STRIPPED_LOG_STALAGNATE.get()));
 	public static final RegistryObject<Block> STALAGNATE_BARK = registerBlock("stalagnate_bark", () -> new BNLogStrippable(BNBlockProperties.STALAGNATE, STRIPPED_BARK_STALAGNATE.get()));
 	public static final RegistryObject<Block> STALAGNATE_PLANKS = registerBlock("stalagnate_planks", () -> new BNBlock(BNBlockProperties.STALAGNATE));
-	public static final RegistryObject<Block> STALAGNATE_STAIRS = registerBlock("stalagnate_stairs", () -> new BNStairsBlock(() -> STALAGNATE_PLANKS.get().getDefaultState(), BNBlockProperties.STALAGNATE));
-	public static final RegistryObject<Block> STALAGNATE_SLAB = registerBlock("stalagnate_slab", () -> new BNSlabBlock(BNBlockProperties.STALAGNATE));
-	public static final RegistryObject<Block> STALAGNATE_FENCE = registerBlock("stalagnate_fence", () -> new BNFenceBlock(BNBlockProperties.STALAGNATE));
-	public static final RegistryObject<Block> STALAGNATE_GATE = registerBlock("stalagnate_gate", () -> new BNGateBlock(BNBlockProperties.STALAGNATE));
-	public static final RegistryObject<Block> STALAGNATE_BUTTON = registerBlock("stalagnate_button", () -> new BNButtonBlock(true, BNBlockProperties.STALAGNATE));
-	public static final RegistryObject<Block> STALAGNATE_PLATE = registerBlock("stalagnate_plate", () -> new BNPlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BNBlockProperties.STALAGNATE));
-	public static final RegistryObject<Block> STALAGNATE_TRAPDOOR = registerBlock("stalagnate_trapdoor", () -> new BNTrapdoorBlock(BNBlockProperties.STALAGNATE));
-	public static final RegistryObject<Block> STALAGNATE_DOOR = registerBlock("stalagnate_door", () -> new BNDoorBlock(BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> STALAGNATE_STAIRS = registerBlock("stalagnate_planks_stairs", () -> new BNStairsBlock(() -> STALAGNATE_PLANKS.get().getDefaultState(), BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> STALAGNATE_SLAB = registerBlock("stalagnate_planks_slab", () -> new BNSlabBlock(BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> STALAGNATE_FENCE = registerBlock("stalagnate_planks_fence", () -> new BNFenceBlock(BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> STALAGNATE_GATE = registerBlock("stalagnate_planks_gate", () -> new BNGateBlock(BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> STALAGNATE_BUTTON = registerBlock("stalagnate_planks_button", () -> new BNButtonBlock(true, BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> STALAGNATE_PLATE = registerBlock("stalagnate_planks_plate", () -> new BNPlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> STALAGNATE_TRAPDOOR = registerBlock("stalagnate_planks_trapdoor", () -> new BNTrapdoorBlock(BNBlockProperties.STALAGNATE));
+	public static final RegistryObject<Block> STALAGNATE_DOOR = registerBlock("stalagnate_planks_door", () -> new BNDoorBlock(BNBlockProperties.STALAGNATE));
 	
 	public static final RegistryObject<Block> EGG_PLANT = registerBlock("egg_plant", () -> new EggPlantBlock());
 	

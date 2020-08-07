@@ -1,6 +1,9 @@
 {
 	"replace": "false",
 	"values": [
-		"betternether:cincinnasite_wall"
+		"betternether:cincinnasite_wall",
+		"betternether:bone_wall",
+		"betternether:basalt_bricks_wall",
+		"betternether:soul_sandstone_wall"
 	]
 }
