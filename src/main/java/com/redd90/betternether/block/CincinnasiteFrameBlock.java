@@ -10,7 +10,8 @@ import net.minecraftforge.api.distmarker.Dist;
 public class CincinnasiteFrameBlock extends BNBlock {
 
 	public CincinnasiteFrameBlock(Properties properties) {
-		super(properties.notSolid());
+		super(properties);
+		this.properties.notSolid();
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 	}
 

@@ -26,7 +26,8 @@ public class StalagnateBlock extends StemBlock implements IGrowable {
 	private static final int MAX_SIZE = 25;
 	
 	public StalagnateBlock() {
-		super(BNBlockProperties.STALAGNATE.tickRandomly().notSolid());
+		super(BNBlockProperties.stalagnate());
+		this.properties.tickRandomly().notSolid();
 		this.setDefaultState(this.stateContainer.getBaseState().with(SHAPE, TripleShape.MIDDLE));
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 	}

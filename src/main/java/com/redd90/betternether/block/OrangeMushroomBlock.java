@@ -21,7 +21,7 @@ public class OrangeMushroomBlock extends BNPlantBlock {
 
 	public OrangeMushroomBlock()
 	{
-		super(BNBlockProperties.Plant(MaterialColor.ORANGE_TERRACOTTA, true).hardnessAndResistance(0.5f));
+		super(BNBlockProperties.plant(MaterialColor.ORANGE_TERRACOTTA, true).hardnessAndResistance(0.5f));
 	}
 
 	@Override

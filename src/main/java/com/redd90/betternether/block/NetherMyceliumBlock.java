@@ -26,7 +26,8 @@ public class NetherMyceliumBlock extends BNBlock {
 	public static final BooleanProperty IS_BLUE = BooleanProperty.create("blue");
 	
 	public NetherMyceliumBlock() {
-		super(BNBlockProperties.NETHERRACK.tickRandomly().sound(SoundType.NYLIUM));
+		super(BNBlockProperties.netherrack());
+		this.properties.tickRandomly().sound(SoundType.NYLIUM);
 		this.setDefaultState(getStateContainer().getBaseState().with(IS_BLUE, false));
 	}
 

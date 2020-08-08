@@ -32,7 +32,7 @@ public class MushroomFirBlock extends BNBlock{
 	
 	public MushroomFirBlock()
 	{
-		super(BNBlockProperties.MUSHROOM_FIR.notSolid().tickRandomly());
+		super(BNBlockProperties.mushroomFir().notSolid().tickRandomly());
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 	}
 	

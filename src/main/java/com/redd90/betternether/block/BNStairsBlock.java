@@ -27,8 +27,4 @@ public class BNStairsBlock extends StairsBlock implements IRenderTypeable {
 		return layer;
 	}
 
-    @Override
-    public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) {
-        return 0;
-    }
 }

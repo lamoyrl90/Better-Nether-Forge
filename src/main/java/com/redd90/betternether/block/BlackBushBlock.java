@@ -28,7 +28,7 @@ public class BlackBushBlock extends BNBlock implements IGrowable {
 	
 	public BlackBushBlock()
 	{
-		super(BNBlockProperties.Plant(MaterialColor.BLACK, false));
+		super(BNBlockProperties.plant(MaterialColor.BLACK, false));
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 	}
 	

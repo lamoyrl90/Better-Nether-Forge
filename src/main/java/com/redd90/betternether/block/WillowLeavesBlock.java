@@ -25,7 +25,7 @@ public class WillowLeavesBlock extends BNBlock {
 	
 	public WillowLeavesBlock()
 	{
-		super(BNBlockProperties.WILLOW_LEAVES);
+		super(BNBlockProperties.willowLeaves());
 		this.setDefaultState(getStateContainer().getBaseState().with(FACING, Direction.UP).with(NATURAL, true));
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 	}

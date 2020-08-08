@@ -48,8 +48,7 @@ public class LucisSporeBlock extends BNBlock implements IGrowable {
 					.zeroHardnessAndResistance()
 					.notSolid()
 					.doesNotBlockMovement()
-					.tickRandomly()
-					.setLightLevel((state) -> {return 7;}));
+					.tickRandomly());
 			this.setDefaultState(getStateContainer().getBaseState().with(FACING, Direction.NORTH));
 		}
 
@@ -146,4 +145,9 @@ public class LucisSporeBlock extends BNBlock implements IGrowable {
 			}
 			return null;
 		}
+		
+	    @Override
+	    public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) {
+	        return 7;
+	    }
 }

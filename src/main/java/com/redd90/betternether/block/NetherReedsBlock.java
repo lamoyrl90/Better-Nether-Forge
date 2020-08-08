@@ -25,7 +25,7 @@ public class NetherReedsBlock extends BNBlock {
 	
 	public NetherReedsBlock()
 	{
-		super(BNBlockProperties.Plant(MaterialColor.CYAN, false));
+		super(BNBlockProperties.plant(MaterialColor.CYAN, false));
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 		this.setDefaultState(getStateContainer().getBaseState().with(TOP, true).with(AGE, 0));
 	}

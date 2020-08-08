@@ -36,7 +36,7 @@ public class BoneMushroomBlock extends BNBlock {
 
 	public BoneMushroomBlock()
 	{
-		super(BNBlockProperties.Plant(MaterialColor.LIME, false));
+		super(BNBlockProperties.plant(MaterialColor.LIME, false));
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 		this.setDefaultState(getStateContainer().getBaseState().with(AGE, 0).with(FACING, Direction.UP));
 	}

@@ -36,7 +36,7 @@ public class WallPlantBlock extends BNBlock {
 	
 	public WallPlantBlock(MaterialColor color)
 	{
-		super(BNBlockProperties.Plant(color, false));
+		super(BNBlockProperties.plant(color, false));
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 	}
 	

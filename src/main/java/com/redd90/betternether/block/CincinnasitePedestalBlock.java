@@ -12,7 +12,8 @@ public class CincinnasitePedestalBlock extends BNBlock {
 	private static final VoxelShape SHAPE = Block.makeCuboidShape(2, 0, 2, 14, 16, 14);
 	
 	public CincinnasitePedestalBlock(Properties properties) {
-		super(properties.notSolid());
+		super(properties);
+		this.properties.notSolid();
 	}
 
 	@Override

@@ -27,7 +27,7 @@ public class LumabusSeedBlock extends BNBlock implements IGrowable {
 	
 	public LumabusSeedBlock()
 	{
-		super(BNBlockProperties.Plant(MaterialColor.RED, false));
+		super(BNBlockProperties.plant(MaterialColor.RED, false));
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 	}
 	

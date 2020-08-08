@@ -27,7 +27,8 @@ public class SpeleothemBlock extends BNBlock {
 	
 	public SpeleothemBlock(AbstractBlock.Properties properties)
 	{
-		super(properties.notSolid());
+		super(properties);
+		this.properties.notSolid();
 		this.setDefaultState(getStateContainer().getBaseState().with(SIZE, 0));
 	}
 	

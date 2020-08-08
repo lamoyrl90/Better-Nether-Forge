@@ -36,7 +36,7 @@ public class BNVineBlock extends BNBlock implements IGrowable {
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_0_15;
 	
 	public BNVineBlock(MaterialColor color) {
-		super(BNBlockProperties.Vine(color));
+		super(BNBlockProperties.vine(color));
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 		this.setDefaultState(getStateContainer().getBaseState().with(BOTTOM, true));
 	}

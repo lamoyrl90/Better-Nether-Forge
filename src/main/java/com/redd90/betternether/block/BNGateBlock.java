@@ -16,8 +16,4 @@ public class BNGateBlock extends FenceGateBlock implements IRenderTypeable {
 		return BNRenderLayer.SOLID;
 	}
 
-    @Override
-    public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) {
-        return 0;
-    }
 }

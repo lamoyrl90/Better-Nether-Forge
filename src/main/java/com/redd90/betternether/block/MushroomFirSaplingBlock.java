@@ -26,7 +26,7 @@ public class MushroomFirSaplingBlock extends BNBlock implements IGrowable {
 	private static final MushroomFirFeature STRUCTURE = new MushroomFirFeature();
 
 	public MushroomFirSaplingBlock() {
-		super(BNBlockProperties.Plant(MaterialColor.BLUE, false));
+		super(BNBlockProperties.plant(MaterialColor.BLUE, false));
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 	}
 

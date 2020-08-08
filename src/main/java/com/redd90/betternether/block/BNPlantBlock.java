@@ -25,7 +25,7 @@ public class BNPlantBlock extends BNBlock implements IGrowable {
 	
 	public BNPlantBlock(MaterialColor color, Boolean solid)
 	{
-		super(BNBlockProperties.Plant(color, solid));
+		super(BNBlockProperties.plant(color, solid));
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 	}
 	

@@ -47,7 +47,8 @@ public class WartSeedBlock extends BNBlock implements IGrowable {
 	
 	public WartSeedBlock()
 	{
-		super(BNBlockProperties.NETHER_WART.tickRandomly().notSolid());
+		super(BNBlockProperties.netherWart());
+		this.properties.tickRandomly().notSolid();
 		this.setDefaultState(getStateContainer().getBaseState().with(FACING, Direction.UP));
 	}
 	

@@ -28,7 +28,7 @@ public class JellyfishMushroomSaplingBlock extends BNBlock implements IGrowable 
 	private static final JellyfishMushroomFeature STRUCTURE = new JellyfishMushroomFeature(NoFeatureConfig.field_236558_a_);
 	
 	public JellyfishMushroomSaplingBlock() {
-		super(BNBlockProperties.Plant(MaterialColor.CYAN, false).setLightLevel((state)->{return 3;}));
+		super(BNBlockProperties.plant(MaterialColor.CYAN, false));
 	}
 
 	@Override
@@ -75,5 +75,10 @@ public class JellyfishMushroomSaplingBlock extends BNBlock implements IGrowable 
 		if (canUseBonemeal(world, random, pos, state))
 			grow(world, random, pos, state);
 	}
+	
+    @Override
+    public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) {
+        return 3;
+    }
 
 }

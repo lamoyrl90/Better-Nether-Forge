@@ -15,7 +15,8 @@ import net.minecraft.world.server.ServerWorld;
 public class NetherrackMossBlock extends BNBlock {
 
 	public NetherrackMossBlock() {
-		super(BNBlockProperties.NETHERRACK.tickRandomly().sound(SoundType.NYLIUM));
+		super(BNBlockProperties.netherrack());
+		this.properties.tickRandomly().sound(SoundType.NYLIUM);
 	}
 	
 	private boolean canSpread(IWorld world, BlockPos pos) {

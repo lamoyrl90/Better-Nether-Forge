@@ -40,8 +40,4 @@ public class BNButtonBlock extends AbstractButtonBlock implements IRenderTypeabl
 		return isOn ? onSound : offSound;
 	}
 	
-    @Override
-    public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) {
-        return 0;
-    }
 }

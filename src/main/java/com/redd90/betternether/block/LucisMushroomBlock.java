@@ -33,7 +33,6 @@ public class LucisMushroomBlock extends BNBlock {
 				.harvestTool(ToolType.AXE)
 				.sound(SoundType.WOOD)
 				.hardnessAndResistance(1F)
-				.setLightLevel((state) -> {return 15;})
 				.notSolid());
 		this.setDefaultState(getStateContainer().getBaseState().with(FACING, Direction.NORTH).with(SHAPE, EnumShape.CORNER));
 	}
@@ -67,6 +66,11 @@ public class LucisMushroomBlock extends BNBlock {
 		return V_SHAPE;
 	}
 
+    @Override
+    public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) {
+        return 15;
+    }
+	
 	public enum EnumShape implements IStringSerializable
 	{
 		CORNER("corner"),

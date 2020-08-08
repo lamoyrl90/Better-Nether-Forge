@@ -27,7 +27,7 @@ public class SmokerBlock extends BNBlock {
 	
 	public SmokerBlock()
 	{
-		super(BNBlockProperties.SMOKER);
+		super(BNBlockProperties.smoker());
 		this.setDefaultState(this.stateContainer.getBaseState().with(SHAPE, TripleShape.TOP));
 	}
 	

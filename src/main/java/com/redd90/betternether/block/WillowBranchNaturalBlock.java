@@ -24,7 +24,7 @@ public class WillowBranchNaturalBlock extends BNBlock {
 	
 	
 	public WillowBranchNaturalBlock() {
-		super(BNBlockProperties.WILLOW_BRANCH);
+		super(BNBlockProperties.willowBranch());
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 		this.setDefaultState(getStateContainer().getBaseState().with(SHAPE, WillowBranchShape.MIDDLE));
 	}

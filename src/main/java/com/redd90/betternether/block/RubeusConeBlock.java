@@ -16,7 +16,8 @@ public class RubeusConeBlock extends BNBlock {
 	private static final VoxelShape SHAPE = Block.makeCuboidShape(3, 3, 3, 13, 16, 13);
 	
 	public RubeusConeBlock() {
-		super(BNBlockProperties.STALAGNATE.notSolid().setLightLevel((state) -> {return 15;}));
+		super(BNBlockProperties.stalagnate());
+		this.properties.notSolid();
 	}
 
 	@Override
@@ -39,5 +40,10 @@ public class RubeusConeBlock extends BNBlock {
 		else
 			return Blocks.AIR.getDefaultState();
 	}
+	
+    @Override
+    public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) {
+        return 15;
+    }
 	
 }

@@ -28,8 +28,14 @@ public class GeyserBlock extends BNBlock {
 	
 	public GeyserBlock()
 	{
-		super(Block.Properties.from(Blocks.NETHERRACK).notSolid().setLightLevel((state)->{return 10;}));
+		super(Block.Properties.from(Blocks.NETHERRACK));
+		this.properties.notSolid();
 	}
+	
+    @Override
+    public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) {
+        return 10;
+    }
 	
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader view, BlockPos pos, ISelectionContext ePos)

@@ -18,7 +18,8 @@ public class WillowTrunkBlock extends BNBlock {
 	
 	public WillowTrunkBlock()
 	{
-		super(BNBlockProperties.WILLOW.notSolid());
+		super(BNBlockProperties.willow());
+		this.properties.notSolid();
 		this.setDefaultState(getStateContainer().getBaseState().with(SHAPE, TripleShape.TOP));
 	}
 	

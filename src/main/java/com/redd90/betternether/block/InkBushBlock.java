@@ -23,7 +23,7 @@ import net.minecraft.world.World;
 public class InkBushBlock extends BNPlantBlock {
 
 	public InkBushBlock() {
-		super(BNBlockProperties.Plant(MaterialColor.BLACK, false));
+		super(BNBlockProperties.plant(MaterialColor.BLACK, false));
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 	}
 

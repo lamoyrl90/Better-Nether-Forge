@@ -22,7 +22,7 @@ public class BNGrassBlock extends BNBlock {
 	
 	public BNGrassBlock()
 	{
-		super(BNBlockProperties.Plant(MaterialColor.GRAY_TERRACOTTA, false));
+		super(BNBlockProperties.plant(MaterialColor.GRAY_TERRACOTTA, false));
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 	}
 	

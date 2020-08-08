@@ -27,7 +27,7 @@ public class RubeusLeavesBlock extends BNBlock {
 	
 	public RubeusLeavesBlock()
 	{
-		super(BNBlockProperties.RUBEUS_LEAVES);
+		super(BNBlockProperties.rubeusLeaves());
 		this.setDefaultState(this.stateContainer.getBaseState().with(DISTANCE_CUSTOM, 1).with(PERSISTENT, false));
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 	}

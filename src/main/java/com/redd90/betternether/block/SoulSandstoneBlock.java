@@ -14,7 +14,7 @@ public class SoulSandstoneBlock extends BNBlock {
 	
 	public SoulSandstoneBlock()
 	{
-		super(BNBlockProperties.SOUL_SANDSTONE);
+		super(BNBlockProperties.soulSandstone());
 		this.setDefaultState(this.getStateContainer().getBaseState().with(UP, true));
 	}
 	

@@ -22,9 +22,4 @@ public class BNPaneBlock extends PaneBlock implements IRenderTypeable {
 	public BNRenderLayer getRenderLayer() {
 		return layer;
 	}
-	
-    @Override
-    public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) {
-        return 0;
-    }
 }

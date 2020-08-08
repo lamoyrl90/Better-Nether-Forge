@@ -13,7 +13,8 @@ import net.minecraft.world.IBlockReader;
 public class BNGlassPaneBlock extends BNPaneBlock {
 
 	public BNGlassPaneBlock(AbstractBlock.Properties properties) {
-		super(properties.notSolid());
+		super(properties);
+		this.properties.notSolid();
 		this.setRenderLayer(BNRenderLayer.TRANSLUCENT);
 	}
 	

@@ -44,7 +44,8 @@ public class BrownMushroomCapBlock extends BNBlock {
 	
 	public BrownMushroomCapBlock()
 	{
-		super(BNBlockProperties.BROWN_MUSHROOM.notSolid());
+		super(BNBlockProperties.brownMushroom());
+		this.properties.notSolid();
 	}
 	
 	@Override

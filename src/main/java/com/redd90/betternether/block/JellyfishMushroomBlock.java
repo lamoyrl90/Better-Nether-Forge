@@ -1,9 +1,5 @@
 package com.redd90.betternether.block;
 
-import java.util.List;
-import java.util.Random;
-
-import com.google.common.collect.Lists;
 import com.redd90.betternether.block.shapes.TripleShape;
 import com.redd90.betternether.registry.BNBlocks;
 
@@ -13,7 +9,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.loot.LootContext;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.util.Direction;
@@ -33,7 +28,7 @@ public class JellyfishMushroomBlock extends BNBlock {
 	
 	public JellyfishMushroomBlock()
 	{
-		super(BNBlockProperties.JELLYFISH_MUSHROOM);
+		super(BNBlockProperties.jellyfishMushroom());
 		this.setRenderLayer(BNRenderLayer.TRANSLUCENT);
 	}
 	

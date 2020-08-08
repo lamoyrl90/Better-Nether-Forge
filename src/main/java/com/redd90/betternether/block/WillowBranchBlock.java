@@ -22,7 +22,7 @@ public class WillowBranchBlock extends BNBlock {
 	private static final VoxelShape V_SHAPE = Block.makeCuboidShape(4, 0, 4, 12, 16, 12);
 	
 	public WillowBranchBlock() {
-		super(BNBlockProperties.WILLOW_BRANCH);
+		super(BNBlockProperties.willowBranch());
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 	}
 

@@ -19,7 +19,7 @@ public class EyeVineBlock extends BNBlock {
 	protected static final VoxelShape SHAPE = Block.makeCuboidShape(4, 0, 4, 12, 16, 12);
 	
 	public EyeVineBlock() {
-		super(BNBlockProperties.Vine(MaterialColor.RED));
+		super(BNBlockProperties.vine(MaterialColor.RED));
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 	}
 
