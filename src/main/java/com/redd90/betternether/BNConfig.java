@@ -20,6 +20,10 @@ public class BNConfig {
 	public static Integer GlobalPlantCount;
 	public static Integer GlobalDecorationCount;
 	public static Float WallFactor;
+	public static Float ScatteredStructureFrequency;
+	public static Float LavaPyramidFrequency;
+	public static Integer CitySeparation;
+	//public static Float GhastHiveFrequency;
 	
 	static {
 		final Pair<CommonConfig, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(CommonConfig::new);
@@ -32,6 +36,9 @@ public class BNConfig {
 		GlobalPlantCount = COMMON.GlobalPlantCount.get();
 		GlobalDecorationCount = COMMON.GlobalDecorationCount.get();
 		WallFactor = COMMON.WallFactor.get();
+		ScatteredStructureFrequency = COMMON.ScatteredStructureFrequency.get();
+		LavaPyramidFrequency = COMMON.LavaPyramidFrequency.get();
+		CitySeparation = COMMON.CitySeparation.get();
 	}
 	
 	@SubscribeEvent
@@ -46,6 +53,9 @@ public class BNConfig {
 		public final ConfigValue<Integer> GlobalPlantCount;
 		public final ConfigValue<Integer> GlobalDecorationCount;
 		public final ConfigValue<Float> WallFactor;
+		public final ConfigValue<Float> ScatteredStructureFrequency;
+		public final ConfigValue<Float> LavaPyramidFrequency;
+		public final ConfigValue<Integer> CitySeparation;
 		
 		public CommonConfig(ForgeConfigSpec.Builder builder) {
 			NetherSpawn = builder
@@ -62,7 +72,20 @@ public class BNConfig {
 			
 			WallFactor = builder
 					.translation(BetterNether.MODID + ".config.WallFactor")
-					.define("Additional factor for wall features", 4.0f);
+					.define("Extra factor for wall features", 4.0f);
+			
+			ScatteredStructureFrequency = builder
+					.translation(BetterNether.MODID + ".config.ScatteredStructureFrequency")
+					.define("Scattered Structure Frequency", 0.23f);
+
+			LavaPyramidFrequency = builder
+					.translation(BetterNether.MODID + ".config.LavaPyramidFrequency")
+					.define("Lava Pyramid Frequency", 0.03f);
+			
+			CitySeparation = builder
+					.translation(BetterNether.MODID + ".config.LavaPyramidFrequency")
+					.define("Separation of cities", 64);
+
 		}
 	}
 	

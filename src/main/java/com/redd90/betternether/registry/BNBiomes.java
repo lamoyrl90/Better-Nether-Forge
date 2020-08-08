@@ -92,7 +92,11 @@ public class BNBiomes {
 			BNBiomeFeatures.addStalagmites(biome, 0.012f);
 			BNBiomeFeatures.addBlackstoneSpikes(biome, 0.005f);
 			BNBiomeFeatures.addBNOres(biome);
-			BNBiomeFeatures.addScatteredFloorStructures(biome, 0.01f);
+			BNBiomeFeatures.addScatteredFloorStructures(biome);
+			BNBiomeFeatures.addLavaPyramids(biome);
+			BNBiomeFeatures.addGhastHives(biome);
+			
+			biome.func_235063_a_(BNBiomeFeatures.NETHER_CITY);
 		}
 		BetterNether.LOGGER.debug("Global biome features successfully added...");
 		

@@ -42,8 +42,7 @@ public class RespawnStatueBlock extends BNBlock {
 	public static final BooleanProperty TOP = BooleanProperty.create("top");
 	
 	public RespawnStatueBlock() {
-		super(BNBlockProperties.cincinnasite());
-		this.properties.notSolid();
+		super(BNBlockProperties.cincinnasite().notSolid());
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 		this.setDefaultState(getStateContainer().getBaseState().with(FACING, Direction.NORTH).with(TOP, false));
 	}

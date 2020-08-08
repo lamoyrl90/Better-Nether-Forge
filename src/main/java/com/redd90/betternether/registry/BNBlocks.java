@@ -30,6 +30,7 @@ import com.redd90.betternether.block.BNOreBlock;
 import com.redd90.betternether.block.BNPaneBlock;
 import com.redd90.betternether.block.BNPillarBlock;
 import com.redd90.betternether.block.BNPlateBlock;
+import com.redd90.betternether.block.BNPotBlock;
 import com.redd90.betternether.block.BNSlabBlock;
 import com.redd90.betternether.block.BNStairsBlock;
 import com.redd90.betternether.block.BNTrapdoorBlock;
@@ -81,6 +82,7 @@ import com.redd90.betternether.block.BNLightBlock;
 import com.redd90.betternether.block.NetherReedsBlock;
 import com.redd90.betternether.block.NetherrackMossBlock;
 import com.redd90.betternether.block.OrangeMushroomBlock;
+import com.redd90.betternether.block.PottedPlantBlock;
 import com.redd90.betternether.block.RedMoldBlock;
 import com.redd90.betternether.block.RedMushroomCapBlock;
 import com.redd90.betternether.block.RespawnStatueBlock;
@@ -154,6 +156,12 @@ public class BNBlocks {
 	
 	public static final RegistryObject<Block> QUARTZ_GLASS = registerBlock("quartz_glass", () -> new BNGlassBlock(BNBlockProperties.quartzGlass()));
 	public static final RegistryObject<Block> QUARTZ_GLASS_FRAMED = registerBlock("quartz_glass_framed", () -> new BNGlassBlock(BNBlockProperties.cincinnasite()));
+	public static final RegistryObject<Block> QUARTZ_GLASS_PANE = registerBlock("quartz_glass_pane", () -> new BNPaneBlock(BNBlockProperties.quartzGlass()));
+	public static final RegistryObject<Block> QUARTZ_GLASS_FRAMED_PANE = registerBlock("quartz_glass_framed_pane", () -> new BNPaneBlock(BNBlockProperties.cincinnasite()));
+	public static final RegistryObject<Block> QUARTZ_GLASS_RED = registerBlock("quartz_glass_red", () -> new BNGlassBlock(BNBlockProperties.quartzGlass()));
+	public static final RegistryObject<Block> QUARTZ_GLASS_FRAMED_RED = registerBlock("quartz_glass_framed_red", () -> new BNGlassBlock(BNBlockProperties.cincinnasite()));
+	public static final RegistryObject<Block> QUARTZ_GLASS_PANE_RED = registerBlock("quartz_glass_pane_red", () -> new BNPaneBlock(BNBlockProperties.quartzGlass()));
+	public static final RegistryObject<Block> QUARTZ_GLASS_FRAMED_PANE_RED = registerBlock("quartz_glass_framed_pane_red", () -> new BNPaneBlock(BNBlockProperties.cincinnasite()));
 		
 	public static final RegistryObject<Block> SOUL_FARMLAND = registerBlock("soul_farmland", () -> new SoulFarmlandBlock());
 	public static final RegistryObject<Block> GLOWSTONE_TORCH = registerBlockNoItem("glowstone_torch", () -> new GlowstoneTorchBlock(AbstractBlock.Properties.from(Blocks.TORCH)));
@@ -396,6 +404,15 @@ public class BNBlocks {
 	public static final RegistryObject<Block> ROOF_TILE_WART = registerBlock("roof_tile_wart", () -> new BNBlock(BNBlockProperties.wartWood()));
 	public static final RegistryObject<Block> ROOF_TILE_WART_STAIRS = registerBlock("roof_tile_wart_stairs", () -> new BNStairsBlock(() -> ROOF_TILE_WART.get().getDefaultState(), BNBlockProperties.wartWood()));
 	public static final RegistryObject<Block> ROOF_TILE_WART_SLAB = registerBlock("roof_tile_wart_slab", () -> new BNSlabBlock(BNBlockProperties.wartWood()));
+	
+	public static final RegistryObject<Block> NETHER_BRICK_TILE_LARGE = registerBlock("nether_brick_tile_large", () -> new BNBlock(BNBlockProperties.netherBricks()));
+	public static final RegistryObject<Block> NETHER_BRICK_TILE_SMALL = registerBlock("nether_brick_tile_small", () -> new BNBlock(BNBlockProperties.netherBricks()));
+	public static final RegistryObject<Block> NETHER_BRICK_WALL = registerBlock("nether_brick_wall", () -> new BNWall(BNBlockProperties.netherBricks()));
+	public static final RegistryObject<Block> NETHER_BRICK_TILE_STAIRS = registerBlock("nether_brick_tile_stairs", () -> new BNStairsBlock(() -> NETHER_BRICK_TILE_SMALL.get().getDefaultState(), BNBlockProperties.netherBricks()));
+	public static final RegistryObject<Block> NETHER_BRICK_TILE_SLAB = registerBlock("nether_brick_tile_slab", () -> new BNSlabBlock(BNBlockProperties.netherBricks()));
+	
+	public static final RegistryObject<Block> POTTED_PLANT = registerBlockNoItem("potted_plant", () -> new PottedPlantBlock());
+	public static final RegistryObject<Block> BRICK_POT = registerBlockNoItem("brick_pot", () -> new BNPotBlock(Blocks.NETHER_BRICKS));
 	
 	
 	private static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<? extends B> supplier) {

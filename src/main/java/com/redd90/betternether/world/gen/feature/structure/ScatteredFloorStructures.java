@@ -60,8 +60,8 @@ public class ScatteredFloorStructures extends Feature<NoFeatureConfig> {
 	{
 		if (isGround(world, world.getBlockState(pos.down()), pos.down()) && isGround(world, world.getBlockState(pos.down(2)), pos.down(2)))
 		{
-			StructureWorld tree = STRUCTURES[random.nextInt(STRUCTURES.length)];
-			tree.generate(world, pos, random);
+			StructureWorld structure = STRUCTURES[random.nextInt(STRUCTURES.length)];
+			structure.generate(world, pos, random);
 			return true;
 		} return false;
 	}

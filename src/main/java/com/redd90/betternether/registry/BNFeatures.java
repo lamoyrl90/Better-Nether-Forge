@@ -4,6 +4,7 @@ import com.redd90.betternether.BetterNether;
 import com.redd90.betternether.world.gen.feature.BNFloorOreFeature;
 import com.redd90.betternether.world.gen.feature.BNFloorOreFeatureConfig;
 import com.redd90.betternether.world.gen.feature.StrayLavaFixer;
+import com.redd90.betternether.world.gen.feature.city.CityStructure;
 import com.redd90.betternether.world.gen.feature.NetherrackFeature;
 import com.redd90.betternether.world.gen.feature.decorations.BlackstoneSpikeFeature;
 import com.redd90.betternether.world.gen.feature.decorations.BoneStalactiteFeature;
@@ -63,12 +64,15 @@ import com.redd90.betternether.world.gen.feature.structure.BigWarpedTreeStructur
 import com.redd90.betternether.world.gen.feature.structure.BoneReefStructure;
 import com.redd90.betternether.world.gen.feature.structure.CrimsonGlowingTreeStructure;
 import com.redd90.betternether.world.gen.feature.structure.CrimsonPinewoodStructure;
+import com.redd90.betternether.world.gen.feature.structure.GhastHiveStructure;
+import com.redd90.betternether.world.gen.feature.structure.LavaPyramidStructure;
 import com.redd90.betternether.world.gen.feature.structure.OldBrownMushroomStructure;
 import com.redd90.betternether.world.gen.feature.structure.OldRedMushroomStructure;
 import com.redd90.betternether.world.gen.feature.structure.ScatteredFloorStructures;
 import com.redd90.betternether.world.gen.feature.structure.WartDeadwoodStructure;
 import com.redd90.betternether.world.gen.feature.trees.WillowTreeFeature;
 
+import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.structure.Structure;
@@ -152,17 +156,19 @@ public class BNFeatures {
 	public static final RegistryObject<Feature<NoFeatureConfig>> CRIMSON_PINEWOOD = FEATURES.register("crimson_pinewood", () -> new CrimsonPinewoodStructure(NoFeatureConfig.field_236558_a_));
 	
 	public static final RegistryObject<Feature<NoFeatureConfig>> SCATTERED_FLOOR_STRUCTURES = FEATURES.register("scattered_floor_structure", () -> new ScatteredFloorStructures(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> LAVA_PYRAMID = FEATURES.register("lava_pyramid", () -> new LavaPyramidStructure(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> GHAST_HIVE = FEATURES.register("ghast_hive", () -> new GhastHiveStructure(NoFeatureConfig.field_236558_a_));
 	
 	/// STRUCTURES ///
 	
-	//public static final RegistryObject<Structure<StructureFrequencyConfig>> OLD_BROWN_MUSHROOM = register("old_brown_mushroom", new OldBrownMushroomStructure(StructureFrequencyConfig.codec), GenerationStage.Decoration.SURFACE_STRUCTURES);
+	public static final RegistryObject<Structure<NoFeatureConfig>> NETHER_CITY = register("nether_city", new CityStructure(NoFeatureConfig.field_236558_a_), GenerationStage.Decoration.STRONGHOLDS);
 	//public static final RegistryObject<Structure<StructureFrequencyConfig>> OLD_RED_MUSHROOM = register("old_red_mushroom", new OldRedMushroomStructure(StructureFrequencyConfig.codec), GenerationStage.Decoration.SURFACE_STRUCTURES);
 	//public static final RegistryObject<Structure<StructureFrequencyConfig>> BONE_REEF = register("bone_reef", new BoneReefStructure(StructureFrequencyConfig.codec), GenerationStage.Decoration.SURFACE_STRUCTURES);
 	//public static final RegistryObject<Structure<StructureFrequencyConfig>> BIG_WARPED_TREE = register("big_warped_tree", new BigWarpedTreeStructure(StructureFrequencyConfig.codec), GenerationStage.Decoration.SURFACE_STRUCTURES);
 
-    /*private static <T extends Structure<?>> RegistryObject<T> register(String name, T structure, GenerationStage.Decoration decoration) {
+    private static <T extends Structure<?>> RegistryObject<T> register(String name, T structure, GenerationStage.Decoration decoration) {
         Structure.field_236365_a_.put(BetterNether.MODID + ":" + name, structure);
         Structure.field_236385_u_.put(structure, decoration);
         return STRUCTURES.register(name, () -> structure);
-    }*/
+    }
 }
