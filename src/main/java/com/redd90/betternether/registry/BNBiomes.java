@@ -96,7 +96,7 @@ public class BNBiomes {
 			BNBiomeFeatures.addLavaPyramids(biome);
 			BNBiomeFeatures.addGhastHives(biome);
 			
-			biome.func_235063_a_(BNBiomeFeatures.NETHER_CITY);
+			//biome.func_235063_a_(BNBiomeFeatures.NETHER_CITY);
 		}
 		BetterNether.LOGGER.debug("Global biome features successfully added...");
 		
