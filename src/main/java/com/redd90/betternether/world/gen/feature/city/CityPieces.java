@@ -84,16 +84,16 @@ public class CityPieces {
 		buildings.add(building.getRotated(Rotation.COUNTERCLOCKWISE_90));
 	}
 	
-	private void placeCenterBuilding(BlockPos pos, CityBuildingStructure building, ArrayList<CityPiece> city, Random random, CityPalette palette)
+	private void placeCenterBuilding(BlockPos pos, CityBuildingStructure building, ArrayList<CityPiece> city, Random random)//, CityPalette palette)
 	{
-		BoundingBox bb = building.getBoungingBox().offset(pos);
+		BoundingBox bb = building.getBoundingBox().offset(pos);
 		bounds.add(bb);
-		city.add(new CityPiece(building, pos.add(0, building.getYOffset(), 0), random.nextInt(), palette));
+		city.add(new CityPiece(building, pos.add(0, building.getYOffset(), 0), random.nextInt()));//, palette));
 		for (int i = 0; i < building.getEndsCount(); i++)
 			ends.add(pos.add(building.getOffsettedPos(i).add(0, building.getYOffset(), 0)));
 	}
 	
-	private void attachBuildings(Random random, ArrayList<CityPiece> city, CityPalette palette)
+	private void attachBuildings(Random random, ArrayList<CityPiece> city)//, CityPalette palette)
 	{
 		for (BlockPos pos : ends)
 		{
@@ -106,7 +106,7 @@ public class CityPieces {
 					CityBuildingStructure building = buildings.get(b | r);
 					int index = random.nextInt(building.getEndsCount());
 					BlockPos offset = building.getPos(index);
-					BoundingBox bb = building.getBoungingBox().offset(pos).offsetNegative(offset);
+					BoundingBox bb = building.getBoundingBox().offset(pos).offsetNegative(offset);
 					if (noCollisions(bb))
 					{
 						boolean validHeight = true;
@@ -125,7 +125,7 @@ public class CityPieces {
 							for (int i = 0; i < building.getEndsCount(); i++)
 								if (i != index)
 									add.add(npos.add(building.getOffsettedPos(i)));
-							city.add(new CityPiece(building, npos, random.nextInt(), palette));
+							city.add(new CityPiece(building, npos, random.nextInt()));//, palette));
 							generate = false;
 						}
 					}
@@ -138,7 +138,7 @@ public class CityPieces {
 		add.clear();
 	}
 	
-	private void closeRoads(ArrayList<CityPiece> city, Random random, CityPalette palette)
+	private void closeRoads(ArrayList<CityPiece> city, Random random)//, CityPalette palette)
 	{
 		for (BlockPos pos : ends)
 		{
@@ -146,12 +146,12 @@ public class CityPieces {
 			{
 				CityBuildingStructure building = roadEnds.get(n);
 				BlockPos offset = building.getPos(0);
-				BoundingBox bb = building.getBoungingBox().offset(pos).offsetNegative(offset);
+				BoundingBox bb = building.getBoundingBox().offset(pos).offsetNegative(offset);
 				if (noCollisions(bb))
 				{
 					BlockPos npos = new BlockPos(bb.x1, pos.getY() - offset.getY() + building.getYOffset(), bb.z1);
 					bounds.add(bb);
-					city.add(new CityPiece(building, npos, random.nextInt(), palette));
+					city.add(new CityPiece(building, npos, random.nextInt()));//, palette));
 					break;
 				}
 			}
@@ -162,10 +162,10 @@ public class CityPieces {
 		add.clear();
 	}
 	
-	public ArrayList<CityPiece> generate(BlockPos pos, Random random, CityPalette palette)
+	public ArrayList<CityPiece> generate(BlockPos pos, Random random)//, CityPalette palette)
 	{
 		ArrayList<CityPiece> city = new ArrayList<CityPiece>();
-		placeCenterBuilding(pos, centers.get(random.nextInt(centers.size())), city, random, palette);
+		placeCenterBuilding(pos, centers.get(random.nextInt(centers.size())), city, random);//, palette);
 		
 		float rnd = random.nextFloat();
 		rnd *= rnd;
@@ -173,8 +173,8 @@ public class CityPieces {
 		int iterations = (int) Math.round(2 + rnd * 2);
 		
 		for (int i = 0; i < iterations; i++)
-			attachBuildings(random, city, palette);
-		closeRoads(city, random, palette);
+			attachBuildings(random, city);//, palette);
+		closeRoads(city, random);//, palette);
 		return city;
 	}
 	

@@ -76,11 +76,11 @@ public class BNConfig {
 			
 			ScatteredStructureFrequency = builder
 					.translation(BetterNether.MODID + ".config.ScatteredStructureFrequency")
-					.define("Scattered Structure Frequency", 0.23f);
+					.define("Scattered Structure Frequency", 0.08f);
 
 			LavaPyramidFrequency = builder
 					.translation(BetterNether.MODID + ".config.LavaPyramidFrequency")
-					.define("Lava Pyramid Frequency", 0.03f);
+					.define("Lava Pyramid Frequency", 0.01f);
 			
 			CitySeparation = builder
 					.translation(BetterNether.MODID + ".config.LavaPyramidFrequency")

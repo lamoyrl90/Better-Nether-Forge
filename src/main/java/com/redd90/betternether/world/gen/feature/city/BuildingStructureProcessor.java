@@ -22,13 +22,13 @@ import net.minecraft.block.TrapDoorBlock;
 import net.minecraft.block.WallBlock;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.gen.feature.template.IStructureProcessorType;
 import net.minecraft.world.gen.feature.template.PlacementSettings;
 import net.minecraft.world.gen.feature.template.StructureProcessor;
 import net.minecraft.world.gen.feature.template.Template;
 import net.minecraft.world.gen.feature.template.Template.BlockInfo;
-import net.minecraftforge.registries.ForgeRegistries;
 
 public class BuildingStructureProcessor extends StructureProcessor {
 	protected final CityPalette palette;
@@ -47,13 +47,18 @@ public class BuildingStructureProcessor extends StructureProcessor {
 	@Override
 	public BlockInfo process(IWorldReader worldView, BlockPos pos, BlockPos blockPos, BlockInfo structureBlockInfo, BlockInfo structureBlockInfo2, PlacementSettings structurePlacementData, Template template)
 	{
+		//BetterNether.LOGGER.debug("world.gen.feature.city.BuildingStructureProcessor: processing : " + template.toString());
 		BlockState state = structureBlockInfo.state;
+		//BetterNether.LOGGER.debug("world.gen.feature.city.BuildingStructureProcessor: processing : " + state.toString());
 		
-		if (state.isAir())
+		if (state.isAir()) {
+			//BetterNether.LOGGER.debug("world.gen.feature.city.BuildingStructureProcessor: structureBlockInfo2 : " + structureBlockInfo2.toString());
 			return structureBlockInfo2;
+		}
 		
 		Block block = state.getBlock();
-		String name = ForgeRegistries.BLOCKS.getKey(block).getPath();
+		String name = Registry.BLOCK.getKey(block).getPath();
+		//BetterNether.LOGGER.debug("world.gen.feature.city.BuildingStructureProcessor: registry name : " + name);
 		
 		if (name.startsWith("roof_tile"))
 		{

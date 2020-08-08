@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import com.redd90.betternether.BetterNether;
 import com.redd90.betternether.block.PottedPlantBlock;
 import com.redd90.betternether.block.PottedPlantBlock.PottedPlantShape;
 import com.redd90.betternether.block.SmallCincinnasiteLanternBlock;
@@ -71,6 +72,7 @@ public class CityPalette {
 	public CityPalette(String name)
 	{
 		this.name = name;
+		BetterNether.LOGGER.debug("world.gen.features.city.Palettes constructor");
 	}
 	
 	public String getName()
@@ -80,8 +82,10 @@ public class CityPalette {
 	
 	private CityPalette putBlocks(Block[] blocks, List<Block> list)
 	{
-		for (Block b: blocks)
+		for (Block b: blocks) {
 			list.add(b);
+			BetterNether.LOGGER.debug("world.gen.features.city.CityPalette: "+b.getRegistryName().getPath()+" registered");
+		}
 		return this;
 	}
 	

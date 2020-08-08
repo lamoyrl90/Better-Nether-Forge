@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
+import com.redd90.betternether.BetterNether;
 import com.redd90.betternether.registry.BNBlocks;
 
 import net.minecraft.block.Blocks;
@@ -44,12 +45,14 @@ public class Palettes {
 	{
 		REGISTRY.put(palette.getName(), palette);
 		PALETTES.add(palette);
+		BetterNether.LOGGER.debug("world.gen.features.city.Palettes: registered " + palette.getName());
 		return palette;
 	}
 	
 	public static CityPalette getPalette(String name)
 	{
 		CityPalette palette = REGISTRY.get(name);
+		BetterNether.LOGGER.debug("world.gen.features.city.Palettes: returning " + palette.getName());
 		return palette == null ? EMPTY : palette;
 	}
 	

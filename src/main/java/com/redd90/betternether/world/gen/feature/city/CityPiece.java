@@ -18,25 +18,24 @@ import net.minecraft.world.ISeedReader;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.feature.structure.StructureManager;
-import net.minecraft.world.gen.feature.template.StructureProcessor;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 
 public class CityPiece extends CustomPiece {
 	private static final Mutable POS = new Mutable();
 
-	private StructureProcessor paletteProcessor;
+	//private StructureProcessor paletteProcessor;
 	private CityBuildingStructure building;
-	private CityPalette palette;
+	//private CityPalette citypalette;
 	private BlockPos pos;
 	
-	public CityPiece(CityBuildingStructure building, BlockPos pos, int id, CityPalette palette)
+	public CityPiece(CityBuildingStructure building, BlockPos pos, int id)//, CityPalette palette)
 	{
 		super(BNStructurePieceTypes.NETHER_CITY, id);
 		this.building = building;
 		this.pos = new BlockPos(pos);
 		this.boundingBox = building.getBoundingBox(pos);
-		this.palette = palette;
-		this.paletteProcessor = new BuildingStructureProcessor(palette);
+		//this.citypalette = palette;
+		//this.paletteProcessor = new BuildingStructureProcessor(palette);
 	}
 
 	public CityPiece(TemplateManager manager, CompoundNBT tag)
@@ -47,8 +46,8 @@ public class CityPiece extends CustomPiece {
 		this.building.setMirror(Mirror.values()[tag.getInt("mirror")]);
 		this.pos = NBTUtil.readBlockPos(tag.getCompound("pos"));
 		this.boundingBox = building.getBoundingBox(pos);
-		this.palette = Palettes.getPalette(tag.getString("palette"));
-		this.paletteProcessor = new BuildingStructureProcessor(palette);
+		//this.citypalette = Palettes.getPalette(tag.getString("citypalette"));
+		//this.paletteProcessor = new BuildingStructureProcessor(citypalette);
 	}
 
 	@Override
@@ -59,7 +58,7 @@ public class CityPiece extends CustomPiece {
 		tag.putInt("mirror", building.getMirror().ordinal());
 		tag.putInt("offset", building.getYOffset());
 		tag.put("pos", NBTUtil.writeBlockPos(pos));
-		tag.putString("palette", palette.getName());
+		//tag.putString("citypalette", citypalette.getName());
 	}
 
 	@SuppressWarnings("deprecation")
@@ -67,7 +66,7 @@ public class CityPiece extends CustomPiece {
 	public boolean func_230383_a_(ISeedReader world, StructureManager arg, ChunkGenerator chunkGenerator, Random random, MutableBoundingBox blockBox, ChunkPos chunkPos, BlockPos blockPos)
 	{
 		if (!this.boundingBox.intersectsWith(blockBox))
-			return true;
+			return false;
 		
 		MutableBoundingBox clamped = new MutableBoundingBox(boundingBox);
 		
@@ -80,7 +79,7 @@ public class CityPiece extends CustomPiece {
 		clamped.minZ = Math.max(clamped.minZ, blockBox.minZ);
 		clamped.maxZ = Math.min(clamped.maxZ, blockBox.maxZ);
 
-		building.placeInChunk(world, pos, clamped, paletteProcessor);
+		boolean gen = building.placeInChunk(world, pos, clamped);//, paletteProcessor);
 		
 		IChunk chunk = world.getChunk(chunkPos.x, chunkPos.z);
 
@@ -109,6 +108,6 @@ public class CityPiece extends CustomPiece {
 				}
 			}
 
-		return true;
+		return gen;
 	}
 }

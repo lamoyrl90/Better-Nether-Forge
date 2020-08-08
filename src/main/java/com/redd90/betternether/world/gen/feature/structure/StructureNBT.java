@@ -64,6 +64,7 @@ public class StructureNBT
 		
 		public boolean generateCentered(IWorld world, BlockPos pos)
 		{
+			
 			if(template == null)
 			{
 				System.out.println("No template: " + location.toString());
@@ -88,6 +89,7 @@ public class StructureNBT
 
 	        try
 	        {
+	        	BetterNether.LOGGER.debug("StructureNBT: Getting resource as stream: /data/" + ns + "/structures/" + nm + ".nbt");
 	        	InputStream inputstream = MinecraftServer.class.getResourceAsStream("/data/" + ns + "/structures/" + nm + ".nbt");
 	            return readStructureFromStream(inputstream);
 	        }
@@ -105,6 +107,7 @@ public class StructureNBT
 
 	        Template template = new Template();
 	        template.read(nbttagcompound);
+	        BetterNether.LOGGER.debug("StructureNBT: Reading structure from stream: " + template.toString());
 	        
 	        return template;
 	    }

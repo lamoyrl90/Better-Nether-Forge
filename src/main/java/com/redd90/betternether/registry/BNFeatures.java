@@ -162,10 +162,7 @@ public class BNFeatures {
 	/// STRUCTURES ///
 	
 	public static final RegistryObject<Structure<NoFeatureConfig>> NETHER_CITY = register("nether_city", new CityStructure(NoFeatureConfig.field_236558_a_), GenerationStage.Decoration.STRONGHOLDS);
-	//public static final RegistryObject<Structure<StructureFrequencyConfig>> OLD_RED_MUSHROOM = register("old_red_mushroom", new OldRedMushroomStructure(StructureFrequencyConfig.codec), GenerationStage.Decoration.SURFACE_STRUCTURES);
-	//public static final RegistryObject<Structure<StructureFrequencyConfig>> BONE_REEF = register("bone_reef", new BoneReefStructure(StructureFrequencyConfig.codec), GenerationStage.Decoration.SURFACE_STRUCTURES);
-	//public static final RegistryObject<Structure<StructureFrequencyConfig>> BIG_WARPED_TREE = register("big_warped_tree", new BigWarpedTreeStructure(StructureFrequencyConfig.codec), GenerationStage.Decoration.SURFACE_STRUCTURES);
-
+	
     private static <T extends Structure<?>> RegistryObject<T> register(String name, T structure, GenerationStage.Decoration decoration) {
         Structure.field_236365_a_.put(BetterNether.MODID + ":" + name, structure);
         Structure.field_236385_u_.put(structure, decoration);

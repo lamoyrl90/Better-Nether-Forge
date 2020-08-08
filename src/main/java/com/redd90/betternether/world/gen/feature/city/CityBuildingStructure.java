@@ -3,6 +3,7 @@ package com.redd90.betternether.world.gen.feature.city;
 import java.util.List;
 import java.util.Random;
 
+import com.redd90.betternether.BetterNether;
 import com.redd90.betternether.world.gen.feature.structure.StructureNBT;
 
 import net.minecraft.block.BlockState;
@@ -13,8 +14,8 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.IWorld;
+import net.minecraft.world.gen.feature.template.BlockIgnoreStructureProcessor;
 import net.minecraft.world.gen.feature.template.PlacementSettings;
-import net.minecraft.world.gen.feature.template.StructureProcessor;
 import net.minecraft.world.gen.feature.template.Template;
 import net.minecraft.world.gen.feature.template.Template.BlockInfo;
 
@@ -86,7 +87,7 @@ public class CityBuildingStructure extends StructureNBT {
 		}
 	}
 
-	public BoundingBox getBoungingBox()
+	public BoundingBox getBoundingBox()
 	{
 		return bb;
 	}
@@ -102,15 +103,26 @@ public class CityBuildingStructure extends StructureNBT {
 		}
 	}
 	
-	public void placeInChunk(IWorld world, BlockPos pos, MutableBoundingBox boundingBox, StructureProcessor paletteProcessor)
+	public boolean placeInChunk(IWorld world, BlockPos pos, MutableBoundingBox boundingBox)//, StructureProcessor paletteProcessor)
 	{
+		if(template == null)
+		{
+			System.out.println("No template: " + location.toString());
+			return false;
+		}
+		
+		BetterNether.LOGGER.debug("CityBuildingStructure: Placing in chunk: " + location);
 		BlockPos p = pos.add(rotationOffset);
-		template.func_237144_a_(world, p, new PlacementSettings()
+		PlacementSettings placementsettings = 
+				new PlacementSettings()
 				.setRotation(rotation)
 				.setMirror(mirror)
 				.setBoundingBox(boundingBox)
-				.addProcessor(paletteProcessor),
+				.addProcessor(BlockIgnoreStructureProcessor.AIR_AND_STRUCTURE_BLOCK);
+		template.func_237144_a_(world, p, 
+				placementsettings,
 				world.getRandom());
+		return true;
 	}
 
 	public BlockPos[] getEnds()
@@ -200,19 +212,6 @@ public class CityBuildingStructure extends StructureNBT {
 		return rotation;
 	}
 
-	/*private static StructureProcessor makeProcessorReplace()
-	{
-		return new RuleStructureProcessor(
-				ImmutableList.of(
-						new StructureProcessorRule(
-								new BlockMatchRuleTest(Blocks.STRUCTURE_BLOCK),
-								AlwaysTrueRuleTest.INSTANCE,
-								Blocks.AIR.getDefaultState()
-						)
-				)
-		);
-	}*/
-	
 	@Override
 	public MutableBoundingBox getBoundingBox(BlockPos pos)
 	{

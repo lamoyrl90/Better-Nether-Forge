@@ -3,8 +3,6 @@ package com.redd90.betternether.world.gen.feature.city;
 import java.util.List;
 
 import com.mojang.serialization.Codec;
-import com.redd90.betternether.BNConfig;
-
 import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -26,7 +24,7 @@ public class CityStructure extends Structure<NoFeatureConfig> {
 	
 	public CityStructure(Codec<NoFeatureConfig> codec) {
 		super(codec);
-		distance = 64;//BNConfig.CitySeparation;
+		distance = 16;//BNConfig.CitySeparation;
 		separation = distance >> 1;
 	}
 
@@ -61,6 +59,7 @@ public class CityStructure extends Structure<NoFeatureConfig> {
 			super(structure, chunkx, chunkz, bounds, reference, seed);
 		}
 
+		//init
 		@Override
 		public void func_230364_a_(ChunkGenerator generator, TemplateManager manager, int chunkx,
 				int chunkz, Biome biome, NoFeatureConfig config) {
@@ -74,8 +73,8 @@ public class CityStructure extends Structure<NoFeatureConfig> {
 			
 			BlockPos center = new BlockPos(px, y, pz);
 			
-			//CityPalette palette = Palettes.getRandom(random);
-			List<CityPiece> buildings = PIECES.generate(center, this.rand, Palettes.EMPTY);
+			//CityPalette citypalette = Palettes.getRandom(this.rand);
+			List<CityPiece> buildings = PIECES.generate(center, this.rand);//, citypalette);
 			MutableBoundingBox cityBox = MutableBoundingBox.getNewBoundingBox();
 			for (CityPiece p: buildings)
 				cityBox.expandTo(p.getBoundingBox());
