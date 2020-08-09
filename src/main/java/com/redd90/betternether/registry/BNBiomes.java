@@ -114,8 +114,8 @@ public class BNBiomes {
 		((SoulPlainsBiome) SOUL_PLAINS.get()).finalizeFeatures();
 		((CrimsonGlowingWoodsBiome) CRIMSON_GLOWING_WOODS.get()).finalizeFeatures();
 		
-		Biomes.CRIMSON_FOREST.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(BNEntities.FIREFLY.get(), 50, 2, 4));
-		Biomes.WARPED_FOREST.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(BNEntities.FIREFLY.get(), 50, 2, 4));
+		//Biomes.CRIMSON_FOREST.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(BNEntities.FIREFLY.get(), 50, 2, 4));
+		//Biomes.WARPED_FOREST.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(BNEntities.FIREFLY.get(), 50, 2, 4));
 	}
 	
 	public static void runCompat() {
