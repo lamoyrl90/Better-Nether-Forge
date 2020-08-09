@@ -41,7 +41,7 @@ public class TorridTerracesBiome extends Biome {
 						   .setAdditionsSound(new SoundAdditionsAmbience(SoundEvents.AMBIENT_CRIMSON_FOREST_ADDITIONS, 0.0111D))
 						   .setMusic(BackgroundMusicTracks.func_232677_a_(SoundEvents.MUSIC_NETHER_CRIMSON_FOREST))
 						   .build()).parent((String)null)
-				   .func_235098_a_(ImmutableList.of(new Biome.Attributes(-0.01F, -0.025F, -0.0F, 0.475F, 0.00F))));
+				   .func_235098_a_(ImmutableList.of(new Biome.Attributes(0.14F, -0.125F, 0.325F, -0.325F, 0.00F))));
 		   
 		  this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_NETHER);
 	      this.func_235063_a_(DefaultBiomeFeatures.FORTRESS);

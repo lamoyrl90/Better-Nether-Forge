@@ -43,7 +43,7 @@ public class ObsidianChasmBiome extends Biome {
 						   .setAdditionsSound(new SoundAdditionsAmbience(SoundEvents.AMBIENT_NETHER_WASTES_ADDITIONS, 0.0111D))
 						   .setMusic(BackgroundMusicTracks.func_232677_a_(SoundEvents.MUSIC_NETHER_NETHER_WASTES))
 						   .build()).parent((String)null)
-				   .func_235098_a_(ImmutableList.of(new Biome.Attributes(0.0f, 0.025f, 0.4f, -0.075F, 0.0F))));
+				   .func_235098_a_(ImmutableList.of(new Biome.Attributes(-0.1f, -0.1f, 0.35f, 0.325F, 0.0F))));
 		   this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_NETHER);
 		this.func_235063_a_(DefaultBiomeFeatures.FORTRESS);
 		this.func_235063_a_(DefaultBiomeFeatures.BASTION_REMNANT);

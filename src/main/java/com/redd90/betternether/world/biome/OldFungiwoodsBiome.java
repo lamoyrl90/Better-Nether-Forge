@@ -46,7 +46,7 @@ public class OldFungiwoodsBiome extends Biome {
 						   .setMusic(BackgroundMusicTracks.func_232677_a_(SoundEvents.MUSIC_NETHER_CRIMSON_FOREST))
 						   .setParticle(new ParticleEffectAmbience(ParticleTypes.MYCELIUM, 0.1F))
 						   .build()).parent((String)null)
-				   .func_235098_a_(ImmutableList.of(new Biome.Attributes(0.00F, 0.026F, -0.125F, -0.475F, 0.0F))));
+				   .func_235098_a_(ImmutableList.of(new Biome.Attributes(0.20F, -0.274F, -0.075F, 0.35F, 0.0F))));
 		   
 		  this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_NETHER);
 	      this.func_235063_a_(DefaultBiomeFeatures.FORTRESS);

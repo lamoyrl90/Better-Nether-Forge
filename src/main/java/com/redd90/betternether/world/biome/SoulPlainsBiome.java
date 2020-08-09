@@ -45,7 +45,7 @@ public class SoulPlainsBiome extends Biome {
 		    				  .setAdditionsSound(new SoundAdditionsAmbience(SoundEvents.AMBIENT_SOUL_SAND_VALLEY_ADDITIONS, 0.0111D))
 		    				  .setParticle(new ParticleEffectAmbience(ParticleTypes.PORTAL, 0.02F))
 							  .setMusic(BackgroundMusicTracks.func_232677_a_(SoundEvents.MUSIC_NETHER_SOUL_SAND_VALLEY)).build()).parent((String)null)
-		    		  .func_235098_a_(ImmutableList.of(new Biome.Attributes(0.10F, -0.0f, -0.475F, 0.0F, 0.0F))));
+		    		  .func_235098_a_(ImmutableList.of(new Biome.Attributes(0.225F, 0.125f, 0.025F, 0.425F, 0.0F))));
 		      this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_NETHER);
 		      this.func_235063_a_(DefaultBiomeFeatures.FORTRESS);
 		      this.func_235063_a_(DefaultBiomeFeatures.BASTION_REMNANT);

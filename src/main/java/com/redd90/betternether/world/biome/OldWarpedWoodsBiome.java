@@ -44,7 +44,7 @@ public class OldWarpedWoodsBiome extends Biome {
 						.setAdditionsSound(new SoundAdditionsAmbience(SoundEvents.AMBIENT_WARPED_FOREST_ADDITIONS, 0.0111D))
 						.setMusic(BackgroundMusicTracks.func_232677_a_(SoundEvents.MUSIC_NETHER_WARPED_FOREST))
 						.build()).parent((String)null)
-				.func_235098_a_(ImmutableList.of(new Biome.Attributes(0.0F, 0.5F, 0.0F, 0.0F, 0.375F))));
+				.func_235098_a_(ImmutableList.of(new Biome.Attributes(-0.3F, -0.3F, 0.075F, 0.25F, 0.0F))));
 		this.func_235063_a_(DefaultBiomeFeatures.FORTRESS);
 		this.func_235063_a_(DefaultBiomeFeatures.BASTION_REMNANT);
 		this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_NETHER);

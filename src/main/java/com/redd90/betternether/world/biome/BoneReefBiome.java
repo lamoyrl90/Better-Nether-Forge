@@ -44,7 +44,7 @@ public class BoneReefBiome extends Biome {
 						   .setMusic(BackgroundMusicTracks.func_232677_a_(SoundEvents.MUSIC_NETHER_NETHER_WASTES))
 						   .setParticle(new ParticleEffectAmbience(ParticleTypes.WARPED_SPORE, 0.01F))
 						   .build()).parent((String)null)
-				   .func_235098_a_(ImmutableList.of(new Biome.Attributes(0.0f, 0.025f, 0.4f, -0.075F, 0.0F))));
+				   .func_235098_a_(ImmutableList.of(new Biome.Attributes(-0.225f, 0.25f, -0.35f, 0.05F, 0.0F))));
 		   this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_NETHER);
 		this.func_235063_a_(DefaultBiomeFeatures.FORTRESS);
 		this.func_235063_a_(DefaultBiomeFeatures.BASTION_REMNANT);

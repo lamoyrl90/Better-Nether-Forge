@@ -44,7 +44,7 @@ public class HadeanJungleBiome extends Biome {
 						   .setAdditionsSound(new SoundAdditionsAmbience(SoundEvents.AMBIENT_WARPED_FOREST_ADDITIONS, 0.0111D))
 						   .setMusic(BackgroundMusicTracks.func_232677_a_(SoundEvents.MUSIC_NETHER_WARPED_FOREST))
 						   .build()).parent((String)null)
-				   .func_235098_a_(ImmutableList.of(new Biome.Attributes(-0.0f, 0.325F, -0.025F, 0.35F, 0.0f))));
+				   .func_235098_a_(ImmutableList.of(new Biome.Attributes(-0.15f, 0.325F, 0.125F, -0.325F, 0.0f))));
 		   
 		  this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_NETHER);
 	      this.func_235063_a_(DefaultBiomeFeatures.FORTRESS);

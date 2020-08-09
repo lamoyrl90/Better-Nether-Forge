@@ -42,7 +42,7 @@ public class WartForestBiome extends Biome {
 						   .setMusic(BackgroundMusicTracks.func_232677_a_(SoundEvents.MUSIC_NETHER_CRIMSON_FOREST))
 						   .setParticle(new ParticleEffectAmbience(ParticleTypes.CRIMSON_SPORE, 0.05F))
 						   .build()).parent((String)null)
-				   .func_235098_a_(ImmutableList.of(new Biome.Attributes(-0.0f, 0.325F, -0.025F, 0.35F, 0.0f))));
+				   .func_235098_a_(ImmutableList.of(new Biome.Attributes(-0.15f, 0.025F, -0.25F, 0.4F, 0.0f))));
 		   
 		  this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_NETHER);
 	      this.func_235063_a_(DefaultBiomeFeatures.FORTRESS);

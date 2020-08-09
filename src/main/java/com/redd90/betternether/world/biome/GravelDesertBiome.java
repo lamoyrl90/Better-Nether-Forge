@@ -47,7 +47,7 @@ public final class GravelDesertBiome extends Biome {
 						   .setMusic(BackgroundMusicTracks.func_232677_a_(SoundEvents.MUSIC_NETHER_NETHER_WASTES))
 						   .setParticle(new ParticleEffectAmbience(ParticleTypes.ASH, 0.02F))
 						   .build()).parent((String)null)
-				   .func_235098_a_(ImmutableList.of(new Biome.Attributes(-0.0f, -0.175F, 0.45F, -0.0F, 0.0f))));
+				   .func_235098_a_(ImmutableList.of(new Biome.Attributes(-0.25f, -0.325F, -0.25F, -0.125F, 0.0f))));
 		   
 		  BetterNether.LOGGER.debug("Building GravelDesertBiome...");
 		  this.func_235063_a_(DefaultBiomeFeatures.RUINED_PORTAL_NETHER);

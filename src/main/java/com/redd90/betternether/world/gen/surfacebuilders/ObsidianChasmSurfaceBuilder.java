@@ -50,6 +50,26 @@ public class ObsidianChasmSurfaceBuilder extends NetherSurfaceBuilder {
 						blockstate1 = config.getUnder();
 					} else if (j1 >= i - 4 && j1 <= i + 1) {
 						blockstate = config.getTop();
+						if (isMask(x, z) && !blockstate.isAir()){
+							boolean magma = true;
+							
+							if (random.nextInt(4) == 0)
+								{
+									if (validWall(chunkIn, blockpos$mutable.down()) && validWall(chunkIn, blockpos$mutable.north()) && validWall(chunkIn, blockpos$mutable.south()) && validWall(chunkIn, blockpos$mutable.east()) && validWall(chunkIn, blockpos$mutable.west()))
+									{
+										blockstate = Blocks.LAVA.getDefaultState();
+										magma = false;
+									}
+								}
+								
+							if (magma)
+								for (int y = 0; y < random.nextInt(3) + 1; y++)
+								{
+									if (BlocksHelper.isNetherGround(chunkIn.getBlockState(blockpos$mutable)))
+											blockstate = Blocks.MAGMA_BLOCK.getDefaultState();
+								}
+								
+						}
 						blockstate1 = config.getUnder();
 						if (flag1) {
 							blockstate = GRAVEL;
@@ -62,26 +82,7 @@ public class ObsidianChasmSurfaceBuilder extends NetherSurfaceBuilder {
 						}
 					}
 						
-					if (isMask(x, z) && !blockstate.isAir()){
-						boolean magma = true;
-						
-						if (random.nextInt(4) == 0)
-							{
-								if (validWall(chunkIn, blockpos$mutable.down()) && validWall(chunkIn, blockpos$mutable.north()) && validWall(chunkIn, blockpos$mutable.south()) && validWall(chunkIn, blockpos$mutable.east()) && validWall(chunkIn, blockpos$mutable.west()))
-								{
-									blockstate = Blocks.LAVA.getDefaultState();
-									magma = false;
-								}
-							}
-							
-						if (magma)
-							for (int y = 0; y < random.nextInt(3) + 1; y++)
-							{
-								if (BlocksHelper.isNetherGround(chunkIn.getBlockState(blockpos$mutable)))
-										blockstate = Blocks.MAGMA_BLOCK.getDefaultState();
-							}
-							
-					}
+					
 	
 					if (j1 < i && flag2) {
 						blockstate = defaultFluid;
