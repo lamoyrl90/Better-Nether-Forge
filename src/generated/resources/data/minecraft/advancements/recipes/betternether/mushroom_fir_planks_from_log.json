@@ -6,7 +6,7 @@
     ]
   },
   "criteria": {
-    "has_net.minecraft.tags.TagRegistry$NamedTag@32200389": {
+    "has_net.minecraft.tags.TagRegistry$NamedTag@57e9dd1f": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "has_net.minecraft.tags.TagRegistry$NamedTag@32200389",
+      "has_net.minecraft.tags.TagRegistry$NamedTag@57e9dd1f",
       "has_the_recipe"
     ]
   ]
