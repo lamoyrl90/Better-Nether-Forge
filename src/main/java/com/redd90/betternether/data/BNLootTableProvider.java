@@ -43,6 +43,7 @@ import net.minecraft.loot.LootTableManager;
 import net.minecraft.loot.RandomValueRange;
 import net.minecraft.loot.functions.LootingEnchantBonus;
 import net.minecraft.loot.functions.SetCount;
+import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.Property;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.IStringSerializable;
@@ -198,6 +199,16 @@ public abstract class BNLootTableProvider extends LootTableProvider {
 				.rolls(ConstantRange.of(1))
 				.addEntry(ItemLootEntry.builder(item.asItem())
 						.acceptCondition(BNLootCondition.SHEARS));
+		
+		return LootTable.builder().addLootPool(pool1);
+	}
+	
+	protected Builder blockState(String path, Block block, Block item, BooleanProperty property, boolean value) {
+		LootPool.Builder pool1 = LootPool.builder()
+				.name("pool1")
+				.rolls(ConstantRange.of(1))
+				.addEntry(ItemLootEntry.builder(item.asItem())
+						.acceptCondition(BNLootCondition.blockState(block, property, value)));
 		
 		return LootTable.builder().addLootPool(pool1);
 	}

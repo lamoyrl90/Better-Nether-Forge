@@ -1,5 +1,7 @@
 package com.redd90.betternether.event;
 
+import com.redd90.betternether.BNConfig;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityClassification;
@@ -21,34 +23,36 @@ public class BNLivingSpawnEvent {
 	private static final Block MAGMA = Blocks.MAGMA_BLOCK;
 	private static final EntityType<?> MAGMA_CUBE = EntityType.MAGMA_CUBE;
 	
-@SubscribeEvent
+	@SubscribeEvent
 	public static void checkLightLevels(LivingSpawnEvent.SpecialSpawn event) {
-		pos.setPos(event.getX(), event.getY(), event.getZ());
-		IWorld world = event.getWorld();
-		boolean nether = event.getEntityLiving().getEntityWorld().func_234923_W_() == World.field_234919_h_;
-		
-		boolean magma = world.getBlockState(pos.down()).getBlock() == MAGMA;
-		boolean cube = event.getEntityLiving().getType() == MAGMA_CUBE;
-		
-		if ((world.getLightValue(pos) > getLightLevelForDifficulty(world.getDifficulty())) 
-				& (event.getEntity().getClassification(false) == EntityClassification.MONSTER)
-				& !magma 
-				& !cube 
-				& nether 
-				& (event.getSpawnReason() == SpawnReason.NATURAL || (event.getSpawnReason() == SpawnReason.SPAWNER)))
-			event.setResult(Event.Result.DENY);
+		if (BNConfig.CommonConfig.lightLevel.get()) {
+			pos.setPos(event.getX(), event.getY(), event.getZ());
+			IWorld world = event.getWorld();
+			boolean nether = event.getEntityLiving().getEntityWorld().func_234923_W_() == World.field_234919_h_;
+			
+			boolean magma = world.getBlockState(pos.down()).getBlock() == MAGMA;
+			boolean cube = event.getEntityLiving().getType() == MAGMA_CUBE;
+			
+			if ((world.getLightValue(pos) > getLightLevelForDifficulty(world.getDifficulty())) 
+					& (event.getEntity().getClassification(false) == EntityClassification.MONSTER)
+					& !magma 
+					& !cube 
+					& nether 
+					& (event.getSpawnReason() == SpawnReason.NATURAL || (event.getSpawnReason() == SpawnReason.SPAWNER)))
+				event.setResult(Event.Result.DENY);
+		}
 	}
 
 	private static int getLightLevelForDifficulty(Difficulty difficulty) {
 		switch (difficulty) {
 		case EASY:
-			return 7;
+			return BNConfig.CommonConfig.easyLightLevel.get();
 		case NORMAL:
-			return 11;
+			return BNConfig.CommonConfig.normalLightLevel.get();
 		case HARD:
-			return 13;
+			return BNConfig.CommonConfig.hardLightLevel.get();
 		default: 
-			return 7;
+			return BNConfig.CommonConfig.easyLightLevel.get();
 		}
 	}
 }

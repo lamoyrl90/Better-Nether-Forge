@@ -1,5 +1,6 @@
 package com.redd90.betternether.data.loot;
 
+import com.redd90.betternether.block.RespawnStatueBlock;
 import com.redd90.betternether.block.WillowBranchNaturalBlock;
 import com.redd90.betternether.data.BNLootTableProvider;
 import com.redd90.betternether.registry.BNBlocks;
@@ -10,6 +11,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.Property;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.IStringSerializable;
@@ -22,7 +24,7 @@ public class BNBlockLootTables extends BNLootTableProvider {
 
 	@Override
 	protected void addTables() {
-		registerSelfDrop(BNBlocks.PIG_STATUE_RESPAWNER.get());
+		registerBlockState(BNBlocks.PIG_STATUE_RESPAWNER.get(), BNBlocks.PIG_STATUE_RESPAWNER.get(), RespawnStatueBlock.TOP, false);
 				
 		registerFortune(BNBlocks.CINCINNASITE_ORE.get(), BNItems.CINCINNASITE.get(), 4.0f, 6.0f);
 		registerFortune(BNBlocks.NETHER_RUBY_ORE.get(), BNItems.NETHER_RUBY.get(), 1.0f, 1.0f);
@@ -297,6 +299,12 @@ public class BNBlockLootTables extends BNLootTableProvider {
 		blockLootTables.put(BNBlocks.EYEBALL_SMALL.get(), eyeball());
 	}
 	
+	private void registerBlockState(Block block, Block item, BooleanProperty property, boolean value) {
+		blockLootTables.put(block, blockState(block.getRegistryName().getPath(), block, item, property, value));
+	}
+
+
+
 	private void registerSelfDrop(Block block) {
 		blockLootTables.put(block, dropItself(block.getRegistryName().getPath(), block));
 	}

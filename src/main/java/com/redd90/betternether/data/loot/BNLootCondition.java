@@ -10,11 +10,13 @@ import net.minecraft.item.Items;
 import net.minecraft.loot.RandomValueRange;
 import net.minecraft.loot.conditions.BlockStateProperty;
 import net.minecraft.loot.conditions.ILootCondition;
+import net.minecraft.loot.conditions.ILootCondition.IBuilder;
 import net.minecraft.loot.conditions.MatchTool;
 import net.minecraft.loot.conditions.RandomChance;
 import net.minecraft.loot.functions.ApplyBonus;
 import net.minecraft.loot.functions.ILootFunction;
 import net.minecraft.loot.functions.SetCount;
+import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.Property;
 import net.minecraft.util.IStringSerializable;
 
@@ -39,6 +41,10 @@ public class BNLootCondition {
 	
 	public static final ILootCondition.IBuilder integerProperty(Block block, Property<Integer> property, int value){
 		return BlockStateProperty.builder(block).fromProperties(StatePropertiesPredicate.Builder.newBuilder().withIntProp(property, value));
+	}
+
+	public static ILootCondition.IBuilder blockState(Block block, BooleanProperty property, boolean value) {
+		return BlockStateProperty.builder(block).fromProperties(StatePropertiesPredicate.Builder.newBuilder().withBoolProp(property, value));
 	}
 	
 }

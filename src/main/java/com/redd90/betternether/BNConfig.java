@@ -1,6 +1,7 @@
 package com.redd90.betternether;
 
 import net.minecraftforge.common.ForgeConfigSpec;
+import net.minecraftforge.common.ForgeConfigSpec.ConfigValue;
 import net.minecraftforge.fml.ModLoadingContext;
 
 public class BNConfig {
@@ -9,15 +10,25 @@ public class BNConfig {
 		public static final ForgeConfigSpec spec;
 		
 		public static final ForgeConfigSpec.BooleanValue netherSpawn;
+		public static final ForgeConfigSpec.BooleanValue lightLevel;
 		public static final ForgeConfigSpec.DoubleValue globalPlantCount;
 		public static final ForgeConfigSpec.DoubleValue wallFactor;
 		public static final ForgeConfigSpec.DoubleValue globalDecorCount;
 		public static final ForgeConfigSpec.DoubleValue scatteredStructureCount;
 		public static final ForgeConfigSpec.DoubleValue lavaPyramidCount;
+		public static final ConfigValue<Integer> easyLightLevel;
+		public static final ConfigValue<Integer> normalLightLevel;
+		public static final ConfigValue<Integer> hardLightLevel;
 		
 		static {
 			builder.push("Game Settings");
 			netherSpawn = builder.comment("Spawn and respawn in the Nether").define("nether_spawn", false);
+			lightLevel = builder.comment("Light level affects Nether monster spawning").define("light_level", false);
+				builder.push("Light level difficulty settings - only works if light_level is true");
+				easyLightLevel = builder.comment("Light level for easy spawning").defineInRange("easy_light_level", 7, 0, 15);
+				normalLightLevel = builder.comment("Light level for normal spawning").defineInRange("normal_light_level", 9, 0, 15);
+				hardLightLevel = builder.comment("Light level for hard spawning").defineInRange("hard_light_level", 11, 0, 15);
+				builder.pop();
 			builder.pop();
 			
 			builder.push("Worldgen Settings");
