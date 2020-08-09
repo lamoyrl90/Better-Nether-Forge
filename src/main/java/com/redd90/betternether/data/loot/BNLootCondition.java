@@ -10,7 +10,6 @@ import net.minecraft.item.Items;
 import net.minecraft.loot.RandomValueRange;
 import net.minecraft.loot.conditions.BlockStateProperty;
 import net.minecraft.loot.conditions.ILootCondition;
-import net.minecraft.loot.conditions.ILootCondition.IBuilder;
 import net.minecraft.loot.conditions.MatchTool;
 import net.minecraft.loot.conditions.RandomChance;
 import net.minecraft.loot.functions.ApplyBonus;

@@ -1,7 +1,9 @@
 package com.redd90.betternether.data.loot;
 
+import com.redd90.betternether.block.LumabusVineBlock;
 import com.redd90.betternether.block.RespawnStatueBlock;
 import com.redd90.betternether.block.WillowBranchNaturalBlock;
+import com.redd90.betternether.block.shapes.TripleShape;
 import com.redd90.betternether.data.BNLootTableProvider;
 import com.redd90.betternether.registry.BNBlocks;
 import com.redd90.betternether.registry.BNItems;
@@ -228,7 +230,7 @@ public class BNBlockLootTables extends BNLootTableProvider {
 		registerSilkWithAltChance(BNBlocks.JUNGLE_GRASS.get(), Blocks.NETHERRACK.asItem(), 1.0f);
 		
 		registerDropItem(BNBlocks.JELLYFISH_MUSHROOM.get(), BNBlocks.JELLYFISH_MUSHROOM_SAPLING.get());
-		registerDropItem(BNBlocks.LUMABUS_VINE.get(), BNBlocks.LUMABUS_SEED.get());
+		registerBlockState(BNBlocks.LUMABUS_VINE.get(), BNBlocks.LUMABUS_SEED.get(), LumabusVineBlock.SHAPE, TripleShape.BOTTOM);
 		
 		registerSelfDrop(BNBlocks.SOUL_SANDSTONE.get());
 		registerSelfDrop(BNBlocks.SOUL_SANDSTONE_CUT.get());
@@ -289,6 +291,7 @@ public class BNBlockLootTables extends BNLootTableProvider {
 		
 		registerSelfDrop(BNBlocks.SOUL_LILY_SAPLING.get());
 		registerDropItem(BNBlocks.SOUL_LILY.get(), BNBlocks.SOUL_LILY_SAPLING.get());
+		registerSelfDrop(BNBlocks.BONE_MUSHROOM.get());
 		
 		
 		blockLootTables.put(BNBlocks.RED_LARGE_MUSHROOM.get(), redMediumMushroom());

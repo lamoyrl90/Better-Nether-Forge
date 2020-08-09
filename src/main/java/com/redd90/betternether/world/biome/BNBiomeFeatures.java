@@ -186,15 +186,24 @@ public class BNBiomeFeatures {
 	}
 	
 	public static void addBNOres(Biome biome) {
-		biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
-				Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, 
-						CINCINNASITE_ORE, 14))
-				.withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(12, 10, 20, 128))));
-		
-		biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
-				Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, 
-						NETHER_RUBY_ORE, 8))
-				.withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(2, 102, 5, 128))));
+		if (BNConfig.CommonConfig.spawnCincinnasite.get() && BNConfig.CommonConfig.cincinnasiteMinY.get() <= BNConfig.CommonConfig.cincinnasiteMaxY.get()) {
+			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
+					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, 
+							CINCINNASITE_ORE, BNConfig.CommonConfig.cincinnasiteSize.get()))
+					.withPlacement(Placement.COUNT_RANGE.configure(
+							new CountRangeConfig(BNConfig.CommonConfig.cincinnasiteCount.get(), 
+									BNConfig.CommonConfig.cincinnasiteMinY.get(), 
+									128-BNConfig.CommonConfig.cincinnasiteMaxY.get(), 128))));
+		}
+		if (BNConfig.CommonConfig.spawnRuby.get() && BNConfig.CommonConfig.rubyMinY.get() <= BNConfig.CommonConfig.rubyMaxY.get()) {
+			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
+					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, 
+							NETHER_RUBY_ORE, BNConfig.CommonConfig.rubySize.get()))
+					.withPlacement(Placement.COUNT_RANGE.configure(
+							new CountRangeConfig(BNConfig.CommonConfig.rubyCount.get(), 
+									BNConfig.CommonConfig.rubyMinY.get(), 
+									128-BNConfig.CommonConfig.rubyMaxY.get(), 128))));
+		}
 	}
 	
 	public static void addStalagmites(Biome biome, float density) {
