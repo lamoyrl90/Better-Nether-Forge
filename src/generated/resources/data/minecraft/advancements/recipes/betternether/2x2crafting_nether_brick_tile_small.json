@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:2x2crafting_nether_brick_tile_small"
+    ]
+  },
+  "criteria": {
+    "has_nether_brick_tile_large": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betternether:nether_brick_tile_large"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:2x2crafting_nether_brick_tile_small"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_nether_brick_tile_large",
+      "has_the_recipe"
+    ]
+  ]
+}

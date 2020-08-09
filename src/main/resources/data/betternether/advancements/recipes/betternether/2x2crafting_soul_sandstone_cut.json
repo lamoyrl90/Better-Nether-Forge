@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:2x2crafting_soul_sandstone_cut"
+    ]
+  },
+  "criteria": {
+    "has_soul_sandstone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betternether:soul_sandstone"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:2x2crafting_soul_sandstone_cut"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_soul_sandstone",
+      "has_the_recipe"
+    ]
+  ]
+}

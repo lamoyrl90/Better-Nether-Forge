@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "betternether:bone_block"
+    }
+  ],
+  "result": {
+    "item": "betternether:bone_button"
+  }
+}

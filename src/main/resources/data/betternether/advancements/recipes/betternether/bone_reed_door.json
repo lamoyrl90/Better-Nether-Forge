@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betternether:bone_reed_door"
+    ]
+  },
+  "criteria": {
+    "has_reed": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betternether:nether_reed"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betternether:bone_reed_door"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_reed",
+      "has_the_recipe"
+    ]
+  ]
+}

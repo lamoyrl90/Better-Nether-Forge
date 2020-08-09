@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "x#x",
+    "x#x"
+  ],
+  "key": {
+    "#": {
+      "item": "betternether:reeds_block"
+    },
+    "x": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "betternether:reeds_gate"
+  }
+}

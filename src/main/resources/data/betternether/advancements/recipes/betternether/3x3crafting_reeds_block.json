@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:3x3crafting_reeds_block"
+    ]
+  },
+  "criteria": {
+    "has_nether_reed": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betternether:nether_reed"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:3x3crafting_reeds_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_nether_reed",
+      "has_the_recipe"
+    ]
+  ]
+}

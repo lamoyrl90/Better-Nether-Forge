@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "CGC",
+    "CCC"
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:glowstone_dust"
+    },
+    "C": {
+      "item": "betternether:cincinnasite_nugget"
+    }
+  },
+  "result": {
+    "item": "betternether:cincinnasite_lantern_small"
+  }
+}

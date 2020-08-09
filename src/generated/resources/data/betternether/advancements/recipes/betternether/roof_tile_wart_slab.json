@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betternether:roof_tile_wart_slab"
+    ]
+  },
+  "criteria": {
+    "has_roof_tile_wart": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betternether:roof_tile_wart"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betternether:roof_tile_wart_slab"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_roof_tile_wart",
+      "has_the_recipe"
+    ]
+  ]
+}

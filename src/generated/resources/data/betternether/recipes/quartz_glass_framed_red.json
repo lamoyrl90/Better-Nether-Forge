@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#D#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "betternether:quartz_glass_red"
+    },
+    "D": {
+      "item": "betternether:cincinnasite_ingot"
+    }
+  },
+  "result": {
+    "item": "betternether:quartz_glass_framed_red",
+    "count": 8
+  }
+}

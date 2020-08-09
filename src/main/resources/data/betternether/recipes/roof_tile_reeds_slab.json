@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "betternether:roof_tile_reeds"
+    }
+  },
+  "result": {
+    "item": "betternether:roof_tile_reeds_slab",
+    "count": 6
+  }
+}

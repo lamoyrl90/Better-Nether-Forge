@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betternether:quartz_glass_framed_red"
+    ]
+  },
+  "criteria": {
+    "has_quartz_glass_red": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betternether:quartz_glass_red"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betternether:quartz_glass_framed_red"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_quartz_glass_red",
+      "has_the_recipe"
+    ]
+  ]
+}

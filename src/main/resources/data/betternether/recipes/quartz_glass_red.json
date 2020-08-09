@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#D#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "betternether:quartz_glass"
+    },
+    "D": {
+      "tag": "forge:dyes/red"
+    }
+  },
+  "result": {
+    "item": "betternether:quartz_glass_red",
+    "count": 8
+  }
+}
