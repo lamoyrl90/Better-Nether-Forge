@@ -2,6 +2,7 @@ package com.redd90.betternether.data;
 
 import java.util.function.Consumer;
 
+import net.minecraft.block.Block;
 import net.minecraft.data.CookingRecipeBuilder;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
@@ -13,6 +14,7 @@ import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.tags.ITag;
+import net.minecraft.tags.ITag.INamedTag;
 import net.minecraft.util.IItemProvider;
 
 public class BNRecipeProvider extends RecipeProvider {
@@ -75,6 +77,7 @@ public class BNRecipeProvider extends RecipeProvider {
 		.patternLine("# #")
 		.patternLine("###")
 		.patternLine(" # ")
+		.addCriterion("has_" + input.asItem().getRegistryName().getPath(), hasItem(input))
 		.build(consumer); 
 	}
 	
@@ -410,6 +413,18 @@ public class BNRecipeProvider extends RecipeProvider {
 				IRecipeSerializer.SMELTING)
 		.addCriterion("has_" + input.asItem().getRegistryName().getPath(), hasItem(input.asItem()))
 		.build(consumer, "smelting/" + output.asItem().getRegistryName().getPath() + "_from_" + input.asItem().getRegistryName().getPath() + "_from_smelting");
+	}
+
+	public void dyeRecipe(Block output, Block input, INamedTag<Item> dye, Consumer<IFinishedRecipe> consumer) {
+		ShapedRecipeBuilder
+		.shapedRecipe(output, 8)
+		.key('#', input)
+		.key('D', dye)
+		.patternLine("###")
+		.patternLine("#D#")
+		.patternLine("###")
+		.addCriterion("has_" + input.asItem().getRegistryName().getPath(), hasItem(input))
+		.build(consumer);
 	}
 	
 }

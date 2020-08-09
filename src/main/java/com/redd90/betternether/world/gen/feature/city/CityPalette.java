@@ -24,7 +24,6 @@ import net.minecraft.block.TrapDoorBlock;
 import net.minecraft.block.WallBlock;
 import net.minecraft.block.WallTorchBlock;
 import net.minecraft.util.Direction;
-import net.minecraft.util.registry.Registry;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class CityPalette {

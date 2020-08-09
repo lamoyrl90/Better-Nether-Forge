@@ -1,9 +1,6 @@
 package com.redd90.betternether.block;
 
-import net.minecraft.block.BlockState;
 import net.minecraft.block.FenceGateBlock;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
 
 public class BNGateBlock extends FenceGateBlock implements IRenderTypeable {
 

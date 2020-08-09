@@ -9,7 +9,6 @@ import net.minecraft.util.math.BlockPos.Mutable;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
-import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

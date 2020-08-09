@@ -6,7 +6,6 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import com.redd90.betternether.BetterNether;
-import com.redd90.betternether.client.renderer.BNRenderType;
 import com.redd90.betternether.client.renderer.entity.model.FireflyModel;
 import com.redd90.betternether.entity.FireflyEntity;
 

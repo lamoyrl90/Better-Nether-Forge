@@ -225,6 +225,66 @@ public class BNBlockLootTables extends BNLootTableProvider {
 		registerShears(BNBlocks.JUNGLE_PLANT.get());
 		registerSilkWithAltChance(BNBlocks.JUNGLE_GRASS.get(), Blocks.NETHERRACK.asItem(), 1.0f);
 		
+		registerDropItem(BNBlocks.JELLYFISH_MUSHROOM.get(), BNBlocks.JELLYFISH_MUSHROOM_SAPLING.get());
+		registerDropItem(BNBlocks.LUMABUS_VINE.get(), BNBlocks.LUMABUS_SEED.get());
+		
+		registerSelfDrop(BNBlocks.SOUL_SANDSTONE.get());
+		registerSelfDrop(BNBlocks.SOUL_SANDSTONE_CUT.get());
+		registerSelfDrop(BNBlocks.SOUL_SANDSTONE_SMOOTH.get());
+		registerSelfDrop(BNBlocks.SOUL_SANDSTONE_CHISELED.get());
+		
+		registerSelfDrop(BNBlocks.SOUL_SANDSTONE_STAIRS.get());
+		registerSelfDrop(BNBlocks.SOUL_SANDSTONE_CUT_STAIRS.get());
+		registerSelfDrop(BNBlocks.SOUL_SANDSTONE_SMOOTH_STAIRS.get());
+		
+		registerSelfDrop(BNBlocks.SOUL_SANDSTONE_SLAB.get());
+		registerSelfDrop(BNBlocks.SOUL_SANDSTONE_CUT_SLAB.get());
+		registerSelfDrop(BNBlocks.SOUL_SANDSTONE_SMOOTH_SLAB.get());
+		
+		registerSelfDrop(BNBlocks.SOUL_SANDSTONE_WALL.get());
+		
+		registerSelfDrop(BNBlocks.BASALT_BRICKS.get());
+		registerSelfDrop(BNBlocks.BASALT_BRICKS_STAIRS.get());
+		registerSelfDrop(BNBlocks.BASALT_BRICKS_SLAB.get());
+		registerSelfDrop(BNBlocks.BASALT_BRICKS_WALL.get());
+		
+		registerSelfDrop(BNBlocks.ROOF_TILE_REEDS.get());
+		registerSelfDrop(BNBlocks.ROOF_TILE_REEDS_STAIRS.get());
+		registerSelfDrop(BNBlocks.ROOF_TILE_REEDS_SLAB.get());
+		registerSelfDrop(BNBlocks.ROOF_TILE_WART.get());
+		registerSelfDrop(BNBlocks.ROOF_TILE_WART_STAIRS.get());
+		registerSelfDrop(BNBlocks.ROOF_TILE_WART_SLAB.get());
+		registerSelfDrop(BNBlocks.ROOF_TILE_CINCINNASITE.get());
+		registerSelfDrop(BNBlocks.ROOF_TILE_CINCINNASITE_STAIRS.get());
+		registerSelfDrop(BNBlocks.ROOF_TILE_CINCINNASITE_SLAB.get());
+		registerSelfDrop(BNBlocks.ROOF_TILE_WILLOW.get());
+		registerSelfDrop(BNBlocks.ROOF_TILE_WILLOW_STAIRS.get());
+		registerSelfDrop(BNBlocks.ROOF_TILE_WILLOW_SLAB.get());
+		registerSelfDrop(BNBlocks.ROOF_TILE_NETHER_BRICKS.get());
+		registerSelfDrop(BNBlocks.ROOF_TILE_NETHER_BRICKS_STAIRS.get());
+		registerSelfDrop(BNBlocks.ROOF_TILE_NETHER_BRICKS_SLAB.get());
+		registerSelfDrop(BNBlocks.ROOF_TILE_STALAGNATE.get());
+		registerSelfDrop(BNBlocks.ROOF_TILE_STALAGNATE_STAIRS.get());
+		registerSelfDrop(BNBlocks.ROOF_TILE_STALAGNATE_SLAB.get());
+		
+		registerSelfDrop(BNBlocks.NETHER_BRICK_TILE_LARGE.get());
+		registerSelfDrop(BNBlocks.NETHER_BRICK_TILE_SMALL.get());
+		registerSelfDrop(BNBlocks.NETHER_BRICK_TILE_STAIRS.get());
+		registerSelfDrop(BNBlocks.NETHER_BRICK_TILE_SLAB.get());
+		registerSelfDrop(BNBlocks.NETHER_BRICK_WALL.get());
+		
+		registerSelfDrop(BNBlocks.BRICK_POT.get());
+		
+		registerSelfDrop(BNBlocks.REEDS_BLOCK.get());
+		registerSelfDrop(BNBlocks.REEDS_STAIRS.get());
+		registerSelfDrop(BNBlocks.REEDS_SLAB.get());
+		registerSelfDrop(BNBlocks.REEDS_FENCE.get());
+		registerSelfDrop(BNBlocks.REEDS_GATE.get());
+		registerSelfDrop(BNBlocks.REEDS_BUTTON.get());
+		registerSelfDrop(BNBlocks.REEDS_PLATE.get());
+		registerSelfDrop(BNBlocks.REEDS_TRAPDOOR.get());
+		registerSelfDrop(BNBlocks.REEDS_DOOR.get());
+		
 		
 		blockLootTables.put(BNBlocks.RED_LARGE_MUSHROOM.get(), redMediumMushroom());
 		blockLootTables.put(BNBlocks.BROWN_LARGE_MUSHROOM.get(), brownMediumMushroom());

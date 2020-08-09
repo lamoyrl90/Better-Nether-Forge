@@ -412,7 +412,7 @@ public class BNBlocks {
 	public static final RegistryObject<Block> NETHER_BRICK_TILE_SLAB = registerBlock("nether_brick_tile_slab", () -> new BNSlabBlock(BNBlockProperties.netherBricks()));
 	
 	public static final RegistryObject<Block> POTTED_PLANT = registerBlockNoItem("potted_plant", () -> new PottedPlantBlock());
-	public static final RegistryObject<Block> BRICK_POT = registerBlockNoItem("brick_pot", () -> new BNPotBlock(Blocks.NETHER_BRICKS));
+	public static final RegistryObject<Block> BRICK_POT = registerBlock("brick_pot", () -> new BNPotBlock(Blocks.NETHER_BRICKS));
 	
 	
 	private static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<? extends B> supplier) {

@@ -1,8 +1,6 @@
 package com.redd90.betternether.world.gen.feature.plants;
 
 import com.mojang.serialization.Codec;
-import com.redd90.betternether.registry.BNBlocks;
-import com.redd90.betternether.util.BlocksHelper;
 import com.redd90.betternether.world.gen.feature.ScatteredFeature;
 
 import net.minecraft.block.Blocks;

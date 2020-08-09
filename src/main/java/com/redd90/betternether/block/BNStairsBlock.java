@@ -4,8 +4,6 @@ import java.util.function.Supplier;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.StairsBlock;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
 
 public class BNStairsBlock extends StairsBlock implements IRenderTypeable {
 

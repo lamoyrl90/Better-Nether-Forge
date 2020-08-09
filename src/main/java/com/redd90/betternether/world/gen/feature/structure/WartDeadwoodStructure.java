@@ -3,8 +3,6 @@ package com.redd90.betternether.world.gen.feature.structure;
 import java.util.Random;
 
 import com.mojang.serialization.Codec;
-import com.redd90.betternether.util.BlocksHelper;
-
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;

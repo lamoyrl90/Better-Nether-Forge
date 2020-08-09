@@ -12,6 +12,7 @@ import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.data.ShapedRecipeBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.tags.ItemTags;
+import net.minecraftforge.common.Tags;
 
 public class BNRecipes extends BNRecipeProvider {
 
@@ -46,7 +47,6 @@ public class BNRecipes extends BNRecipeProvider {
         super.pillarRecipe(BNBlocks.CINCINNASITE_PILLAR.get().asItem(), 5, BNBlocks.CINCINNASITE_FORGED.get().asItem(), consumer);
         super.recipe2x2(BNBlocks.CINCINNASITE_CARVED.get().asItem(), 4, BNBlocks.CINCINNASITE_FORGED.get().asItem(), consumer);
         super.pillarRecipe(BNBlocks.CINCINNASITE_BRICKS_PILLAR.get().asItem(), 2, BNBlocks.CINCINNASITE_BRICKS.get().asItem(), consumer);
-         
         
         super.cookFood(BNItems.DUSTMITE_JERKY.get(), BNItems.DUSTMITE_FLESH.get(), consumer);
         
@@ -118,7 +118,7 @@ public class BNRecipes extends BNRecipeProvider {
         super.plateRecipe(BNBlocks.WILLOW_PLATE.get().asItem(), BNBlocks.WILLOW_PLANKS.get(), consumer);
         super.wallRecipe(BNBlocks.WILLOW_TRAPDOOR.get().asItem(), 2, BNBlocks.WILLOW_PLANKS.get(), consumer);
         super.doorRecipe(BNBlocks.WILLOW_DOOR.get().asItem(), 3, BNBlocks.WILLOW_PLANKS.get(), consumer);
-        super.singleItemRecipe(BNBlocks.WILLOW_BUTTON.get(), 4, BNBlocks.WILLOW_PLANKS.get(), consumer);
+        super.singleItemRecipe(BNBlocks.WILLOW_BUTTON.get(), 1, BNBlocks.WILLOW_PLANKS.get(), consumer);
         
         super.singleItemRecipe("mushroom_planks", BNBlocks.MUSHROOM_PLANKS.get(), 1, BNBlocks.MUSHROOM_STEM.get(), consumer);
         super.stairsRecipe(BNBlocks.MUSHROOM_STAIRS.get().asItem(), BNBlocks.MUSHROOM_PLANKS.get(), consumer);
@@ -128,7 +128,7 @@ public class BNRecipes extends BNRecipeProvider {
         super.plateRecipe(BNBlocks.MUSHROOM_PLATE.get().asItem(), BNBlocks.MUSHROOM_PLANKS.get(), consumer);
         super.wallRecipe(BNBlocks.MUSHROOM_TRAPDOOR.get().asItem(), 2, BNBlocks.MUSHROOM_PLANKS.get(), consumer);
         super.doorRecipe(BNBlocks.MUSHROOM_DOOR.get().asItem(), 3, BNBlocks.MUSHROOM_PLANKS.get(), consumer);
-        super.singleItemRecipe(BNBlocks.MUSHROOM_BUTTON.get(), 4, BNBlocks.MUSHROOM_PLANKS.get(), consumer);
+        super.singleItemRecipe(BNBlocks.MUSHROOM_BUTTON.get(), 1, BNBlocks.MUSHROOM_PLANKS.get(), consumer);
         
         super.singleItemRecipe("mushroom_fir_planks_from_stem", BNBlocks.MUSHROOM_FIR_PLANKS.get(), 1, BNBlocks.MUSHROOM_FIR_STEM.get(), consumer);
         super.singleItemRecipe("mushroom_fir_planks_from_log", BNBlocks.MUSHROOM_FIR_PLANKS.get(), 1, BNTags.Items.MUSHROOM_FIR_LOGS, consumer);
@@ -140,7 +140,7 @@ public class BNRecipes extends BNRecipeProvider {
         super.plateRecipe(BNBlocks.MUSHROOM_FIR_PLATE.get().asItem(), BNBlocks.MUSHROOM_FIR_PLANKS.get(), consumer);
         super.wallRecipe(BNBlocks.MUSHROOM_FIR_TRAPDOOR.get().asItem(), 2, BNBlocks.MUSHROOM_FIR_PLANKS.get(), consumer);
         super.doorRecipe(BNBlocks.MUSHROOM_FIR_DOOR.get().asItem(), 3, BNBlocks.MUSHROOM_FIR_PLANKS.get(), consumer);
-        super.singleItemRecipe(BNBlocks.MUSHROOM_FIR_BUTTON.get(), 4, BNBlocks.MUSHROOM_FIR_PLANKS.get(), consumer);
+        super.singleItemRecipe(BNBlocks.MUSHROOM_FIR_BUTTON.get(), 1, BNBlocks.MUSHROOM_FIR_PLANKS.get(), consumer);
         
         super.singleItemRecipe("wart_planks", BNBlocks.WART_PLANKS.get(), 4, BNTags.Items.WART_LOGS, consumer);
         super.recipe2x2(BNBlocks.WART_BARK.get(), 3, BNBlocks.WART_LOG.get(), consumer);
@@ -151,7 +151,7 @@ public class BNRecipes extends BNRecipeProvider {
         super.plateRecipe(BNBlocks.WART_PLATE.get().asItem(), BNBlocks.WART_PLANKS.get(), consumer);
         super.wallRecipe(BNBlocks.WART_TRAPDOOR.get().asItem(), 2, BNBlocks.WART_PLANKS.get(), consumer);
         super.doorRecipe(BNBlocks.WART_DOOR.get().asItem(), 3, BNBlocks.WART_PLANKS.get(), consumer);
-        super.singleItemRecipe(BNBlocks.WART_BUTTON.get(), 4, BNBlocks.WART_PLANKS.get(), consumer);
+        super.singleItemRecipe(BNBlocks.WART_BUTTON.get(), 1, BNBlocks.WART_PLANKS.get(), consumer);
         
         super.singleItemRecipe("stalagnate_planks_from_stem", BNBlocks.STALAGNATE_PLANKS.get(), 1, BNBlocks.STALAGNATE_STEM.get(), consumer);
         super.singleItemRecipe("stalagnate_planks_from_log", BNBlocks.STALAGNATE_PLANKS.get(), 4, BNTags.Items.STALAGNATE_LOGS, consumer);
@@ -164,7 +164,7 @@ public class BNRecipes extends BNRecipeProvider {
         super.plateRecipe(BNBlocks.STALAGNATE_PLATE.get().asItem(), BNBlocks.STALAGNATE_PLANKS.get(), consumer);
         super.wallRecipe(BNBlocks.STALAGNATE_TRAPDOOR.get().asItem(), 2, BNBlocks.STALAGNATE_PLANKS.get(), consumer);
         super.doorRecipe(BNBlocks.STALAGNATE_DOOR.get().asItem(), 3, BNBlocks.STALAGNATE_PLANKS.get(), consumer);
-        super.singleItemRecipe(BNBlocks.STALAGNATE_BUTTON.get(), 4, BNBlocks.STALAGNATE_PLANKS.get(), consumer);
+        super.singleItemRecipe(BNBlocks.STALAGNATE_BUTTON.get(), 1, BNBlocks.STALAGNATE_PLANKS.get(), consumer);
         
         super.singleItemRecipe("rubeus_planks_from_log", BNBlocks.RUBEUS_PLANKS.get(), 4, BNTags.Items.RUBEUS_LOGS, consumer);
         super.recipe2x2(BNBlocks.RUBEUS_BARK.get(), 3, BNBlocks.RUBEUS_LOG.get(), consumer);
@@ -175,8 +175,102 @@ public class BNRecipes extends BNRecipeProvider {
         super.plateRecipe(BNBlocks.RUBEUS_PLATE.get().asItem(), BNBlocks.RUBEUS_PLANKS.get(), consumer);
         super.wallRecipe(BNBlocks.RUBEUS_TRAPDOOR.get().asItem(), 2, BNBlocks.RUBEUS_PLANKS.get(), consumer);
         super.doorRecipe(BNBlocks.RUBEUS_DOOR.get().asItem(), 3, BNBlocks.RUBEUS_PLANKS.get(), consumer);
-        super.singleItemRecipe(BNBlocks.RUBEUS_BUTTON.get(), 4, BNBlocks.RUBEUS_PLANKS.get(), consumer);
+        super.singleItemRecipe(BNBlocks.RUBEUS_BUTTON.get(), 1, BNBlocks.RUBEUS_PLANKS.get(), consumer);
         
+        super.recipe2x2(BNBlocks.BONE_BLOCK.get(), 4, Blocks.BONE_BLOCK, consumer);
+        super.stairsRecipe(BNBlocks.BONE_STAIRS.get(), BNBlocks.BONE_BLOCK.get(), consumer);
+        super.slabRecipe(BNBlocks.BONE_SLAB.get(), 6, BNBlocks.BONE_BLOCK.get(), consumer);
+        super.recipe2x2(BNBlocks.BONE_TILE.get(), 4, BNBlocks.BONE_BLOCK.get(), consumer);
+        super.plateRecipe(BNBlocks.BONE_PLATE.get(), BNBlocks.BONE_BLOCK.get(), consumer);
+        super.wallRecipe(BNBlocks.BONE_WALL.get(), 6, BNBlocks.BONE_BLOCK.get(), consumer);
+        super.singleItemRecipe(BNBlocks.BONE_BUTTON.get(), 1, BNBlocks.BONE_BLOCK.get(), consumer);
+        
+        super.dyeRecipe(BNBlocks.QUARTZ_GLASS_FRAMED.get(), BNBlocks.QUARTZ_GLASS.get(), BNItems.CINCINNASITE_INGOT.get(), consumer);
+        super.wallRecipe(BNBlocks.QUARTZ_GLASS_PANE.get(), 16, BNBlocks.QUARTZ_GLASS.get(), consumer);
+        super.wallRecipe(BNBlocks.QUARTZ_GLASS_FRAMED_PANE.get(), 16, BNBlocks.QUARTZ_GLASS_FRAMED.get(), consumer);
+        super.dyeRecipe(BNBlocks.QUARTZ_GLASS_RED.get(), BNBlocks.QUARTZ_GLASS.get(), Tags.Items.DYES_RED, consumer);
+        super.dyeRecipe(BNBlocks.QUARTZ_GLASS_FRAMED_RED.get(), BNBlocks.QUARTZ_GLASS_RED.get(), BNItems.CINCINNASITE_INGOT.get(), consumer);
+        super.wallRecipe(BNBlocks.QUARTZ_GLASS_PANE_RED.get(), 16, BNBlocks.QUARTZ_GLASS_RED.get(), consumer);
+        super.wallRecipe(BNBlocks.QUARTZ_GLASS_FRAMED_PANE_RED.get(), 16, BNBlocks.QUARTZ_GLASS_FRAMED_RED.get(), consumer);
+        
+        super.recipe3x3(BNBlocks.REEDS_BLOCK.get(), 1, BNBlocks.NETHER_REED.get(), consumer);
+        super.stairsRecipe(BNBlocks.REEDS_STAIRS.get().asItem(), BNBlocks.REEDS_BLOCK.get(), consumer);
+        super.slabRecipe(BNBlocks.REEDS_SLAB.get().asItem(), 6, BNBlocks.REEDS_BLOCK.get(), consumer);
+        super.fenceRecipe(BNBlocks.REEDS_FENCE.get().asItem(), BNBlocks.REEDS_BLOCK.get(), consumer);
+        super.gateRecipe(BNBlocks.REEDS_GATE.get().asItem(), BNBlocks.REEDS_BLOCK.get(), consumer);
+        super.plateRecipe(BNBlocks.REEDS_PLATE.get().asItem(), BNBlocks.REEDS_BLOCK.get(), consumer);
+        super.wallRecipe(BNBlocks.REEDS_TRAPDOOR.get().asItem(), 2, BNBlocks.REEDS_BLOCK.get(), consumer);
+        super.doorRecipe(BNBlocks.REEDS_DOOR.get().asItem(), 3, BNBlocks.REEDS_BLOCK.get(), consumer);
+        super.singleItemRecipe(BNBlocks.REEDS_BUTTON.get(), 1, BNBlocks.REEDS_BLOCK.get(), consumer);
+        
+        super.recipe2x2(BNBlocks.SOUL_SANDSTONE.get(), 1, Blocks.SOUL_SAND, consumer);
+        super.recipe2x2(BNBlocks.SOUL_SANDSTONE_CUT.get(), 4, BNBlocks.SOUL_SANDSTONE.get(), consumer);
+        super.recipe2x2(BNBlocks.SOUL_SANDSTONE_CHISELED.get(), 4, BNBlocks.SOUL_SANDSTONE_CHISELED.get(), consumer);
+        super.stairsRecipe(BNBlocks.SOUL_SANDSTONE_STAIRS.get().asItem(), BNBlocks.SOUL_SANDSTONE.get(), consumer);
+        super.stairsRecipe(BNBlocks.SOUL_SANDSTONE_CUT_STAIRS.get().asItem(), BNBlocks.SOUL_SANDSTONE_CUT.get(), consumer);
+        super.stairsRecipe(BNBlocks.SOUL_SANDSTONE_SMOOTH_STAIRS.get().asItem(), BNBlocks.SOUL_SANDSTONE_SMOOTH.get(), consumer);
+        super.slabRecipe(BNBlocks.SOUL_SANDSTONE_SLAB.get().asItem(), 6, BNBlocks.SOUL_SANDSTONE.get(), consumer);
+        super.slabRecipe(BNBlocks.SOUL_SANDSTONE_CUT_SLAB.get().asItem(), 6, BNBlocks.SOUL_SANDSTONE_CUT.get(), consumer);
+        super.slabRecipe(BNBlocks.SOUL_SANDSTONE_SMOOTH_SLAB.get().asItem(), 6, BNBlocks.SOUL_SANDSTONE_SMOOTH.get(), consumer);
+        super.wallRecipe(BNBlocks.SOUL_SANDSTONE_WALL.get().asItem(), 6, BNBlocks.SOUL_SANDSTONE.get(), consumer);
+        
+        super.recipe2x2(BNBlocks.BASALT_BRICKS.get(), 1, Blocks.BASALT, consumer);
+        super.stairsRecipe(BNBlocks.BASALT_BRICKS_STAIRS.get().asItem(), BNBlocks.BASALT_BRICKS.get(), consumer);
+        super.slabRecipe(BNBlocks.BASALT_BRICKS_SLAB.get().asItem(), 6, BNBlocks.BASALT_BRICKS.get(), consumer);
+        
+        super.roofRecipe(BNBlocks.ROOF_TILE_CINCINNASITE.get(), BNBlocks.CINCINNASITE_BLOCK.get(), consumer);
+        super.stairsRecipe(BNBlocks.ROOF_TILE_CINCINNASITE_STAIRS.get().asItem(), BNBlocks.ROOF_TILE_CINCINNASITE.get(), consumer);
+        super.slabRecipe(BNBlocks.ROOF_TILE_CINCINNASITE_SLAB.get().asItem(), 6, BNBlocks.ROOF_TILE_CINCINNASITE.get(), consumer);
+        super.roofRecipe(BNBlocks.ROOF_TILE_REEDS.get(), BNBlocks.REEDS_BLOCK.get(), consumer);
+        super.stairsRecipe(BNBlocks.ROOF_TILE_REEDS_STAIRS.get().asItem(), BNBlocks.ROOF_TILE_REEDS.get(), consumer);
+        super.slabRecipe(BNBlocks.ROOF_TILE_REEDS_SLAB.get().asItem(), 6, BNBlocks.ROOF_TILE_REEDS.get(), consumer);
+        super.roofRecipe(BNBlocks.ROOF_TILE_STALAGNATE.get(), BNBlocks.STALAGNATE_PLANKS.get(), consumer);
+        super.stairsRecipe(BNBlocks.ROOF_TILE_STALAGNATE_STAIRS.get().asItem(), BNBlocks.ROOF_TILE_STALAGNATE.get(), consumer);
+        super.slabRecipe(BNBlocks.ROOF_TILE_STALAGNATE_SLAB.get().asItem(), 6, BNBlocks.ROOF_TILE_STALAGNATE.get(), consumer);
+        super.roofRecipe(BNBlocks.ROOF_TILE_WILLOW.get(), BNBlocks.WILLOW_PLANKS.get(), consumer);
+        super.stairsRecipe(BNBlocks.ROOF_TILE_WILLOW_STAIRS.get().asItem(), BNBlocks.ROOF_TILE_WILLOW.get(), consumer);
+        super.slabRecipe(BNBlocks.ROOF_TILE_WILLOW_SLAB.get().asItem(), 6, BNBlocks.ROOF_TILE_WILLOW.get(), consumer);
+        super.roofRecipe(BNBlocks.ROOF_TILE_WART.get(), BNBlocks.WART_PLANKS.get(), consumer);
+        super.stairsRecipe(BNBlocks.ROOF_TILE_WART_STAIRS.get().asItem(), BNBlocks.ROOF_TILE_WART.get(), consumer);
+        super.slabRecipe(BNBlocks.ROOF_TILE_WART_SLAB.get().asItem(), 6, BNBlocks.ROOF_TILE_WART.get(), consumer);
+        super.roofRecipe(BNBlocks.ROOF_TILE_NETHER_BRICKS.get(), Blocks.NETHER_BRICKS, consumer);
+        super.stairsRecipe(BNBlocks.ROOF_TILE_NETHER_BRICKS_STAIRS.get().asItem(), BNBlocks.ROOF_TILE_NETHER_BRICKS.get(), consumer);
+        super.slabRecipe(BNBlocks.ROOF_TILE_NETHER_BRICKS_SLAB.get().asItem(), 6, BNBlocks.ROOF_TILE_NETHER_BRICKS.get(), consumer);
+        
+        super.recipe2x2(BNBlocks.NETHER_BRICK_TILE_LARGE.get(), 4, Blocks.NETHER_BRICKS, consumer);
+        super.recipe2x2(BNBlocks.NETHER_BRICK_TILE_SMALL.get(), 4, BNBlocks.NETHER_BRICK_TILE_LARGE.get(), consumer);
+        super.wallRecipe(BNBlocks.NETHER_BRICK_WALL.get().asItem(), 6, Blocks.NETHER_BRICKS, consumer);
+        super.stairsRecipe(BNBlocks.NETHER_BRICK_TILE_STAIRS.get(), BNBlocks.NETHER_BRICK_TILE_SMALL.get(), consumer);
+        super.slabRecipe(BNBlocks.NETHER_BRICK_TILE_SLAB.get(), 6, BNBlocks.NETHER_BRICK_TILE_SMALL.get(), consumer);
+        
+        
+        ShapedRecipeBuilder
+		.shapedRecipe(BNBlocks.BRICK_POT.get(), 1)
+		.key('B', Items.NETHER_BRICK)
+		.patternLine("B B")
+		.patternLine(" B ")
+		.addCriterion("has_nether_bricks", hasItem(Items.NETHER_BRICK))
+		.build(consumer);
+        
+        ShapedRecipeBuilder
+		.shapedRecipe(BNBlocks.BONE_REED_DOOR.get(), 3)
+		.key('B', BNBlocks.BONE_BLOCK.get())
+		.key('R', BNBlocks.REEDS_BLOCK.get())
+		.patternLine("BR")
+		.patternLine("RB")
+		.patternLine("BR")
+		.addCriterion("has_reed", hasItem(BNBlocks.NETHER_REED.get()))
+		.build(consumer);
+        
+        ShapedRecipeBuilder
+		.shapedRecipe(BNBlocks.BONE_CINCINNASITE_DOOR.get(), 3)
+		.key('B', BNBlocks.BONE_BLOCK.get())
+		.key('R', BNItems.CINCINNASITE_INGOT.get())
+		.patternLine("BR")
+		.patternLine("RB")
+		.patternLine("BR")
+		.addCriterion("has_cincinnasite", hasItem(BNItems.CINCINNASITE_INGOT.get()))
+		.build(consumer);
         
         ShapedRecipeBuilder
 		.shapedRecipe(BNBlocks.PIG_STATUE_RESPAWNER.get())
@@ -216,6 +310,17 @@ public class BNRecipes extends BNRecipeProvider {
 		.patternLine(" C ")
 		.addCriterion("has_glowstone", hasItem(Items.GLOWSTONE))
 		.build(consumer);
+        
+        ShapedRecipeBuilder
+		.shapedRecipe(BNBlocks.CINCINNASITE_LANTERN_SMALL.get(), 1)
+		.key('G', Items.GLOWSTONE_DUST)
+		.key('C', BNItems.CINCINNASITE_NUGGET.get())
+		.patternLine("CCC")
+		.patternLine("CGC")
+		.patternLine("CCC")
+		.addCriterion("has_glowstone", hasItem(Items.GLOWSTONE))
+		.build(consumer);
+        
         
         ShapedRecipeBuilder
 		.shapedRecipe(BNBlocks.CINCINNASITE_FIRE_BOWL.get(), 1)
