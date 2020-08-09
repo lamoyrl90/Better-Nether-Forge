@@ -2,16 +2,16 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "minecraft:wart_planks"
+      "minecraft:scaffolding"
     ]
   },
   "criteria": {
-    "has_net.minecraft.tags.TagRegistry$NamedTag@113d9226": {
+    "has_string": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "tag": "betternether:wart_logs"
+            "tag": "forge:string"
           }
         ]
       }
@@ -19,13 +19,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "minecraft:wart_planks"
+        "recipe": "minecraft:scaffolding"
       }
     }
   },
   "requirements": [
     [
-      "has_net.minecraft.tags.TagRegistry$NamedTag@113d9226",
+      "has_string",
       "has_the_recipe"
     ]
   ]

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " X ",
+    "SSS"
+  ],
+  "key": {
+    "X": {
+      "tag": "forge:string"
+    },
+    "S": {
+      "tag": "betternether:stems"
+    }
+  },
+  "result": {
+    "item": "minecraft:scaffolding",
+    "count": 6
+  }
+}
