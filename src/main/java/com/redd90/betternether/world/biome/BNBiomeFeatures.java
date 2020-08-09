@@ -30,11 +30,11 @@ import net.minecraft.world.gen.placement.Placement;
 public class BNBiomeFeatures {
 	
 	public static final boolean FULL_CHUNK_SCANNING = false;
-	private static final float PLANT_COUNT = BNConfig.GlobalPlantCount;
-	private static final float DECOR_COUNT = BNConfig.GlobalDecorationCount;
-	private static final float WALL_FACTOR = BNConfig.WallFactor;
-	private static final Float SCATTERED_STRUCTURE_FREQUENCY = BNConfig.ScatteredStructureFrequency;
-	private static final Float LAVA_PYRAMID_FREQUENCY = BNConfig.LavaPyramidFrequency;
+	private static final double PLANT_COUNT = BNConfig.CommonConfig.globalPlantCount.get();
+	private static final double DECOR_COUNT = BNConfig.CommonConfig.globalDecorCount.get();
+	private static final double WALL_FACTOR = BNConfig.CommonConfig.wallFactor.get();
+	private static final double SCATTERED_STRUCTURE_FREQUENCY = BNConfig.CommonConfig.scatteredStructureCount.get();
+	private static final double LAVA_PYRAMID_FREQUENCY = BNConfig.CommonConfig.lavaPyramidCount.get();
 	
 	private static final BlockState AGAVE = BNBlocks.AGAVE.get().getDefaultState();
 	private static final BlockState BARREL_CACTUS = BNBlocks.BARREL_CACTUS.get().getDefaultState();
@@ -44,48 +44,48 @@ public class BNBiomeFeatures {
 	public static final BlockClusterFeatureConfig AGAVE_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(AGAVE), SimpleBlockPlacer.field_236447_c_)).tries(64).func_227317_b_().build();
 	public static final BlockClusterFeatureConfig BARREL_CACTUS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(BARREL_CACTUS), SimpleBlockPlacer.field_236447_c_)).tries(64).func_227317_b_().build();
 	
-	public static final StructureFeature<NoFeatureConfig, ? extends Structure<NoFeatureConfig>> NETHER_CITY = BNFeatures.NETHER_CITY.get().func_236391_a_(NoFeatureConfig.field_236559_b_);
+	//public static final StructureFeature<NoFeatureConfig, ? extends Structure<NoFeatureConfig>> NETHER_CITY = BNFeatures.NETHER_CITY.get().func_236391_a_(NoFeatureConfig.field_236559_b_);
 	
 	private static ConfiguredPlacement<DensityConfig> floorPlantPlacement(float density){
-		return BNPlacements.VERTICAL_DOWN.get().configure(new DensityConfig(density*PLANT_COUNT));
+		return BNPlacements.VERTICAL_DOWN.get().configure(new DensityConfig((float) (density*PLANT_COUNT)));
 	}
 	
 	private static ConfiguredPlacement<DensityConfig> ceilingPlantPlacement(float density){
-		return BNPlacements.VERTICAL_UP.get().configure(new DensityConfig(density*PLANT_COUNT));
+		return BNPlacements.VERTICAL_UP.get().configure(new DensityConfig((float) (density*PLANT_COUNT)));
 	}
 	
 	private static ConfiguredPlacement<DensityConfig> wallPlantPlacement(float density){
-		return BNPlacements.WALL_SEARCH.get().configure(new DensityConfig(density*PLANT_COUNT*WALL_FACTOR));
+		return BNPlacements.WALL_SEARCH.get().configure(new DensityConfig((float) (density*PLANT_COUNT*WALL_FACTOR)));
 	}
 	
 	private static ConfiguredPlacement<DensityConfig> floorDecorPlacement(float density){
-		return BNPlacements.VERTICAL_DOWN.get().configure(new DensityConfig(density*DECOR_COUNT));
+		return BNPlacements.VERTICAL_DOWN.get().configure(new DensityConfig((float) (density*DECOR_COUNT)));
 	}
 	
 	private static ConfiguredPlacement<DensityConfig> ceilingDecorPlacement(float density){
-		return BNPlacements.VERTICAL_UP.get().configure(new DensityConfig(density*DECOR_COUNT));
+		return BNPlacements.VERTICAL_UP.get().configure(new DensityConfig((float) (density*DECOR_COUNT)));
 	}
 	
 	private static ConfiguredPlacement<DensityConfig> wallDecorPlacement(float density){
-		return BNPlacements.WALL_SEARCH.get().configure(new DensityConfig(density*DECOR_COUNT*WALL_FACTOR));
+		return BNPlacements.WALL_SEARCH.get().configure(new DensityConfig((float) (density*DECOR_COUNT*WALL_FACTOR)));
 	}
 	
 	public static void addScatteredFloorStructures(Biome biome) {
 		biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, 
 				BNFeatures.SCATTERED_FLOOR_STRUCTURES.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
-				.withPlacement(BNPlacements.VERTICAL_DOWN.get().configure(new DensityConfig(SCATTERED_STRUCTURE_FREQUENCY))));
+				.withPlacement(BNPlacements.VERTICAL_DOWN.get().configure(new DensityConfig((float) SCATTERED_STRUCTURE_FREQUENCY))));
 	}
 	
 	public static void addLavaPyramids(Biome biome) {
 		biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, 
 				BNFeatures.LAVA_PYRAMID.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
-				.withPlacement(BNPlacements.VERTICAL_DOWN.get().configure(new DensityConfig(LAVA_PYRAMID_FREQUENCY))));
+				.withPlacement(BNPlacements.VERTICAL_DOWN.get().configure(new DensityConfig((float) LAVA_PYRAMID_FREQUENCY))));
 	}
 	
 	public static void addGhastHives(Biome biome) {
 		biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, 
 				BNFeatures.GHAST_HIVE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
-				.withPlacement(BNPlacements.VERTICAL_UP.get().configure(new DensityConfig(SCATTERED_STRUCTURE_FREQUENCY/4))));
+				.withPlacement(BNPlacements.VERTICAL_UP.get().configure(new DensityConfig((float) (SCATTERED_STRUCTURE_FREQUENCY/4)))));
 	}
 	
 	public static void addBoneReefs(Biome biome, float density) {
@@ -97,6 +97,12 @@ public class BNBiomeFeatures {
 	public static void addTwistingVines(Biome biome, float density) {
 		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
 				BNFeatures.TWISTING_VINES.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				.withPlacement(floorPlantPlacement(density)));
+	}
+	
+	public static void addSoulLilies(Biome biome, float density) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+				BNFeatures.SOUL_LILY.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 				.withPlacement(floorPlantPlacement(density)));
 	}
 	

@@ -1,92 +1,38 @@
 package com.redd90.betternether;
 
-
-import org.apache.commons.lang3.tuple.Pair;
-
 import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.common.ForgeConfigSpec.ConfigValue;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.ModLoadingContext;
 
-@EventBusSubscriber (modid = BetterNether.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class BNConfig {
-
-	
-	public static final ForgeConfigSpec COMMON_SPEC;
-	public static final CommonConfig COMMON;
-	
-	public static Boolean NetherSpawn;
-	public static Integer GlobalPlantCount;
-	public static Integer GlobalDecorationCount;
-	public static Float WallFactor;
-	public static Float ScatteredStructureFrequency;
-	public static Float LavaPyramidFrequency;
-	public static Integer CitySeparation;
-	//public static Float GhastHiveFrequency;
-	
-	static {
-		final Pair<CommonConfig, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(CommonConfig::new);
-		COMMON_SPEC = specPair.getRight();
-		COMMON = specPair.getLeft();
-	}
-	
-	public static void bakeConfig() {
-		NetherSpawn = COMMON.NetherSpawn.get();
-		GlobalPlantCount = COMMON.GlobalPlantCount.get();
-		GlobalDecorationCount = COMMON.GlobalDecorationCount.get();
-		WallFactor = COMMON.WallFactor.get();
-		ScatteredStructureFrequency = COMMON.ScatteredStructureFrequency.get();
-		LavaPyramidFrequency = COMMON.LavaPyramidFrequency.get();
-		CitySeparation = COMMON.CitySeparation.get();
-	}
-	
-	@SubscribeEvent
-	public static void onModConfigEvent(final ModConfig.ModConfigEvent event) {
-		if (event.getConfig().getSpec() == BNConfig.COMMON_SPEC) {
-			bakeConfig();
-		}
-	}
-	
-	public static class CommonConfig{
-		public final ForgeConfigSpec.BooleanValue NetherSpawn;
-		public final ConfigValue<Integer> GlobalPlantCount;
-		public final ConfigValue<Integer> GlobalDecorationCount;
-		public final ConfigValue<Float> WallFactor;
-		public final ConfigValue<Float> ScatteredStructureFrequency;
-		public final ConfigValue<Float> LavaPyramidFrequency;
-		public final ConfigValue<Integer> CitySeparation;
+	public static class CommonConfig {
+		public static final ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
+		public static final ForgeConfigSpec spec;
 		
-		public CommonConfig(ForgeConfigSpec.Builder builder) {
-			NetherSpawn = builder
-					.translation(BetterNether.MODID + ".config.NetherSpawn")
-					.define("Spawn in Nether", true);
+		public static final ForgeConfigSpec.BooleanValue netherSpawn;
+		public static final ForgeConfigSpec.DoubleValue globalPlantCount;
+		public static final ForgeConfigSpec.DoubleValue wallFactor;
+		public static final ForgeConfigSpec.DoubleValue globalDecorCount;
+		public static final ForgeConfigSpec.DoubleValue scatteredStructureCount;
+		public static final ForgeConfigSpec.DoubleValue lavaPyramidCount;
+		
+		static {
+			builder.push("Game Settings");
+			netherSpawn = builder.comment("Spawn and respawn in the Nether").define("nether_spawn", false);
+			builder.pop();
 			
-			GlobalPlantCount = builder
-					.translation(BetterNether.MODID + ".config.GlobalPlantCount")
-					.define("Global Plant Count", 128);
+			builder.push("Worldgen Settings");
+			globalPlantCount = builder.comment("Base number of plants generated. Higher == more").defineInRange("global_plant_count",  128d, 0, 10000);
+			wallFactor = builder.comment("Extra factor applied to wall decorations").defineInRange("wall_factor",  4d, 0, 10000);
+			globalDecorCount = builder.comment("Base number of decorations generated. Higher == more").defineInRange("global_decor_count",  64d, 0, 10000);
+			scatteredStructureCount = builder.comment("Average scattered structures per chunk").defineInRange("scattered_structure_count",  0.08d, 0, 100);
+			lavaPyramidCount = builder.comment("Average lava pyramids per chunk").defineInRange("lava_pyramid_count",  0.01d, 0, 100);
+			builder.pop();
 			
-			GlobalDecorationCount = builder
-					.translation(BetterNether.MODID + ".config.GlobalDecorationCount")
-					.define("Global Decoration Count", 64);
-			
-			WallFactor = builder
-					.translation(BetterNether.MODID + ".config.WallFactor")
-					.define("Extra factor for wall features", 4.0f);
-			
-			ScatteredStructureFrequency = builder
-					.translation(BetterNether.MODID + ".config.ScatteredStructureFrequency")
-					.define("Scattered Structure Frequency", 0.08f);
-
-			LavaPyramidFrequency = builder
-					.translation(BetterNether.MODID + ".config.LavaPyramidFrequency")
-					.define("Lava Pyramid Frequency", 0.01f);
-			
-			CitySeparation = builder
-					.translation(BetterNether.MODID + ".config.LavaPyramidFrequency")
-					.define("Separation of cities", 64);
-
+			spec = builder.build();
 		}
 	}
 	
+	public static void registerConfig() {
+		ModLoadingContext.get().registerConfig(net.minecraftforge.fml.config.ModConfig.Type.COMMON, CommonConfig.spec, "betternether.toml");
+	}
 }

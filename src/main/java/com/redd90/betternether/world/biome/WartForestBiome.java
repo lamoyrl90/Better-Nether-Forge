@@ -69,5 +69,6 @@ public class WartForestBiome extends Biome {
 		BNBiomeFeatures.addNetherWart(this, 0.2f);
 		BNBiomeFeatures.addWartTrees(this, 0.1f);
 		BNBiomeFeatures.addWartDeadwood(this, 0.02f);
+		BNBiomeFeatures.addSoulLilies(this, 0.2f);
 	}
 }

@@ -2,16 +2,16 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "minecraft:wart_planks"
+      "minecraft:minecart"
     ]
   },
   "criteria": {
-    "has_net.minecraft.tags.TagRegistry$NamedTag@113d9226": {
+    "has_cincinnasite": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "tag": "betternether:wart_logs"
+            "item": "betternether:cincinnasite_ingot"
           }
         ]
       }
@@ -19,13 +19,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "minecraft:wart_planks"
+        "recipe": "minecraft:minecart"
       }
     }
   },
   "requirements": [
     [
-      "has_net.minecraft.tags.TagRegistry$NamedTag@113d9226",
+      "has_cincinnasite",
       "has_the_recipe"
     ]
   ]

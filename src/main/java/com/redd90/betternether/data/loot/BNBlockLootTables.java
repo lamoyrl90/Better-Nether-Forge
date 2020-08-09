@@ -285,6 +285,9 @@ public class BNBlockLootTables extends BNLootTableProvider {
 		registerSelfDrop(BNBlocks.REEDS_TRAPDOOR.get());
 		registerSelfDrop(BNBlocks.REEDS_DOOR.get());
 		
+		registerSelfDrop(BNBlocks.SOUL_LILY_SAPLING.get());
+		registerDropItem(BNBlocks.SOUL_LILY.get(), BNBlocks.SOUL_LILY_SAPLING.get());
+		
 		
 		blockLootTables.put(BNBlocks.RED_LARGE_MUSHROOM.get(), redMediumMushroom());
 		blockLootTables.put(BNBlocks.BROWN_LARGE_MUSHROOM.get(), brownMediumMushroom());

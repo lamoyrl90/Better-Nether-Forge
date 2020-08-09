@@ -49,6 +49,7 @@ import com.redd90.betternether.world.gen.feature.plants.RubeusBushFeature;
 import com.redd90.betternether.world.gen.feature.plants.RubeusTreeFeature;
 import com.redd90.betternether.world.gen.feature.plants.SmokerFeature;
 import com.redd90.betternether.world.gen.feature.plants.SoulGrassFeature;
+import com.redd90.betternether.world.gen.feature.plants.SoulLilyFeature;
 import com.redd90.betternether.world.gen.feature.plants.SoulVeinFeature;
 import com.redd90.betternether.world.gen.feature.plants.StalagnateFeature;
 import com.redd90.betternether.world.gen.feature.plants.SwampGrassFeature;
@@ -154,6 +155,7 @@ public class BNFeatures {
 	public static final RegistryObject<Feature<NoFeatureConfig>> WART_BUSH = FEATURES.register("wart_bush", () -> new WartBushFeature(NoFeatureConfig.field_236558_a_));
 	public static final RegistryObject<Feature<NoFeatureConfig>> CRIMSON_GLOWING_TREE = FEATURES.register("crimson_glowing_tree", () -> new CrimsonGlowingTreeStructure(NoFeatureConfig.field_236558_a_));
 	public static final RegistryObject<Feature<NoFeatureConfig>> CRIMSON_PINEWOOD = FEATURES.register("crimson_pinewood", () -> new CrimsonPinewoodStructure(NoFeatureConfig.field_236558_a_));
+	public static final RegistryObject<Feature<NoFeatureConfig>> SOUL_LILY = FEATURES.register("soul_lily", () -> new SoulLilyFeature(NoFeatureConfig.field_236558_a_));
 	
 	public static final RegistryObject<Feature<NoFeatureConfig>> SCATTERED_FLOOR_STRUCTURES = FEATURES.register("scattered_floor_structure", () -> new ScatteredFloorStructures(NoFeatureConfig.field_236558_a_));
 	public static final RegistryObject<Feature<NoFeatureConfig>> LAVA_PYRAMID = FEATURES.register("lava_pyramid", () -> new LavaPyramidStructure(NoFeatureConfig.field_236558_a_));
@@ -161,11 +163,11 @@ public class BNFeatures {
 	
 	/// STRUCTURES ///
 	
-	public static final RegistryObject<Structure<NoFeatureConfig>> NETHER_CITY = register("nether_city", new CityStructure(NoFeatureConfig.field_236558_a_), GenerationStage.Decoration.STRONGHOLDS);
+	//public static final RegistryObject<Structure<NoFeatureConfig>> NETHER_CITY = register("nether_city", new CityStructure(NoFeatureConfig.field_236558_a_), GenerationStage.Decoration.STRONGHOLDS);
 	
-    private static <T extends Structure<?>> RegistryObject<T> register(String name, T structure, GenerationStage.Decoration decoration) {
+    /*private static <T extends Structure<?>> RegistryObject<T> register(String name, T structure, GenerationStage.Decoration decoration) {
         Structure.field_236365_a_.put(BetterNether.MODID + ":" + name, structure);
         Structure.field_236385_u_.put(structure, decoration);
         return STRUCTURES.register(name, () -> structure);
-    }
+    }*/
 }

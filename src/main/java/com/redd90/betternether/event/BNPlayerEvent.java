@@ -27,10 +27,11 @@ import net.minecraftforge.fml.common.Mod;
 public class BNPlayerEvent {
 	
 	private static HashMap<PlayerEntity, Boolean> deathCheck = new HashMap<PlayerEntity, Boolean>();
+	private static boolean NETHER_SPAWN = BNConfig.CommonConfig.netherSpawn.get();
 	
 	@SubscribeEvent
 	public static void PlayerLoggedInEvent(PlayerEvent.PlayerLoggedInEvent event) {
-		if(BNConfig.NetherSpawn==true) {
+		if(NETHER_SPAWN) {
 			ServerPlayerEntity player = (ServerPlayerEntity) event.getPlayer();
 	
 	        int timePlayed = player.getStats().getValue(Stats.CUSTOM.get(Stats.PLAY_ONE_MINUTE));
@@ -46,7 +47,7 @@ public class BNPlayerEvent {
 	
 	@SubscribeEvent
 	public static void PlayerCopyEvent(PlayerEvent.Clone event) {
-		if(BNConfig.NetherSpawn==true) {
+		if(NETHER_SPAWN) {
 			PlayerEntity player = event.getOriginal();
 			ServerPlayerEntity serverplayer = (ServerPlayerEntity) player;
 			MinecraftServer server = serverplayer.getServer();
@@ -74,7 +75,7 @@ public class BNPlayerEvent {
 	
 	@SubscribeEvent
 	public static void PlayerRespawnEvent(PlayerEvent.PlayerRespawnEvent event) {
-		if(BNConfig.NetherSpawn==true) {
+		if(NETHER_SPAWN) {
 			PlayerEntity player = event.getPlayer();
 			UUID uuid = player.getGameProfile().getId();
 			boolean netherspawn = deathCheck.get(player);

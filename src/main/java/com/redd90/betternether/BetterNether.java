@@ -39,7 +39,7 @@ public class BetterNether
 
         MinecraftForge.EVENT_BUS.register(this);
         
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BNConfig.COMMON_SPEC); 
+        BNConfig.registerConfig();
         
         BNTags.init();
         

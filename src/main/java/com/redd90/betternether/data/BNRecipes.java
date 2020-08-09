@@ -245,6 +245,42 @@ public class BNRecipes extends BNRecipeProvider {
         
         
         ShapedRecipeBuilder
+		.shapedRecipe(Blocks.RAIL, 12)
+		.key('C', BNItems.CINCINNASITE_INGOT.get())
+		.key('S', BNTags.Items.STEMS)
+		.patternLine("C C")
+		.patternLine("CSC")
+		.patternLine("C C")
+		.addCriterion("has_cincinnasite", hasItem(BNItems.CINCINNASITE_INGOT.get()))
+		.build(consumer);
+        
+        ShapedRecipeBuilder
+		.shapedRecipe(Items.MINECART, 1)
+		.key('C', BNItems.CINCINNASITE_INGOT.get())
+		.patternLine("C C")
+		.patternLine("CCC")
+		.addCriterion("has_cincinnasite", hasItem(BNItems.CINCINNASITE_INGOT.get()))
+		.build(consumer);
+        
+        ShapedRecipeBuilder
+		.shapedRecipe(Blocks.HOPPER, 1)
+		.key('C', BNItems.CINCINNASITE_INGOT.get())
+		.patternLine("C C")
+		.patternLine("C C")
+		.patternLine(" C ")
+		.addCriterion("has_cincinnasite", hasItem(BNItems.CINCINNASITE_INGOT.get()))
+		.build(consumer);
+        
+        ShapedRecipeBuilder
+		.shapedRecipe(Blocks.SCAFFOLDING, 6)
+		.key('X', Tags.Items.STRING)
+		.key('S', BNTags.Items.STEMS)
+		.patternLine(" X ")
+		.patternLine("SSS")
+		.addCriterion("has_string", hasItem(Tags.Items.STRING))
+		.build(consumer);
+        
+        ShapedRecipeBuilder
 		.shapedRecipe(BNBlocks.BRICK_POT.get(), 1)
 		.key('B', Items.NETHER_BRICK)
 		.patternLine("B B")

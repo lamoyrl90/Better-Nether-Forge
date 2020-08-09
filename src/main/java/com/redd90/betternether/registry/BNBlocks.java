@@ -93,6 +93,8 @@ import com.redd90.betternether.block.SmallCincinnasiteLanternBlock;
 import com.redd90.betternether.block.SmallEyeballBlock;
 import com.redd90.betternether.block.SmokerBlock;
 import com.redd90.betternether.block.SoulFarmlandBlock;
+import com.redd90.betternether.block.SoulLilyBlock;
+import com.redd90.betternether.block.SoulLilySaplingBlock;
 import com.redd90.betternether.block.SoulSandstoneBlock;
 import com.redd90.betternether.block.SoulVeinBlock;
 import com.redd90.betternether.block.SpeleothemBlock;
@@ -305,8 +307,8 @@ public class BNBlocks {
 	public static final RegistryObject<Block> WART_TRAPDOOR = registerBlock("wart_trapdoor", () -> new BNTrapdoorBlock(BNBlockProperties.wartWood()));
 	public static final RegistryObject<Block> WART_DOOR = registerBlock("wart_door", () -> new BNDoorBlock(BNBlockProperties.wartWood()));
 	
-	public static final RegistryObject<Block> SOUL_LILY = registerBlockNoItem("soul_lily", () -> new BNBlock(BNBlockProperties.willow()));
-	public static final RegistryObject<Block> SOUL_LILY_SAPLING = registerBlock("soul_lily_sapling", () -> new BNBlock(BNBlockProperties.willow()));
+	public static final RegistryObject<Block> SOUL_LILY = registerBlockNoItem("soul_lily", () -> new SoulLilyBlock());
+	public static final RegistryObject<Block> SOUL_LILY_SAPLING = registerBlock("soul_lily_sapling", () -> new SoulLilySaplingBlock());
 	
 	public static final RegistryObject<Block> BLACK_APPLE = registerBlockNoItem("black_apple", () -> new BlackAppleBlock());
 	public static final RegistryObject<Block> BLACK_APPLE_SEED = registerBlock("black_apple_seed", () -> new BlackAppleSeedBlock());
@@ -365,7 +367,7 @@ public class BNBlocks {
 	public static final RegistryObject<Block> JELLYFISH_MUSHROOM_SAPLING = registerBlock("jellyfish_mushroom_sapling", () -> new JellyfishMushroomSaplingBlock());
 	public static final RegistryObject<Block> LUMABUS_VINE = registerBlockNoItem("lumabus_vine", () -> new LumabusVineBlock());
 	public static final RegistryObject<Block> LUMABUS_SEED = registerBlock("lumabus_seed", () -> new LumabusSeedBlock());
-	
+		
 	public static final RegistryObject<Block> SOUL_SANDSTONE = registerBlock("soul_sandstone", () -> new SoulSandstoneBlock());
 	public static final RegistryObject<Block> SOUL_SANDSTONE_CUT = registerBlock("soul_sandstone_cut", () -> new SoulSandstoneBlock());
 	public static final RegistryObject<Block> SOUL_SANDSTONE_SMOOTH = registerBlock("soul_sandstone_smooth", () -> new BNBlock(BNBlockProperties.soulSandstone()));

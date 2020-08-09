@@ -72,11 +72,12 @@ public class HadeanJungleBiome extends Biome {
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.STRIDER, 60, 1, 2));
 	      */
 
-	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.HOGLIN, 5, 2, 4));
+	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ZOGLIN, 5, 2, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.MAGMA_CUBE, 2, 4, 4));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.STRIDER, 60, 1, 2));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ZOMBIFIED_PIGLIN, 20, 4, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ENDERMAN, 1, 4, 4));
+	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.CAVE_SPIDER, 40, 4, 4));
 	   }
 	
 	public void finalizeFeatures() {
