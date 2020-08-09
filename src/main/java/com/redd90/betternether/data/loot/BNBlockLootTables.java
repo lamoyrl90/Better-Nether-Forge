@@ -1,9 +1,7 @@
 package com.redd90.betternether.data.loot;
 
-import com.redd90.betternether.block.LumabusVineBlock;
 import com.redd90.betternether.block.RespawnStatueBlock;
 import com.redd90.betternether.block.WillowBranchNaturalBlock;
-import com.redd90.betternether.block.shapes.TripleShape;
 import com.redd90.betternether.data.BNLootTableProvider;
 import com.redd90.betternether.registry.BNBlocks;
 import com.redd90.betternether.registry.BNItems;
@@ -230,7 +228,6 @@ public class BNBlockLootTables extends BNLootTableProvider {
 		registerSilkWithAltChance(BNBlocks.JUNGLE_GRASS.get(), Blocks.NETHERRACK.asItem(), 1.0f);
 		
 		registerDropItem(BNBlocks.JELLYFISH_MUSHROOM.get(), BNBlocks.JELLYFISH_MUSHROOM_SAPLING.get());
-		registerBlockState(BNBlocks.LUMABUS_VINE.get(), BNBlocks.LUMABUS_SEED.get(), LumabusVineBlock.SHAPE, TripleShape.BOTTOM);
 		
 		registerSelfDrop(BNBlocks.SOUL_SANDSTONE.get());
 		registerSelfDrop(BNBlocks.SOUL_SANDSTONE_CUT.get());
@@ -300,6 +297,7 @@ public class BNBlockLootTables extends BNLootTableProvider {
 		blockLootTables.put(BNBlocks.GIANT_MOLD.get(), giantMold());
 		blockLootTables.put(BNBlocks.EYEBALL.get(), eyeball());
 		blockLootTables.put(BNBlocks.EYEBALL_SMALL.get(), eyeball());
+		blockLootTables.put(BNBlocks.LUMABUS_VINE.get(), lumabusVine());
 	}
 	
 	private void registerBlockState(Block block, Block item, BooleanProperty property, boolean value) {

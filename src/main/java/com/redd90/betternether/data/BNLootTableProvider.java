@@ -14,6 +14,7 @@ import com.redd90.betternether.block.BNPlantBlock;
 import com.redd90.betternether.block.BrownMushroomCapBlock;
 import com.redd90.betternether.block.BrownMushroomCapBlock.BrownMushroomShape;
 import com.redd90.betternether.block.GiantMoldBlock;
+import com.redd90.betternether.block.LumabusVineBlock;
 import com.redd90.betternether.block.MushroomFirBlock;
 import com.redd90.betternether.block.MushroomFirBlock.MushroomFirShape;
 import com.redd90.betternether.block.RedMushroomCapBlock;
@@ -396,6 +397,24 @@ public abstract class BNLootTableProvider extends LootTableProvider {
 				.rolls(ConstantRange.of(1))
 				.addEntry(ItemLootEntry.builder(Items.SLIME_BALL)
 						.acceptFunction(BNLootCondition.randomCount(1, 4)));
+						
+		
+		return LootTable.builder().addLootPool(pool1).addLootPool(pool2);
+	}
+	
+	protected LootTable.Builder lumabusVine() {
+		LootPool.Builder pool1 = LootPool.builder()
+				.name("pool1")
+				.rolls(ConstantRange.of(1))
+				.addEntry(ItemLootEntry.builder(BNBlocks.LUMABUS_SEED.get().asItem())
+						.acceptCondition(BNLootCondition.blockState(BNBlocks.LUMABUS_VINE.get(), LumabusVineBlock.SHAPE, TripleShape.BOTTOM)));
+						
+		LootPool.Builder pool2 = LootPool.builder()
+				.name("pool2")
+				.rolls(ConstantRange.of(1))
+				.addEntry(ItemLootEntry.builder(Items.GLOWSTONE_DUST)
+						.acceptCondition(BNLootCondition.blockState(BNBlocks.LUMABUS_VINE.get(), LumabusVineBlock.SHAPE, TripleShape.BOTTOM))
+						.acceptFunction(BNLootCondition.randomCount(0.0f, 2.0f)));
 						
 		
 		return LootTable.builder().addLootPool(pool1).addLootPool(pool2);
