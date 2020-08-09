@@ -2,7 +2,6 @@ package com.redd90.betternether.world.gen.feature.city;
 
 import java.util.Random;
 
-import com.redd90.betternether.registry.BNStructurePieceTypes;
 import com.redd90.betternether.util.BlocksHelper;
 
 import net.minecraft.block.BlockState;
@@ -17,6 +16,7 @@ import net.minecraft.util.math.BlockPos.Mutable;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.ChunkGenerator;
+import net.minecraft.world.gen.feature.structure.IStructurePieceType;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 
@@ -30,7 +30,7 @@ public class CityPiece extends CustomPiece {
 	
 	public CityPiece(CityBuildingStructure building, BlockPos pos, int id)//, CityPalette palette)
 	{
-		super(BNStructurePieceTypes.NETHER_CITY, id);
+		super(IStructurePieceType.IGLU, id);
 		this.building = building;
 		this.pos = new BlockPos(pos);
 		this.boundingBox = building.getBoundingBox(pos);
@@ -40,7 +40,7 @@ public class CityPiece extends CustomPiece {
 
 	public CityPiece(TemplateManager manager, CompoundNBT tag)
 	{
-		super(BNStructurePieceTypes.NETHER_CITY, tag);
+		super(IStructurePieceType.IGLU, tag);
 		this.building = new CityBuildingStructure(tag.getString("building"), tag.getInt("offset"));
 		this.building = this.building.getRotated(Rotation.values()[tag.getInt("rotation")]);
 		this.building.setMirror(Mirror.values()[tag.getInt("mirror")]);

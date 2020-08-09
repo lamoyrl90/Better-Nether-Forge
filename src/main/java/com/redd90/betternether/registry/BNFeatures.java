@@ -4,7 +4,6 @@ import com.redd90.betternether.BetterNether;
 import com.redd90.betternether.world.gen.feature.BNFloorOreFeature;
 import com.redd90.betternether.world.gen.feature.BNFloorOreFeatureConfig;
 import com.redd90.betternether.world.gen.feature.StrayLavaFixer;
-import com.redd90.betternether.world.gen.feature.city.CityStructure;
 import com.redd90.betternether.world.gen.feature.NetherrackFeature;
 import com.redd90.betternether.world.gen.feature.decorations.BlackstoneSpikeFeature;
 import com.redd90.betternether.world.gen.feature.decorations.BoneStalactiteFeature;
@@ -73,7 +72,6 @@ import com.redd90.betternether.world.gen.feature.structure.ScatteredFloorStructu
 import com.redd90.betternether.world.gen.feature.structure.WartDeadwoodStructure;
 import com.redd90.betternether.world.gen.feature.trees.WillowTreeFeature;
 
-import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.structure.Structure;

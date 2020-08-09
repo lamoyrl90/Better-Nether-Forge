@@ -71,7 +71,7 @@ public class BNEntities {
 		EntitySpawnPlacementRegistry.register(DUST_DEVIL.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, DustDevilEntity::canMonsterSpawn);
 		EntitySpawnPlacementRegistry.register(DUSTMITE.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, DustmiteEntity::canMonsterSpawn);
 		EntitySpawnPlacementRegistry.register(OVERGROWN_SKELETON.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, OvergrownSkeletonEntity::canMonsterSpawn);
-		EntitySpawnPlacementRegistry.register(FIREFLY.get(), EntitySpawnPlacementRegistry.PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, FireflyEntity::canMonsterSpawn);
+		EntitySpawnPlacementRegistry.register(FIREFLY.get(), EntitySpawnPlacementRegistry.PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING, FireflyEntity::canMonsterSpawn);
 	}
 	
 	public static void registerRenderers() {

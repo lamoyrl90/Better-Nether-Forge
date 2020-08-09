@@ -2,7 +2,6 @@ package com.redd90.betternether.world.gen.feature.city;
 
 import java.util.Random;
 
-import com.redd90.betternether.registry.BNStructurePieceTypes;
 import com.redd90.betternether.util.OpenSimplexNoise;
 
 import net.minecraft.block.BlockState;
@@ -15,6 +14,7 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.ChunkGenerator;
+import net.minecraft.world.gen.feature.structure.IStructurePieceType;
 import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 
@@ -31,7 +31,7 @@ public class CavePiece extends CustomPiece {
 	
 	public CavePiece(BlockPos center, int radius, Random random)
 	{
-		super(BNStructurePieceTypes.CAVE, random.nextInt());
+		super(IStructurePieceType.IGLU, random.nextInt());
 		this.center = center;
 		this.radius = radius;
 		this.radSqr = radius * radius;
@@ -40,7 +40,7 @@ public class CavePiece extends CustomPiece {
 	
 	public CavePiece(TemplateManager manager, CompoundNBT tag)
 	{
-		super(BNStructurePieceTypes.CAVE, tag);
+		super(IStructurePieceType.IGLU, tag);
 		this.center = NBTUtil.readBlockPos(tag.getCompound("center"));
 		this.radius = tag.getInt("radius");
 		this.radSqr = radius * radius;
