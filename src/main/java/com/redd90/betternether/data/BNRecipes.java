@@ -26,10 +26,12 @@ public class BNRecipes extends BNRecipeProvider {
     	//Cincinnasite and cincinnasite accessories
     	
     	super.recipe2x2(BNBlocks.CINCINNASITE_BLOCK.get().asItem(), 1, BNItems.CINCINNASITE.get(), consumer);
-        super.recipe3x3(BNBlocks.CINCINNASITE_FORGED.get().asItem(), 1, BNItems.CINCINNASITE_INGOT.get(), consumer);
+        super.recipe2x2(BNBlocks.CINCINNASITE_FORGED.get().asItem(), 1, BNItems.CINCINNASITE_INGOT.get(), consumer);
         super.recipe3x3(BNItems.CINCINNASITE_INGOT.get(), 1, BNItems.CINCINNASITE_NUGGET.get().asItem(), consumer);
-        super.smeltQuick(BNItems.CINCINNASITE_NUGGET.get(), BNItems.CINCINNASITE.get(), 0.08f, consumer);
+        super.smeltOre(BNItems.CINCINNASITE_INGOT.get(), BNItems.CINCINNASITE.get(), 0.7f, consumer);
         super.smeltOre(BNItems.CINCINNASITE_INGOT.get(), BNBlocks.CINCINNASITE_ORE.get().asItem(), 0.7f, consumer);
+        super.smeltOre(BNBlocks.CINCINNASITE_FORGED.get(), BNBlocks.CINCINNASITE_BLOCK.get().asItem(), 0.7f, consumer);
+        
         
         super.recipe2x2(Blocks.GLOWSTONE.asItem(), 3, BNBlocks.GLOWSTONE_SPELEOTHEM.get().asItem(), consumer);
         super.recipe2x2(Blocks.BASALT.asItem(), 3, BNBlocks.BASALT_SPELEOTHEM.get().asItem(), consumer);
@@ -43,8 +45,7 @@ public class BNRecipes extends BNRecipeProvider {
         
         super.recipe2x2(BNBlocks.CINCINNASITE_TILE_SMALL.get().asItem(), 4, BNBlocks.CINCINNASITE_TILE_LARGE.get().asItem(), consumer);
         super.pillarRecipe(BNBlocks.CINCINNASITE_TILE_LARGE.get().asItem(), 1, BNBlocks.CINCINNASITE_SLAB.get().asItem(), consumer);
-        super.pillarRecipe(BNBlocks.CINCINNASITE_PILLAR.get().asItem(), 2, BNBlocks.CINCINNASITE_BLOCK.get().asItem(), consumer);
-        super.pillarRecipe(BNBlocks.CINCINNASITE_PILLAR.get().asItem(), 5, BNBlocks.CINCINNASITE_FORGED.get().asItem(), consumer);
+        super.pillarRecipe(BNBlocks.CINCINNASITE_PILLAR.get().asItem(), 2, BNBlocks.CINCINNASITE_FORGED.get().asItem(), consumer);
         super.recipe2x2(BNBlocks.CINCINNASITE_CARVED.get().asItem(), 4, BNBlocks.CINCINNASITE_FORGED.get().asItem(), consumer);
         super.pillarRecipe(BNBlocks.CINCINNASITE_BRICKS_PILLAR.get().asItem(), 2, BNBlocks.CINCINNASITE_BRICKS.get().asItem(), consumer);
         
@@ -75,11 +76,11 @@ public class BNRecipes extends BNRecipeProvider {
         super.leggingsRecipe(BNItems.NETHER_RUBY_LEGGINGS.get(), BNItems.NETHER_RUBY.get(), consumer);
         super.bootsRecipe(BNItems.NETHER_RUBY_BOOTS.get(), BNItems.NETHER_RUBY.get(), consumer);
         
-        super.stairsRecipe(BNBlocks.CINCINNASITE_STAIRS.get(), BNBlocks.CINCINNASITE_BLOCK.get(), consumer);
-        super.slabRecipe(BNBlocks.CINCINNASITE_SLAB.get(), 6, BNBlocks.CINCINNASITE_BLOCK.get(), consumer);
-        super.plateRecipe(BNBlocks.CINCINNASITE_PLATE.get(), BNBlocks.CINCINNASITE_BLOCK.get(), consumer);
-        super.singleItemRecipe(BNBlocks.CINCINNASITE_BUTTON.get(), 1, BNBlocks.CINCINNASITE_BLOCK.get(), consumer);
-        super.wallRecipe(BNBlocks.CINCINNASITE_WALL.get(), 6, BNBlocks.CINCINNASITE_BLOCK.get(), consumer);
+        super.stairsRecipe(BNBlocks.CINCINNASITE_STAIRS.get(), BNBlocks.CINCINNASITE_FORGED.get(), consumer);
+        super.slabRecipe(BNBlocks.CINCINNASITE_SLAB.get(), 6, BNBlocks.CINCINNASITE_FORGED.get(), consumer);
+        super.plateRecipe(BNBlocks.CINCINNASITE_PLATE.get(), BNBlocks.CINCINNASITE_FORGED.get(), consumer);
+        super.singleItemRecipe(BNBlocks.CINCINNASITE_BUTTON.get(), 1, BNBlocks.CINCINNASITE_FORGED.get(), consumer);
+        super.wallRecipe(BNBlocks.CINCINNASITE_WALL.get(), 6, BNBlocks.CINCINNASITE_FORGED.get(), consumer);
         
         super.furnace(Items.ORANGE_DYE, BNBlocks.NETHER_CACTUS.get(), .7f, consumer);
         super.furnace(Items.LIGHT_BLUE_DYE, BNBlocks.WILLOW_FRUIT.get(), .7f, consumer);
@@ -214,7 +215,7 @@ public class BNRecipes extends BNRecipeProvider {
         super.slabRecipe(BNBlocks.SOUL_SANDSTONE_SMOOTH_SLAB.get().asItem(), 6, BNBlocks.SOUL_SANDSTONE_SMOOTH.get(), consumer);
         super.wallRecipe(BNBlocks.SOUL_SANDSTONE_WALL.get().asItem(), 6, BNBlocks.SOUL_SANDSTONE.get(), consumer);
         
-        super.recipe2x2(BNBlocks.BASALT_BRICKS.get(), 1, Blocks.BASALT, consumer);
+        super.recipe2x2(BNBlocks.BASALT_BRICKS.get(), 4, Blocks.POLISHED_BASALT, consumer);
         super.stairsRecipe(BNBlocks.BASALT_BRICKS_STAIRS.get().asItem(), BNBlocks.BASALT_BRICKS.get(), consumer);
         super.slabRecipe(BNBlocks.BASALT_BRICKS_SLAB.get().asItem(), 6, BNBlocks.BASALT_BRICKS.get(), consumer);
         
@@ -312,8 +313,9 @@ public class BNRecipes extends BNRecipeProvider {
 		.shapedRecipe(BNBlocks.PIG_STATUE_RESPAWNER.get())
 		.key('C', BNBlocks.CINCINNASITE_FIRE_BOWL.get())
 		.key('W', BNItems.CINCINNASITE_INGOT.get())
+		.key('P', BNBlocks.CINCINNASITE_PEDESTAL.get())
 		.patternLine("WCW")
-		.patternLine("WWW")
+		.patternLine("WPW")
 		.patternLine(" W ")
 		.addCriterion("has_cincinnasite", hasItem(BNItems.CINCINNASITE_INGOT.get()))
 		.build(consumer);
@@ -370,7 +372,7 @@ public class BNRecipes extends BNRecipeProvider {
         ShapedRecipeBuilder
 		.shapedRecipe(BNBlocks.CINCINNASITE_BRICKS.get(), 1)
 		.key('N', Items.NETHER_BRICK)
-		.key('C', BNItems.CINCINNASITE_INGOT.get())
+		.key('C', BNBlocks.CINCINNASITE_FORGED.get())
 		.patternLine("NC")
 		.patternLine("CN")
 		.addCriterion("has_glowstone", hasItem(BNItems.CINCINNASITE_INGOT.get()))
@@ -378,16 +380,6 @@ public class BNRecipes extends BNRecipeProvider {
         
         ShapedRecipeBuilder
 		.shapedRecipe(BNBlocks.CINCINNASITE_BRICK_PLATE.get(), 5)
-		.key('N', Items.NETHER_BRICK)
-		.key('C', BNBlocks.CINCINNASITE_BLOCK.get())
-		.patternLine(" C ")
-		.patternLine("NNN")
-		.patternLine(" C ")
-		.addCriterion("has_glowstone", hasItem(BNItems.CINCINNASITE_INGOT.get()))
-		.build(consumer);
-        
-        ShapedRecipeBuilder
-		.shapedRecipe(BNBlocks.CINCINNASITE_BRICK_PLATE.get(), 12)
 		.key('N', Items.NETHER_BRICK)
 		.key('C', BNBlocks.CINCINNASITE_FORGED.get())
 		.patternLine(" C ")
@@ -398,7 +390,7 @@ public class BNRecipes extends BNRecipeProvider {
         
         ShapedRecipeBuilder
 		.shapedRecipe(BNBlocks.CINCINNASITE_BARS.get(), 16)
-		.key('C', BNItems.CINCINNASITE_INGOT.get())
+		.key('C', BNBlocks.CINCINNASITE_FORGED.get())
 		.patternLine("C C")
 		.patternLine("C C")
 		.patternLine("C C")
@@ -406,7 +398,7 @@ public class BNRecipes extends BNRecipeProvider {
 		.build(consumer);
         
         ShapedRecipeBuilder
-		.shapedRecipe(BNBlocks.CINCINNASITE_PEDESTAL.get(), 5)
+		.shapedRecipe(BNBlocks.CINCINNASITE_PEDESTAL.get(), 2)
 		.key('C', BNBlocks.CINCINNASITE_FORGED.get())
 		.patternLine("CC")
 		.patternLine("CC")

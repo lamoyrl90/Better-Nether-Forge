@@ -26,7 +26,7 @@ public class BNBlockLootTables extends BNLootTableProvider {
 	protected void addTables() {
 		registerBlockState(BNBlocks.PIG_STATUE_RESPAWNER.get(), BNBlocks.PIG_STATUE_RESPAWNER.get(), RespawnStatueBlock.TOP, false);
 				
-		registerFortune(BNBlocks.CINCINNASITE_ORE.get(), BNItems.CINCINNASITE.get(), 4.0f, 6.0f);
+		registerSilkWithAltChance(BNBlocks.CINCINNASITE_ORE.get(), BNItems.CINCINNASITE.get(), 1.0f);
 		registerFortune(BNBlocks.NETHER_RUBY_ORE.get(), BNItems.NETHER_RUBY.get(), 1.0f, 1.0f);
 		
 		registerSelfDrop(BNBlocks.CINCINNASITE_BLOCK.get());
@@ -182,6 +182,7 @@ public class BNBlockLootTables extends BNLootTableProvider {
 		registerSelfDrop(BNBlocks.WART_PLATE.get());
 		registerSelfDrop(BNBlocks.WART_TRAPDOOR.get());
 		registerSelfDrop(BNBlocks.WART_DOOR.get());
+		registerDropItem(BNBlocks.WART_ROOTS.get(), BNBlocks.WART_LOG.get());
 		
 		registerCrop(BNBlocks.BLACK_APPLE.get(), BNItems.BLACK_APPLE.get(), 3, 1, 1);
 		registerSelfDrop(BNBlocks.BLACK_APPLE_SEED.get());
