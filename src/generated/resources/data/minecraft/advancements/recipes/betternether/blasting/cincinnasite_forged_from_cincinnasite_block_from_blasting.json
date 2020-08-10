@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "minecraft:pillarcrafting_cincinnasite_pillar_from_cincinnasite_block"
+      "minecraft:blasting/cincinnasite_forged_from_cincinnasite_block_from_blasting"
     ]
   },
   "criteria": {
@@ -19,7 +19,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "minecraft:pillarcrafting_cincinnasite_pillar_from_cincinnasite_block"
+        "recipe": "minecraft:blasting/cincinnasite_forged_from_cincinnasite_block_from_blasting"
       }
     }
   },

@@ -6,10 +6,11 @@
   ],
   "key": {
     "#": {
-      "item": "minecraft:basalt"
+      "item": "minecraft:polished_basalt"
     }
   },
   "result": {
-    "item": "betternether:basalt_bricks"
+    "item": "betternether:basalt_bricks",
+    "count": 4
   }
 }

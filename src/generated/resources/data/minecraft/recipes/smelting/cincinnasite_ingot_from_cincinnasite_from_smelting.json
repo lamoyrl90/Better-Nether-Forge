@@ -3,7 +3,7 @@
   "ingredient": {
     "item": "betternether:cincinnasite"
   },
-  "result": "betternether:cincinnasite_nugget",
-  "experience": 0.08,
-  "cookingtime": 22
+  "result": "betternether:cincinnasite_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
 }

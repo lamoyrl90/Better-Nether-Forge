@@ -6,12 +6,12 @@
     ]
   },
   "criteria": {
-    "has_cincinnasite_block": {
+    "has_cincinnasite_forged": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "betternether:cincinnasite_block"
+            "item": "betternether:cincinnasite_forged"
           }
         ]
       }
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "has_cincinnasite_block",
+      "has_cincinnasite_forged",
       "has_the_recipe"
     ]
   ]

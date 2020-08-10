@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "minecraft:3x3crafting_cincinnasite_forged"
+      "minecraft:2x2crafting_cincinnasite_forged"
     ]
   },
   "criteria": {
@@ -19,7 +19,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "minecraft:3x3crafting_cincinnasite_forged"
+        "recipe": "minecraft:2x2crafting_cincinnasite_forged"
       }
     }
   },

@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "WCW",
-    "WWW",
+    "WPW",
     " W "
   ],
   "key": {
@@ -11,6 +11,9 @@
     },
     "W": {
       "item": "betternether:cincinnasite_ingot"
+    },
+    "P": {
+      "item": "betternether:cincinnasite_pedestal"
     }
   },
   "result": {

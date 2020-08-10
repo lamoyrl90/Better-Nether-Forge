@@ -2,16 +2,16 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "minecraft:smelting/cincinnasite_nugget_from_cincinnasite_from_smelting"
+      "minecraft:2x2crafting_cincinnasite_forged"
     ]
   },
   "criteria": {
-    "has_cincinnasite": {
+    "has_cincinnasite_ingot": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "betternether:cincinnasite"
+            "item": "betternether:cincinnasite_ingot"
           }
         ]
       }
@@ -19,13 +19,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "minecraft:smelting/cincinnasite_nugget_from_cincinnasite_from_smelting"
+        "recipe": "minecraft:2x2crafting_cincinnasite_forged"
       }
     }
   },
   "requirements": [
     [
-      "has_cincinnasite",
+      "has_cincinnasite_ingot",
       "has_the_recipe"
     ]
   ]

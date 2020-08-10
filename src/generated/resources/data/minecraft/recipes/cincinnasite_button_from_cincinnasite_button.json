@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "betternether:cincinnasite_block"
+      "item": "betternether:cincinnasite_forged"
     }
   ],
   "result": {

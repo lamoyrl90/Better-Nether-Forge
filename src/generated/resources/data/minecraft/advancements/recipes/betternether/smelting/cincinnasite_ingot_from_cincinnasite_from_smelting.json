@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "minecraft:blasting/cincinnasite_nugget_from_cincinnasite_from_blasting"
+      "minecraft:smelting/cincinnasite_ingot_from_cincinnasite_from_smelting"
     ]
   },
   "criteria": {
@@ -19,7 +19,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "minecraft:blasting/cincinnasite_nugget_from_cincinnasite_from_blasting"
+        "recipe": "minecraft:smelting/cincinnasite_ingot_from_cincinnasite_from_smelting"
       }
     }
   },
