@@ -7,15 +7,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:block_state_property",
-              "block": "betternether:lumabus_vine",
-              "properties": {
-                "shape": "bottom"
-              }
-            }
-          ],
           "name": "betternether:lumabus_seed"
         }
       ]
@@ -26,15 +17,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:block_state_property",
-              "block": "betternether:lumabus_vine",
-              "properties": {
-                "shape": "bottom"
-              }
-            }
-          ],
           "functions": [
             {
               "function": "minecraft:set_count",
