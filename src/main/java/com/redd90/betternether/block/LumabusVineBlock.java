@@ -23,7 +23,6 @@ import net.minecraft.world.IWorldReader;
 
 public class LumabusVineBlock extends BNBlock {
 	private static final VoxelShape MIDDLE_SHAPE = Block.makeCuboidShape(4, 0, 4, 12, 16, 12);
-	private static final VoxelShape BOTTOM_SHAPE = Block.makeCuboidShape(2, 4, 2, 14, 16, 14);
 	public static final EnumProperty<TripleShape> SHAPE = EnumProperty.create("shape", TripleShape.class);
 
 	public LumabusVineBlock()
@@ -47,7 +46,7 @@ public class LumabusVineBlock extends BNBlock {
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader view, BlockPos pos, ISelectionContext ePos)
 	{
-		return state.get(SHAPE) == TripleShape.BOTTOM ? BOTTOM_SHAPE : MIDDLE_SHAPE;
+		return MIDDLE_SHAPE;
 	}
 	
 	@Override
@@ -71,7 +70,7 @@ public class LumabusVineBlock extends BNBlock {
 	@Override
 	public BlockState updatePostPlacement(BlockState state, Direction facing, BlockState neighborState, IWorld world, BlockPos pos, BlockPos neighborPos)
 	{
-		return isValidPosition(state, world, pos) && (world.getBlockState(pos.down()).getBlock() == this || state.get(SHAPE) == TripleShape.BOTTOM) ? state : Blocks.AIR.getDefaultState();
+		return isValidPosition(state, world, pos) && (world.getBlockState(pos.down()).getBlock() == this || world.getBlockState(pos.down()).getBlock() == BNBlocks.LUMABUS_BULB.get()) ? state : Blocks.AIR.getDefaultState();
 	}
 	
 	
@@ -80,12 +79,4 @@ public class LumabusVineBlock extends BNBlock {
 	{
 		return new ItemStack(BNBlocks.LUMABUS_SEED.get());
 	}
-	
-    @Override
-    public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) {
-        if (world.getBlockState(pos).getBlock() instanceof LumabusVineBlock) {
-    		return world.getBlockState(pos).get(SHAPE) == TripleShape.BOTTOM ? 15 : 0;
-        }
-        return 0;
-    }
 }

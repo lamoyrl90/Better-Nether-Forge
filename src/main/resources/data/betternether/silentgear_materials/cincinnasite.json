@@ -13,6 +13,39 @@
   "name": {
     "text": "Cincinnasite"
   },
+    "display": {
+    "main/all": [
+      {
+        "texture": "silentgear:main_generic_hc",
+        "color": "#AA9900"
+      },
+      {
+        "texture": "silentgear:_highlight",
+        "color": "#AA9900"
+      }
+    ],
+    "main/armor": [
+      {
+        "texture": "silentgear:main_generic_hc",
+        "color": "#AA9900"
+      },
+      {
+        "texture": "silentgear:_highlight",
+        "color": "#AA9900"
+      }
+    ],
+    "rod/all": [
+      {
+        "texture": "silentgear:rod_generic_lc",
+        "color": "#AA9900"
+      }
+    ],
+    "tip/all": [
+      {
+        "texture": "silentgear:tip_gold"
+      }
+    ]
+  },
   "stats": {
     "main": {
       "durability": 230.0,

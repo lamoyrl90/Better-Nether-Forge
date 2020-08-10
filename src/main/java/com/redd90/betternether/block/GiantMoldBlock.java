@@ -25,8 +25,7 @@ public class GiantMoldBlock extends BNBlock {
 	public static final EnumProperty<TripleShape> SHAPE = EnumProperty.create("shape", TripleShape.class);
 		
 	public GiantMoldBlock() {
-		super(BNBlockProperties.giantMold());
-		this.properties.notSolid();
+		super(BNBlockProperties.giantMold().notSolid());
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 	}
 	

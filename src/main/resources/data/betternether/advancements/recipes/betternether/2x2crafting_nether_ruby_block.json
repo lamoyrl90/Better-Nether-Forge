@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:2x2crafting_nether_ruby_block"
+    ]
+  },
+  "criteria": {
+    "has_nether_ruby_stairs": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betternether:nether_ruby_stairs"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:2x2crafting_nether_ruby_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_nether_ruby_stairs",
+      "has_the_recipe"
+    ]
+  ]
+}

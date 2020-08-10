@@ -80,6 +80,10 @@ public class BNBlockProperties {
 		return AbstractBlock.Properties.from(Blocks.BASALT);
 	}
 	
+	public static AbstractBlock.Properties ruby(){
+		return AbstractBlock.Properties.create(Material.IRON, MaterialColor.RED).setRequiresTool().hardnessAndResistance(5.0F, 6.0F).sound(SoundType.METAL);
+	}
+		
 	public static AbstractBlock.Properties cincinnasite(){
 		return AbstractBlock.Properties.create(Material.IRON, MaterialColor.YELLOW).setRequiresTool().hardnessAndResistance(5.0F, 6.0F).sound(SoundType.METAL);
 	}

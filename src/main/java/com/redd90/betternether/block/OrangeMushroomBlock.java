@@ -1,7 +1,5 @@
 package com.redd90.betternether.block;
 
-import com.redd90.betternether.util.BlocksHelper;
-
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.util.math.BlockPos;
@@ -9,7 +7,6 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorldReader;
 
 public class OrangeMushroomBlock extends BNPlantBlock {
 	private static final VoxelShape[] SHAPES = new VoxelShape[] {
@@ -21,17 +18,19 @@ public class OrangeMushroomBlock extends BNPlantBlock {
 
 	public OrangeMushroomBlock()
 	{
-		super(BNBlockProperties.plant(MaterialColor.ORANGE_TERRACOTTA, true).hardnessAndResistance(0.5f));
+		super(BNBlockProperties.plant(MaterialColor.ORANGE_TERRACOTTA, false).hardnessAndResistance(0.5f));
 	}
 
-	@Override
-	public boolean isValidPosition(BlockState state, IWorldReader world, BlockPos pos)
-	{
-		return BlocksHelper.isNetherMycelium(world.getBlockState(pos.down()));
-	}
+
 	
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader view, BlockPos pos, ISelectionContext ePos)
+	{
+		return SHAPES[state.get(AGE)];
+	}
+	
+	@Override
+	public VoxelShape getCollisionShape(BlockState state, IBlockReader view, BlockPos pos, ISelectionContext ePos)
 	{
 		return SHAPES[state.get(AGE)];
 	}

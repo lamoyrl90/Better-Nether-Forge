@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:cincinnasite_ingot_from_cincinnasite_ingot"
+    ]
+  },
+  "criteria": {
+    "has_cincinnasite_forged": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betternether:cincinnasite_forged"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:cincinnasite_ingot_from_cincinnasite_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cincinnasite_forged",
+      "has_the_recipe"
+    ]
+  ]
+}

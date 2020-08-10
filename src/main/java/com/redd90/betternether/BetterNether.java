@@ -20,6 +20,7 @@ import com.redd90.betternether.registry.BNItems;
 import com.redd90.betternether.registry.BNPlacements;
 import com.redd90.betternether.registry.BNStructurePieceTypes;
 import com.redd90.betternether.registry.BNTags;
+import com.redd90.betternether.registry.BNTileEntities;
 
 @Mod(BetterNether.MODID)
 @Mod.EventBusSubscriber(modid = BetterNether.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -43,6 +44,7 @@ public class BetterNether
         
         BNBlocks.BLOCKS.register(modEventBus);
         BNItems.ITEMS.register(modEventBus);
+        BNTileEntities.TILES.register(modEventBus);
         BNEntities.ENTITIES.register(modEventBus);
         BNPlacements.PLACEMENTS.register(modEventBus);
         BNFeatures.FEATURES.register(modEventBus);
@@ -56,6 +58,7 @@ public class BetterNether
     {
     	BNBlocks.setupRenderLayers();
     	BNEntities.registerRenderers();
+    	BNTileEntities.registerRenderers();
     }
 
 	private void commonSetup(final FMLCommonSetupEvent event) {

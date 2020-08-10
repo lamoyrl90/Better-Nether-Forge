@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:pillarcrafting_nether_ruby_block_from_nether_ruby_slab"
+    ]
+  },
+  "criteria": {
+    "has_nether_ruby_slab": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betternether:nether_ruby_slab"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:pillarcrafting_nether_ruby_block_from_nether_ruby_slab"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_nether_ruby_slab",
+      "has_the_recipe"
+    ]
+  ]
+}

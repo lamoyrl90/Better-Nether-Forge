@@ -29,6 +29,10 @@ public class BNBlockLootTables extends BNLootTableProvider {
 		registerSilkWithAltChance(BNBlocks.CINCINNASITE_ORE.get(), BNItems.CINCINNASITE.get(), 1.0f);
 		registerFortune(BNBlocks.NETHER_RUBY_ORE.get(), BNItems.NETHER_RUBY.get(), 1.0f, 1.0f);
 		
+		registerSelfDrop(BNBlocks.NETHER_RUBY_BLOCK.get());
+		registerSelfDrop(BNBlocks.NETHER_RUBY_STAIRS.get());
+		registerSelfDrop(BNBlocks.NETHER_RUBY_SLAB.get());
+		
 		registerSelfDrop(BNBlocks.CINCINNASITE_BLOCK.get());
 		registerSelfDrop(BNBlocks.CINCINNASITE_FORGED.get());
 		registerSelfDrop(BNBlocks.CINCINNASITE_PILLAR.get());
@@ -298,7 +302,7 @@ public class BNBlockLootTables extends BNLootTableProvider {
 		blockLootTables.put(BNBlocks.GIANT_MOLD.get(), giantMold());
 		blockLootTables.put(BNBlocks.EYEBALL.get(), eyeball());
 		blockLootTables.put(BNBlocks.EYEBALL_SMALL.get(), eyeball());
-		blockLootTables.put(BNBlocks.LUMABUS_VINE.get(), lumabusVine());
+		blockLootTables.put(BNBlocks.LUMABUS_BULB.get(), lumabusBulb());
 	}
 	
 	private void registerBlockState(Block block, Block item, BooleanProperty property, boolean value) {

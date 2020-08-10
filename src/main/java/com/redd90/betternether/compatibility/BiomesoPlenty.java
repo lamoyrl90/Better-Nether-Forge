@@ -1,13 +1,9 @@
 package com.redd90.betternether.compatibility;
 
 import com.redd90.betternether.registry.BNBiomes;
-import com.redd90.betternether.registry.BNEntities;
-import biomesoplenty.api.biome.BOPBiomes;
 import biomesoplenty.api.block.BOPBlocks;
 import biomesoplenty.api.enums.BOPClimates;
 import net.minecraft.block.Block;
-import net.minecraft.entity.EntityClassification;
-import net.minecraft.world.biome.Biome;
 
 public class BiomesoPlenty {
 	public static void registerBiomesToBOP() {

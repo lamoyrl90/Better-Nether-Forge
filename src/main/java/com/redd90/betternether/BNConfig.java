@@ -49,8 +49,8 @@ public class BNConfig {
 				lavaPyramidCount = builder.comment("Average lava pyramids per chunk").defineInRange("lava_pyramid_count",  0.01d, 0, 100);
 				builder.push("Cincinnasite Ore");
 					spawnCincinnasite = builder.comment("Should cincinnasite ore generate").define("generate_cincinnasite", true);
-					cincinnasiteCount = builder.comment("Number of veins per chunk").define("cincinnasite_count", 12);
-					cincinnasiteSize = builder.comment("Size of cincinnasize veins").define("cincinnasite_size", 14);
+					cincinnasiteCount = builder.comment("Number of veins per chunk").define("cincinnasite_count", 8);
+					cincinnasiteSize = builder.comment("Size of cincinnasize veins").define("cincinnasite_size", 12);
 					cincinnasiteMinY = builder.comment("Minimum Y level that cincinnasite generates").defineInRange("cincinnasite_min_y", 10, 0, 128);
 					cincinnasiteMaxY = builder.comment("Maximum Y level that cincinnasite generates").defineInRange("cincinnasite_max_y", 108, 0, 128);
 				builder.pop();

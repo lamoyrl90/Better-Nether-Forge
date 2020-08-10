@@ -33,7 +33,8 @@ public class LucisMushroomBlock extends BNBlock {
 				.harvestTool(ToolType.AXE)
 				.sound(SoundType.WOOD)
 				.hardnessAndResistance(1F)
-				.notSolid());
+				.notSolid()
+				.setLightLevel((state)->{return 15;}));
 		this.setDefaultState(getStateContainer().getBaseState().with(FACING, Direction.NORTH).with(SHAPE, EnumShape.CORNER));
 	}
 

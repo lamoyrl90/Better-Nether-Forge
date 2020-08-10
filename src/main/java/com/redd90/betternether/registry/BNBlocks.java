@@ -37,6 +37,7 @@ import com.redd90.betternether.block.BNTrapdoorBlock;
 import com.redd90.betternether.block.BNVineBlock;
 import com.redd90.betternether.block.BNWall;
 import com.redd90.betternether.block.BNButtonBlock;
+import com.redd90.betternether.block.BNChestBlock;
 import com.redd90.betternether.block.BNDoorBlock;
 import com.redd90.betternether.block.BNFenceBlock;
 import com.redd90.betternether.block.BNGateBlock;
@@ -70,6 +71,7 @@ import com.redd90.betternether.block.JellyfishMushroomBlock;
 import com.redd90.betternether.block.JellyfishMushroomSaplingBlock;
 import com.redd90.betternether.block.LucisMushroomBlock;
 import com.redd90.betternether.block.LucisSporeBlock;
+import com.redd90.betternether.block.LumabusBulbBlock;
 import com.redd90.betternether.block.LumabusSeedBlock;
 import com.redd90.betternether.block.LumabusVineBlock;
 import com.redd90.betternether.block.MagmaFlowerBlock;
@@ -125,6 +127,10 @@ public class BNBlocks {
 	
 	public static final RegistryObject<Block> PIG_STATUE_RESPAWNER = registerBlock("pig_statue_respawner", () -> new RespawnStatueBlock());
 	
+	public static final RegistryObject<Block> NETHER_RUBY_BLOCK = registerBlock("nether_ruby_block", () -> new BNBlock(BNBlockProperties.ruby()));
+	public static final RegistryObject<Block> NETHER_RUBY_SLAB = registerBlock("nether_ruby_slab", () -> new BNSlabBlock(BNBlockProperties.ruby()));
+	public static final RegistryObject<Block> NETHER_RUBY_STAIRS = registerBlock("nether_ruby_stairs", () -> new BNStairsBlock(()-> NETHER_RUBY_BLOCK.get().getDefaultState(), BNBlockProperties.ruby()));
+		
 	public static final RegistryObject<Block> CINCINNASITE_BLOCK = registerBlock("cincinnasite_block", () -> new BNBlock(BNBlockProperties.cincinnasite()));
 	public static final RegistryObject<Block> CINCINNASITE_FORGED = registerBlock("cincinnasite_forged", () -> new BNBlock(BNBlockProperties.cincinnasite()));
 	public static final RegistryObject<Block> CINCINNASITE_PILLAR = registerBlock("cincinnasite_pillar", () -> new CincinnasitePillarBlock(BNBlockProperties.cincinnasite()));
@@ -366,6 +372,7 @@ public class BNBlocks {
 	public static final RegistryObject<Block> JELLYFISH_MUSHROOM = registerBlockNoItem("jellyfish_mushroom", () -> new JellyfishMushroomBlock());
 	public static final RegistryObject<Block> JELLYFISH_MUSHROOM_SAPLING = registerBlock("jellyfish_mushroom_sapling", () -> new JellyfishMushroomSaplingBlock());
 	public static final RegistryObject<Block> LUMABUS_VINE = registerBlockNoItem("lumabus_vine", () -> new LumabusVineBlock());
+	public static final RegistryObject<Block> LUMABUS_BULB = registerBlockNoItem("lumabus_bulb", () -> new LumabusBulbBlock());
 	public static final RegistryObject<Block> LUMABUS_SEED = registerBlock("lumabus_seed", () -> new LumabusSeedBlock());
 		
 	public static final RegistryObject<Block> SOUL_SANDSTONE = registerBlock("soul_sandstone", () -> new SoulSandstoneBlock());
@@ -416,6 +423,13 @@ public class BNBlocks {
 	public static final RegistryObject<Block> POTTED_PLANT = registerBlockNoItem("potted_plant", () -> new PottedPlantBlock());
 	public static final RegistryObject<Block> BRICK_POT = registerBlock("brick_pot", () -> new BNPotBlock(Blocks.NETHER_BRICKS));
 	
+	public static final RegistryObject<Block> CHEST_STALAGNATE = registerBlock("chest_stalagnate", () -> new BNChestBlock(BNBlockProperties.stalagnate()));
+	public static final RegistryObject<Block> CHEST_REED = registerBlock("chest_reed", () -> new BNChestBlock(BNBlockProperties.reeds()));
+	public static final RegistryObject<Block> CHEST_WILLOW = registerBlock("chest_willow", () -> new BNChestBlock(BNBlockProperties.willow()));
+	public static final RegistryObject<Block> CHEST_WART = registerBlock("chest_wart", () -> new BNChestBlock(BNBlockProperties.wartWood()));
+	public static final RegistryObject<Block> CHEST_RUBEUS = registerBlock("chest_rubeus", () -> new BNChestBlock(BNBlockProperties.rubeus()));
+	public static final RegistryObject<Block> CHEST_MUSHROOM = registerBlock("chest_mushroom", () -> new BNChestBlock(BNBlockProperties.mushroom()));
+	public static final RegistryObject<Block> CHEST_MUSHROOM_FIR = registerBlock("chest_mushroom_fir", () -> new BNChestBlock(BNBlockProperties.mushroomFir()));
 	
 	private static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<? extends B> supplier) {
 		RegistryObject<B> block = BLOCKS.register(name, supplier);
@@ -453,6 +467,12 @@ public class BNBlocks {
 				}
 			}
 		}
+	}
+	
+	public static Block[] getChests()
+	{
+		Block[] blocks = {CHEST_STALAGNATE.get(), CHEST_REED.get(), CHEST_MUSHROOM.get(), CHEST_MUSHROOM_FIR.get(), CHEST_RUBEUS.get(), CHEST_WILLOW.get(), CHEST_WART.get()};
+		return blocks;
 	}
 
 }

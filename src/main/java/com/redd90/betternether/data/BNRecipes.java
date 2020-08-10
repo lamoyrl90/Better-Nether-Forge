@@ -23,6 +23,14 @@ public class BNRecipes extends BNRecipeProvider {
     @Override
     protected void registerRecipes(Consumer<IFinishedRecipe> consumer) {
     	
+    	super.shapeRound(BNBlocks.CHEST_STALAGNATE.get(), BNBlocks.STALAGNATE_PLANKS.get(), consumer);
+    	super.shapeRound(BNBlocks.CHEST_WART.get(), BNBlocks.WART_PLANKS.get(), consumer);
+    	super.shapeRound(BNBlocks.CHEST_WILLOW.get(), BNBlocks.WILLOW_PLANKS.get(), consumer);
+    	super.shapeRound(BNBlocks.CHEST_RUBEUS.get(), BNBlocks.RUBEUS_PLANKS.get(), consumer);
+    	super.shapeRound(BNBlocks.CHEST_REED.get(), BNBlocks.REEDS_BLOCK.get(), consumer);
+    	super.shapeRound(BNBlocks.CHEST_MUSHROOM.get(), BNBlocks.MUSHROOM_PLANKS.get(), consumer);
+    	super.shapeRound(BNBlocks.CHEST_MUSHROOM_FIR.get(), BNBlocks.MUSHROOM_FIR_PLANKS.get(), consumer);
+    	
     	//Cincinnasite and cincinnasite accessories
     	
     	super.recipe2x2(BNBlocks.CINCINNASITE_BLOCK.get().asItem(), 1, BNItems.CINCINNASITE.get(), consumer);
@@ -32,6 +40,14 @@ public class BNRecipes extends BNRecipeProvider {
         super.smeltOre(BNItems.CINCINNASITE_INGOT.get(), BNBlocks.CINCINNASITE_ORE.get().asItem(), 0.7f, consumer);
         super.smeltOre(BNBlocks.CINCINNASITE_FORGED.get(), BNBlocks.CINCINNASITE_BLOCK.get().asItem(), 0.7f, consumer);
         
+        super.recipe3x3(BNBlocks.NETHER_RUBY_BLOCK.get().asItem(), 1, BNItems.NETHER_RUBY.get(), consumer);
+        super.stairsRecipe(BNBlocks.NETHER_RUBY_STAIRS.get(), BNBlocks.NETHER_RUBY_BLOCK.get(), consumer);
+        super.slabRecipe(BNBlocks.NETHER_RUBY_SLAB.get(), 6, BNBlocks.NETHER_RUBY_BLOCK.get(), consumer);
+        super.pillarRecipe(BNBlocks.NETHER_RUBY_BLOCK.get(), 1, BNBlocks.NETHER_RUBY_SLAB.get(), consumer);
+        super.singleItemRecipe(BNItems.NETHER_RUBY.get(), 9, BNBlocks.NETHER_RUBY_BLOCK.get(), consumer);
+        super.recipe2x2(BNBlocks.NETHER_RUBY_BLOCK.get(), 6, BNBlocks.NETHER_RUBY_STAIRS.get(), consumer);
+        
+        super.furnace(Items.BLUE_DYE, BNBlocks.MUSHROOM_FIR_SAPLING.get(), 0.1f, consumer);
         
         super.recipe2x2(Blocks.GLOWSTONE.asItem(), 3, BNBlocks.GLOWSTONE_SPELEOTHEM.get().asItem(), consumer);
         super.recipe2x2(Blocks.BASALT.asItem(), 3, BNBlocks.BASALT_SPELEOTHEM.get().asItem(), consumer);
@@ -79,7 +95,8 @@ public class BNRecipes extends BNRecipeProvider {
         super.stairsRecipe(BNBlocks.CINCINNASITE_STAIRS.get(), BNBlocks.CINCINNASITE_FORGED.get(), consumer);
         super.slabRecipe(BNBlocks.CINCINNASITE_SLAB.get(), 6, BNBlocks.CINCINNASITE_FORGED.get(), consumer);
         super.plateRecipe(BNBlocks.CINCINNASITE_PLATE.get(), BNBlocks.CINCINNASITE_FORGED.get(), consumer);
-        super.singleItemRecipe(BNBlocks.CINCINNASITE_BUTTON.get(), 1, BNBlocks.CINCINNASITE_FORGED.get(), consumer);
+        super.singleItemRecipe(BNBlocks.CINCINNASITE_BUTTON.get(), 1, BNBlocks.CINCINNASITE_BLOCK.get(), consumer);
+        super.singleItemRecipe(BNItems.CINCINNASITE_INGOT.get(), 4, BNBlocks.CINCINNASITE_FORGED.get(), consumer);
         super.wallRecipe(BNBlocks.CINCINNASITE_WALL.get(), 6, BNBlocks.CINCINNASITE_FORGED.get(), consumer);
         
         super.furnace(Items.ORANGE_DYE, BNBlocks.NETHER_CACTUS.get(), .7f, consumer);

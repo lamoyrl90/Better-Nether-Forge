@@ -22,7 +22,6 @@ import com.redd90.betternether.world.biome.SwelteringSwamplandBiome;
 import com.redd90.betternether.world.biome.TorridTerracesBiome;
 import com.redd90.betternether.world.biome.WartForestBiome;
 
-import net.minecraft.entity.EntityClassification;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
 import net.minecraftforge.common.BiomeDictionary;

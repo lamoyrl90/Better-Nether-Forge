@@ -26,8 +26,7 @@ public class RedMushroomCapBlock extends BNBlock {
 	public static final EnumProperty<TripleShape> SHAPE = EnumProperty.create("shape", TripleShape.class);
 		
 	public RedMushroomCapBlock() {
-		super(BNBlockProperties.redMushroom());
-		this.properties.notSolid();
+		super(BNBlockProperties.redMushroom().notSolid());
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 	}
 	

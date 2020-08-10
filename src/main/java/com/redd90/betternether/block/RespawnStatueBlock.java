@@ -42,7 +42,7 @@ public class RespawnStatueBlock extends BNBlock {
 	public static final BooleanProperty TOP = BooleanProperty.create("top");
 	
 	public RespawnStatueBlock() {
-		super(BNBlockProperties.cincinnasite().notSolid());
+		super(BNBlockProperties.cincinnasite().notSolid().setLightLevel((state)->{return 15;}));
 		this.setRenderLayer(BNRenderLayer.CUTOUT);
 		this.setDefaultState(getStateContainer().getBaseState().with(FACING, Direction.NORTH).with(TOP, false));
 	}
@@ -134,10 +134,5 @@ public class RespawnStatueBlock extends BNBlock {
 	{
 		return BlocksHelper.mirrorHorizontal(state, mirror, FACING);
 	}
-	
-    @Override
-    public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) {
-        return 15;
-    }
 	
 }

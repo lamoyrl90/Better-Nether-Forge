@@ -6,6 +6,7 @@ import com.redd90.betternether.registry.BNBlocks;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.OreBlock;
+import net.minecraft.block.SoundType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockReader;
@@ -14,7 +15,7 @@ public class BNOreBlock extends OreBlock implements IRenderTypeable {
 	private BNRenderLayer layer = BNRenderLayer.SOLID;
 	
 	public BNOreBlock(Properties properties) {
-		super(properties);
+		super(properties.sound(SoundType.NETHER_ORE));
 	}
 
 	public void setRenderLayer(BNRenderLayer layer)

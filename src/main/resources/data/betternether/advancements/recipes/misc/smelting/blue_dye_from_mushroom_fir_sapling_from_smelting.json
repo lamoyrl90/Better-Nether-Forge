@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:smelting/blue_dye_from_mushroom_fir_sapling_from_smelting"
+    ]
+  },
+  "criteria": {
+    "has_mushroom_fir_sapling": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betternether:mushroom_fir_sapling"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:smelting/blue_dye_from_mushroom_fir_sapling_from_smelting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_mushroom_fir_sapling",
+      "has_the_recipe"
+    ]
+  ]
+}

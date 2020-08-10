@@ -48,7 +48,7 @@ public class LumabusVineFeature extends Feature<NoFeatureConfig> {
 		for (int y = 1; y < h2; y++)
 			BlocksHelper.setWithoutUpdate(world, pos.down(y), vineState);
 		
-		BlocksHelper.setWithoutUpdate(world, pos.down(h2), BNBlocks.LUMABUS_VINE.get().getDefaultState().with(LumabusVineBlock.SHAPE, TripleShape.BOTTOM));
+		BlocksHelper.setWithoutUpdate(world, pos.down(h2), BNBlocks.LUMABUS_BULB.get().getDefaultState());
 	}
 
 }

@@ -1,0 +1,10 @@
+{
+	"variants": {
+        " ":  [
+			{ "model": "betternether:block/lumabus_bulb_1" },
+			{ "model": "betternether:block/lumabus_bulb_2" },
+			{ "model": "betternether:block/lumabus_bulb_3" },
+			{ "model": "betternether:block/lumabus_bulb_4" }
+		]
+    }
+}

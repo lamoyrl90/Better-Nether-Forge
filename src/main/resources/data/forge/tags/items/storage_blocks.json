@@ -1,0 +1,7 @@
+{
+	"replace": "false",
+	"values": [
+		"#forge:storage_blocks/cincinnasite",
+		"#forge:storage_blocks/ruby"
+	]
+}
