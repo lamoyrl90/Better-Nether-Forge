@@ -263,6 +263,14 @@ public class BNRecipes extends BNRecipeProvider {
         
         
         ShapedRecipeBuilder
+		.shapedRecipe(Items.BUCKET, 12)
+		.key('C', BNItems.CINCINNASITE_INGOT.get())
+		.patternLine("C C")
+		.patternLine(" C ")
+		.addCriterion("has_cincinnasite", hasItem(BNItems.CINCINNASITE_INGOT.get()))
+		.build(consumer, "bucket_from_cincinnasite");
+        
+        ShapedRecipeBuilder
 		.shapedRecipe(Blocks.RAIL, 12)
 		.key('C', BNItems.CINCINNASITE_INGOT.get())
 		.key('S', BNTags.Items.STEMS)
