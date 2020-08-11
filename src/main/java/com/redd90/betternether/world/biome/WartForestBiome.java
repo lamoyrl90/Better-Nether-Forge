@@ -5,6 +5,8 @@ import com.redd90.betternether.world.gen.surfacebuilders.BNSurfaceBuilders;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.client.audio.BackgroundMusicTracks;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.EntityType;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.world.biome.Biome;
@@ -61,6 +63,11 @@ public class WartForestBiome extends Biome {
 	      this.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, Feature.SPRING_FEATURE.withConfiguration(DefaultBiomeFeatures.ENCLOSED_NETHER_SPRING_CONFIG).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(16, 10, 20, 128))));
 	     
 	      DefaultBiomeFeatures.func_235192_as_(this);
+	      
+	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ZOMBIFIED_PIGLIN, 1, 2, 4));
+	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.HOGLIN, 9, 3, 4));
+	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.PIGLIN, 5, 3, 4));
+	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.STRIDER, 60, 1, 2));
 	}
 	
 	public void finalizeFeatures() {
